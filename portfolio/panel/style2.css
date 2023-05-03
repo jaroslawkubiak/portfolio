@@ -1,0 +1,429 @@
+/* usunicie domylnych wlaciwoci CSS z elementw - ol - oraz - ul */
+#menu, #menu ul, #menu ol {
+	list-style-type:none;
+	padding:0;
+	margin:0;
+}
+
+
+/* wygląd glównego elementu - ol */
+#menu {
+	background-color:#ffffff; /* tlo pod glowne menu, naroniki, marginesy itp  UWAGA TO Z BODY*/
+	font-size:16px;
+	height:2em;
+	line-height:2em;
+	text-align:center;
+}
+
+/* wygląd wszystkich elementw - a - znajdujących się w elemencie - ol */
+#menu a {
+	display:block;
+	text-decoration:none;
+	color:#fff;
+	padding:0 5px;
+	font-size:10px;
+}
+
+/* wygld elementw - li - wszystkich dzieci elementu - ol */
+#menu > li {
+	float:left;
+	width:140px;
+	margin-left:1px;
+	background-color:#ffa008;  /*################################# glówne menu           ################*/
+	height:2em;
+}
+
+/* wygld elementu - li - pierwszego dziecka elementu - ol */
+#menu > li:first-child {
+	margin-left:0;
+}
+
+/* wygld elementw - li - wszystkich dzieci elementu - ol - po najechaniu kursorem myszki na element - li */
+#menu > li:hover {
+	background-color:#47b15e; /*#################################   tlo glownego menu po najechaniu mysz  #################*/
+}
+
+/* wygld elementu - a - dziecka elementu - li - bdcego dzieckiem elementu - ol - po najechaniu kursorem myszki na element - li */
+#menu > li:hover > a {
+	color:#000000;
+}
+
+/* wygld elementu - ul - dziecka elementu - li - bdcego dzieckiem elementu - ol - po najechaniu kursorem myszki na element - li */
+#menu > li:hover > ul {
+	display:block;
+}
+
+/* ------------------------CZʦ-ROZWIJANA-MENU-POZIOM-1----------------------- */
+
+/* wygld glwnych rozwijanych elementw - ul */
+#menu > li > ul {
+	display:none;
+	width:140%;
+}
+
+/* wygld elementu - li - w czci rozwijanej */
+#menu > li > ul > li {
+	position:relative;
+	text-align:center;
+	background-color:#a4a8a3; /*##################################### tlo glownego menu po rozwinieciu                 #########################################*/
+}
+
+/* wygld elementu - a - w czci rozwijanej */
+#menu > li > ul > li > a {
+	border-top:1px solid #ffffff;
+}
+
+/* wygld elementu - li - w czci rozwijanej, po najechaniu kursorem myszki na dany element - li */
+#menu > li > ul > li:hover {
+	background-color:#a4a8a3; /*####################################### tlo podrzdnego menu po najechaniu mysz  ################################*/
+}
+
+/* wygld elementu - a - w czci rozwijanej, po najechaniu kursorem myszki na element - li */
+#menu > li > ul > li:hover > a {
+	color:#000000;
+}
+
+/* ------------------------CZʦ-ROZWIJANA-MENU-POZIOM-2----------------------- */
+
+/* wygld glwnego elementu - ol - w drugiej czci rozwijanej */
+#menu > li > ul > li > ol {
+	display:none;
+	width:100%;
+	position:absolute;
+	left:100%;
+	margin-top:-2em;
+}
+
+/* wygld glwnego elementu - ol - w drugiej czci rozwijanej, po najechaniu kursorem myszki na jego rodzica - li */
+#menu > li > ul > li:hover > ol {
+	display:block;
+}
+
+/* wygld elementw - li - w drugiej czci rozwijanej */
+#menu > li > ul > li > ol > li {
+	background-color:#a4a8a3; /*#################################  tlo wysunitego menu   ################*/
+}
+
+/* wygld elementw - a - w drugiej czci rozwijanej */
+#menu > li > ul > li > ol > li > a {
+	border-top:1px solid #ffffff;
+	border-left:1px solid #ffffff;
+}
+
+/* wygld elementu - a - w drugiej czci rozwijanej, po najechaniu kursorem myszki */
+#menu > li > ul > li > ol > li > a:hover {
+	color:#000000;
+}
+
+
+
+/* ------------------------WSPLNE----------------------- */
+
+/* zaokrglone rogi wszystkich elementw - li - oraz - a */
+#menu li, ol a {
+	border-radius:6px;
+}
+
+/* strzalka w prawo */
+#menu .dol {
+	background-image:url('images/down.png');
+	background-repeat:no-repeat;
+	background-position:98% center;
+}
+
+/* strzalka w dl */
+#menu .prawo {
+	background-image:url('images/right_mini.png');
+	background-repeat:no-repeat;
+	background-position:98% center;
+}
+
+
+
+  /* ------------------------CZʦ-ROZWIJANA-MENU-POZIOM-2------ tEST ##########################################################################################----------------- */
+
+/* usunicie domylnych wlaciwoci CSS z elementw - ol - oraz - ul */
+  #menu2, #menu2 ul, #menu2 ol {
+	list-style-type:none;
+	padding:0;
+	margin:0;
+  }
+
+  /* wygld glwnego elementu - ol */
+  #menu2 {
+	background-color:#ffffff; /* tlo pod glowne menu, naroniki, marginesy itp  UWAGA TO Z BODY*/
+	font-size:16px;
+	height:2em;
+	line-height:2em;
+	text-align:center;
+  }
+
+  /* wygld wszystkich elementw - a - znajdujcych si w elemencie - ol */
+  #menu2 a {
+	display:block;
+	text-decoration:none;
+	color:#fff;
+	padding:0 5px;
+	font-size:10px;
+  }
+
+  /* wygld elementw - li - wszystkich dzieci elementu - ol */
+  #menu2 > li {
+	float:left;
+	width:140px;
+	margin-left:1px;
+	background-color:#ffa008;  /*################################# glwne menu  ################*/
+	height:2em;
+  }
+
+  /* wygld elementu - li - pierwszego dziecka elementu - ol */
+  #menu2 > li:first-child {
+	margin-left:0;
+  }
+
+  /* wygld elementw - li - wszystkich dzieci elementu - ol - po najechaniu kursorem myszki na element - li */
+  #menu2 > li:hover {
+	background-color:#47b15e; /*#################################   tlo glownego menu po najechaniu mysz  #################*/
+  }
+
+  /* wygld elementu - a - dziecka elementu - li - bdcego dzieckiem elementu - ol - po najechaniu kursorem myszki na element - li */
+  #menu2 > li:hover > a {
+	color:#000000;
+  }
+
+  /* wygld elementu - ul - dziecka elementu - li - bdcego dzieckiem elementu - ol - po najechaniu kursorem myszki na element - li */
+  #menu2 > li:hover > ul {
+	display:block;
+  }
+
+  /* ------------------------CZʦ-ROZWIJANA-MENU-POZIOM-1----------------------- */
+
+  /* wygld glwnych rozwijanych elementw - ul */
+  #menu2 > li > ul {
+	display:none;
+	width:140%;
+  }
+
+  /* wygld elementu - li - w czci rozwijanej */
+  #menu2 > li > ul > li {
+	position:relative;
+	text-align:center;
+	background-color:#a4a8a3; /*##################################### tlo glownego menu po rozwinieciu  #########################################*/
+  }
+
+  /* wygld elementu - a - w czci rozwijanej */
+  #menu2 > li > ul > li > a {
+	border-top:1px solid #ffffff;
+  }
+
+  /* wygld elementu - li - w czci rozwijanej, po najechaniu kursorem myszki na dany element - li */
+  #menu2 > li > ul > li:hover {
+	background-color:#a4a8a3; /*####################################### tlo podrzdnego menu po najechaniu mysz  ################################*/
+  }
+
+  /* wygld elementu - a - w czci rozwijanej, po najechaniu kursorem myszki na element - li */
+  #menu2 > li > ul > li:hover > a {
+	color:#000000;
+  }
+
+
+  
+  /* wygld glwnego elementu - ol - w drugiej czci rozwijanej */
+  #menu2 > li > ul > li > ol {
+	display:none;
+	width:100%;
+	position:absolute;
+	right:100%;
+	margin-top:-2em;
+  }
+
+  /* wygld glwnego elementu - ol - w drugiej czci rozwijanej, po najechaniu kursorem myszki na jego rodzica - li */
+  #menu2 > li > ul > li:hover > ol {
+	display:block;
+  }
+
+  /* wygld elementw - li - w drugiej czci rozwijanej */
+  #menu2 > li > ul > li > ol > li {
+	background-color:#a4a8a3; /*#################################  tlo wysunitego menu   ################*/
+  }
+
+  /* wygld elementw - a - w drugiej czci rozwijanej */
+  #menu2 > li > ul > li > ol > li > a {
+	border-top:1px solid #ffffff;
+	border-left:1px solid #ffffff;
+  }
+
+  /* wygld elementu - a - w drugiej czci rozwijanej, po najechaniu kursorem myszki */
+  #menu2 > li > ul > li > ol > li > a:hover {
+	color:#000000;
+  }
+
+  /* strzalka w dl */
+  #menu2 .lewo {
+	background-image:url('images/left_mini.png');
+	background-repeat:no-repeat;
+	background-position:2% center;
+	}
+
+  /* zaokrglone rogi wszystkich elementw - li - oraz - a */
+  #menu2 li, ol a {
+	border-radius:6px;
+  }
+
+
+
+
+/* ############################################################################################################################################################################################################################################ */
+/* #########################################################################################   MENU DLA EDYCJI KLIENTOW    	######################################################################################### */
+/* ############################################################################################################################################################################################################################################ */
+/* usunicie domylnych wlaciwoci CSS z elementw - ol - oraz - ul */
+  #menu_klienci, #menu_klienci ul, #menu_klienci ol {
+	list-style-type:none;
+	padding:0;
+	margin:0;
+  }
+
+  /* wygld glwnego elementu - ol */
+  #menu_klienci {
+	color : #000000; 
+	font-weight: Bold;
+	font-family: arial; 
+	font-size:10px;
+	height:2em;
+	line-height:2em;
+	text-align:center;
+	
+  }
+
+  /* wygld wszystkich elementw - a - znajdujcych si w elemencie - ol */
+  #menu_klienci a {
+	display:block;
+	text-decoration:none;
+	color:#000;
+	padding:0 3px;
+	font-size:8px;
+  }
+
+  /* wygld elementw - li - wszystkich dzieci elementu - ol */
+  #menu_klienci > li {
+	float:left;
+	width:90px;
+	margin-left:1px;
+	height:2em;
+	background-image:url(images/background_menu_klienci.jpg);  /*################################# glwne menu_klienci             ################*/
+	border-style: ridge; /*     https://www.w3schools.com/css/css_border.asp    */
+	border-color:#656565;
+	border-width: 1px;
+  }
+
+  /* wygld elementu - li - pierwszego dziecka elementu - ol */
+  #menu_klienci > li:first-child {
+	margin-left:0;
+  }
+
+  /* wygld elementw - li - wszystkich dzieci elementu - ol - po najechaniu kursorem myszki na element - li */
+  #menu_klienci > li:hover {
+	 /*#################################   tlo glownego menu_klienci po najechaniu mysz  #################*/
+	background-image:url(images/background_menu_klienci_aktywne.jpg);  
+	
+	/*
+	background-color:#dadada;
+	*/
+	
+  }
+
+  /* wygld elementu - a - dziecka elementu - li - bdcego dzieckiem elementu - ol - po najechaniu kursorem myszki na element - li */
+  #menu_klienci > li:hover > a {
+	color:#000000;
+  }
+
+  /* wygld elementu - ul - dziecka elementu - li - bdcego dzieckiem elementu - ol - po najechaniu kursorem myszki na element - li */
+  #menu_klienci > li:hover > ul {
+	display:block;
+  }
+
+  /* ------------------------CZʦ-ROZWIJANA-menu_klienci-POZIOM-1----------------------- */
+
+  /* wygld glwnych rozwijanych elementw - ul */
+  #menu_klienci > li > ul {
+	display:none;
+	width:140%;
+  }
+
+  /* wygld elementu - li - w czci rozwijanej */
+  #menu_klienci > li > ul > li {
+	position:relative;
+	text-align:center;
+	background-color:#ececec; /*##################################### tlo glownego menu_klienci po rozwinieciu                 #########################################*/
+  }
+
+  /* wygld elementu - a - w czci rozwijanej */
+  #menu_klienci > li > ul > li > a {
+	border-top:1px solid #ffffff;
+  }
+
+  /* wygld elementu - li - w czci rozwijanej, po najechaniu kursorem myszki na dany element - li */
+  #menu_klienci > li > ul > li:hover {
+	background-color:#dadada; /*####################################### tlo podrzdnego menu_klienci po najechaniu mysz  ################################*/
+  }
+
+  /* wygld elementu - a - w czci rozwijanej, po najechaniu kursorem myszki na element - li */
+  #menu_klienci > li > ul > li:hover > a {
+	color:#000000;
+  }
+  
+  /* ------------------------CZʦ-ROZWIJANA-menu_klienci-POZIOM-2----------------------- */
+
+  /* wygld glwnego elementu - ol - w drugiej czci rozwijanej */
+  #menu_klienci > li > ul > li > ol {
+	display:none;
+	width:100%;
+	position:absolute;
+	left:100%;
+	margin-top:-2em;
+  }
+
+  /* wygld glwnego elementu - ol - w drugiej czci rozwijanej, po najechaniu kursorem myszki na jego rodzica - li */
+  #menu_klienci > li > ul > li:hover > ol {
+	display:block;
+  }
+
+  /* wygld elementw - li - w drugiej czci rozwijanej */
+  #menu_klienci > li > ul > li > ol > li {
+	background-color:#a4a8a3; /*#################################  tlo wysunitego menu_klienci   ################*/
+  }
+
+  /* wygld elementw - a - w drugiej czci rozwijanej */
+  #menu_klienci > li > ul > li > ol > li > a {
+	border-top:1px solid #ffffff;
+	border-left:1px solid #ffffff;
+  }
+
+  /* wygld elementu - a - w drugiej czci rozwijanej, po najechaniu kursorem myszki */
+  #menu_klienci > li > ul > li > ol > li > a:hover {
+	color:#000000;
+  }
+  
+
+
+  /* ------------------------WSPLNE----------------------- */
+
+  /* zaokrglone rogi wszystkich elementw - li - oraz - a */
+  #menu_klienci li, ol a {
+	border-radius:6px;
+  }
+  
+/* strzalka w prawo */
+  #menu_klienci .dol {
+	background-image:url('images/down.png');
+	background-repeat:no-repeat;
+	background-position:98% center;
+  }
+
+  /* strzalka w dl */
+  #menu_klienci .prawo {
+	background-image:url('images/right.png');
+	background-repeat:no-repeat;
+	background-position:98% center;
+	}
+
