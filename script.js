@@ -220,3 +220,29 @@ portfolio.map(item => {
     }
   });
 });
+
+// smooth go back to top of the page
+function scroolUp() {
+  window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+}
+
+function update() {
+  const section = document.getElementById("section");
+  let positionFromTop = section.getBoundingClientRect().y;
+  const goUp = document.getElementById("goUp");
+
+  //if btn exist in DOM - addevent
+  if (goUp) goUp.addEventListener("click", scroolUp);
+
+  //if scrooling up - remove btn
+  if (goUp && positionFromTop > -1500) goUp.remove();
+
+  // if scrool below 1500px - insert btn
+  if (positionFromTop < -1500 && !goUp)
+    section.insertAdjacentHTML(
+      "beforeend",
+      `<button class="arrow-go-up" id="goUp">UP</button>`
+    );
+}
+
+document.addEventListener("scroll", update);

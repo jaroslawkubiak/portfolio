@@ -523,6 +523,17 @@ footer p {
   background-color: rgb(255, 0, 0);
 }
 
+
+.arrow-go-up {
+  z-index: 10;
+  position: fixed;
+  font-size: 3em;
+  fill: rgb(0, 0, 0);
+  bottom: 20px;
+  right: 20px;
+}
+
+
 /*############################## Small devices (portrait tablets and large phones, 600px and up) ##############################*/
 @media only screen and (min-width: 600px) {
   .test {
@@ -549,4 +560,12 @@ footer p {
   .test {
     background-color: #f200ff;
   }
+  /* .arrow-up {
+    position: sticky;
+    font-size: 8em;
+    left: 100%;
+    bottom: 2%;
+    margin: 30px;
+  } */
+
 }
