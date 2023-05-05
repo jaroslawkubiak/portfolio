@@ -1,11 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
 
 :root {
-  --bg-primary: #1c2331;
-  --br-secondary: #0f1624;
-  --primary-color: #e8e4e4;
-  --secondary-color: #5daeb4;
+  --dark-primary-color: #1c2331;
+  --light-primary-color: #0f1624;
+  --primary-text: #e8e4e4;
+  --secondary-text: #5daeb4;
   --accent-color: #e31948;
+
+  /* --dark-primary-color: #C2185B;
+--light-primary-color: #F8BBD0;
+--primary-color: #E91E63;
+--accent-color: #536DFE;
+--primary-text: #212121;
+--secondary-text:#757575; */
+
+  /* --dark-primary-color: #2f3c42;
+--light-primary-color: #CFD8DC;
+--primary-color: #607D8B;
+--accent-color: #5da3f8;
+
+--primary-text:#efeeee;
+--secondary-text: #212121; */
 
   /* colors for tech svg  */
   --svg-fill-color: #e335e9;
@@ -28,9 +43,10 @@
 }
 
 body {
-  background-color: var(--bg-primary);
-  color: var(--primary-color);
+  background-color: var(--dark-primary-color);
+  color: var(--primary-text);
   font-family: "Lato", sans-serif;
+  font-size: 1em;
   margin: 0;
   padding: 0;
 }
@@ -63,7 +79,7 @@ body {
   position: absolute;
   height: 4px;
   width: 100%;
-  background: var(--primary-color);
+  background: var(--primary-text);
   opacity: 1;
   left: 0;
   -webkit-transform: rotate(0deg);
@@ -120,8 +136,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 20px; */
-
-  background-color: var(--br-secondary);
+  background-color: var(--light-primary-color);
 }
 
 /* header img {
@@ -129,7 +144,7 @@ header {
 } */
 
 a {
-  color: var(--primary-color);
+  color: var(--primary-text);
   text-decoration: none;
   padding: 10px;
 }
@@ -163,26 +178,25 @@ nav {
   transform: translateY(8rem);
 }
 .about p {
-  font-size: 0.8em;
   text-align: justify;
 }
 
 .about img {
   float: left;
-  margin: 10px;
+  margin-right: 10px;
+  margin-top: 20px;
   width: 100px;
   object-fit: contain;
   border-radius: 10px;
 }
 
 h1 {
-  font-size: 24px;
+  font-size: 2em;
   margin-bottom: 10px;
-  color: var(--secondary-color);
+  color: var(--secondary-text);
 }
 
 p {
-  font-size: 16px;
   line-height: 1.5;
   margin-bottom: 20px;
 }
@@ -196,10 +210,8 @@ li {
 }
 
 /* portfolio section */
-.lazy-img {
-  filter: blur(20px);
-}
 .portfolio-item-wrapper {
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -208,7 +220,7 @@ li {
 .portfolio-title {
   color: var(--accent-color);
   font-size: 1.2em;
-  margin: 20px 0;
+  margin: 20px;
 }
 .portfolio-description-wrapper {
   display: flex;
@@ -222,7 +234,6 @@ li {
   justify-content: center;
 }
 .portfolio-description {
-  font-size: 1em;
   line-height: 1.5;
   padding: 0 10px;
 }
@@ -239,8 +250,11 @@ li {
   width: 100%;
   object-fit: contain;
 }
+.lazy-img {
+  filter: blur(20px);
+}
 .portfolio-footer {
-  margin: 20px 0;
+  margin: 20px 0 80px 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   width: 100%;
@@ -261,7 +275,7 @@ li {
 .portfolio-svg-github {
   width: 28px;
   height: 28px;
-  fill: var(--primary-color);
+  fill: var(--primary-text);
 }
 .portfolio-svg-github:hover {
   fill: var(--accent-color);
@@ -282,7 +296,7 @@ li {
 .portfolio-svg-demo {
   width: 28px;
   height: 28px;
-  color: var(--primary-color);
+  color: var(--primary-text);
 }
 .portfolio-svg-demo:hover {
   color: var(--accent-color);
@@ -346,7 +360,7 @@ li {
   bottom: 0%;
   z-index: 10;
   border: none;
-  background: var(--primary-color);
+  background: var(--primary-text);
   color: var(--accent-color);
   border-radius: 50%;
   height: 2em;
@@ -356,7 +370,7 @@ li {
   align-items: center;
 }
 .slider-btn:hover {
-  color: var(--primary-color);
+  color: var(--primary-text);
   background: var(--accent-color);
 }
 .slider-btn-left {
@@ -376,7 +390,7 @@ li {
 }
 .dots-dot {
   border: none;
-  background-color: var(--primary-color);
+  background-color: var(--primary-text);
   opacity: 0.5;
   height: 1em;
   width: 1em;
@@ -402,7 +416,7 @@ li {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 10px;
+  margin-bottom: 20px;
 }
 .courses-item-title {
   width: auto;
@@ -479,22 +493,28 @@ li {
 .skill-off {
   opacity: 0.3;
 }
-
+/* road-map */
+.road-map-item {
+  padding: 5px;
+}
 /* footer */
 footer {
-  background-color: var(--br-secondary);
+  background-color: var(--light-primary-color);
   padding: 20px;
   text-align: center;
 }
 footer p {
   margin: 0;
-  font-size: 14px;
 }
 .footer-links {
   display: flex;
   justify-content: center;
+  gap: 20px;
 }
-
+.footer-svg {
+  width: 2em;
+  height: 2em;
+}
 .arrow-go-up {
   position: fixed;
   width: 30px;
@@ -503,13 +523,13 @@ footer p {
   bottom: 20px;
   right: 20px;
   color: var(--accent-color);
-  background-color: var(--primary-color);
+  background-color: var(--primary-text);
   padding: 5px;
   cursor: pointer;
 }
 
 .test {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 99999;
@@ -520,15 +540,205 @@ footer p {
 
 /*############################## Small devices (portrait tablets and large phones, 600px and up) ##############################*/
 @media only screen and (min-width: 600px) {
+  :root {
+    /* border for tech svg icon */
+    --svg-border-width: 2px;
+    /* courses */
+    --size-link-box: 30px;
+  }
   .test {
     background-color: #ff9900;
+  }
+  body {
+    font-size: 1.2em;
+  }
+  .portfolio-title {
+    font-size: 1.4em;
+  }
+  .portfolio-description-wrapper {
+    gap: 30px;
+  }
+  .portfolio-svg {
+    width: 22px;
+    height: 22px;
+  }
+  .portfolio-svg-wrapper {
+    width: 40px;
+    height: 40px;
+    margin: 6px;
+  }
+  .portfolio-preview {
+    margin-top: 30px;
+    height: 35em;
+  }
+  .slider-btn {
+    bottom: -10px;
+    height: 3em;
+    width: 3em;
+  }
+  .dots {
+    bottom: 2%;
+  }
+  .dots-dot {
+    height: 2em;
+    width: 2em;
+    border-radius: 50%;
+    margin-right: 1.4em;
+  }
+  .courses-item-wrapper {
+    padding: 15px;
+  }
+  .courses-item-in-progress {
+    font-size: 0.8em;
+  }
+  .svg-trophy {
+    width: 30px;
+    height: 30px;
+  }
+  .skills-item-wrapper {
+    margin-bottom: 25px;
+  }
+  .skills-item-title {
+    width: 150px;
+  }
+  .skill-point {
+    width: 18px;
+    height: 18px;
+    margin: 5px;
+  }
+  .road-map-item {
+    padding: 10px;
+  }
+  footer p {
+    font-size: 1.2em;
+  }
+  .footer-links {
+    gap: 30px;
+  }
+  .footer-svg {
+    width: 3em;
+    height: 3em;
+  }
+  .arrow-go-up {
+    width: 40px;
+    height: 40px;
+    bottom: 30px;
+    right: 30px;
   }
 }
 
 /*############################## Medium devices (landscape tablets, 768px and up) ##############################*/
 @media only screen and (min-width: 768px) {
+  :root {
+    /* border for tech svg icon */
+    --svg-border-width: 3px;
+    /* courses */
+    --size-link-box: 45px;
+  }
   .test {
     background-color: #008000;
+  }
+  body {
+    font-size: 1.4em;
+  }
+  .about img {
+    margin-right: 20px;
+    margin-top: 35px;
+    width: 150px;
+  }
+  .portfolio-title {
+    font-size: 1.6em;
+  }
+
+  .portfolio-item-wrapper {
+    margin-top: 30px;
+  }
+  .portfolio-description-wrapper {
+    gap: 50px;
+  }
+  .portfolio-svg {
+    width: 32px;
+    height: 32px;
+  }
+  .portfolio-svg-wrapper {
+    width: 55px;
+    height: 55px;
+    margin: 10px;
+  }
+  .portfolio-preview {
+    height: 40em;
+  }
+  .portoflio-footer {
+    margin: 30px 0 100px 0;
+  }
+  .portfolio-footer-demo span {
+    padding: 16px;
+    font-size: 2em;
+  }
+  .portfolio-svg-demo {
+    width: 1em;
+    height: 1em;
+  }
+  .portfolio-footer-github span {
+    padding: 16px;
+    font-size: 2em;
+  }
+  .portfolio-svg-github {
+    width: 1em;
+    height: 1em;
+  }
+
+  .slider-btn {
+    bottom: -25px;
+    height: 4em;
+    width: 4em;
+  }
+  .dots {
+    bottom: 1%;
+  }
+  .dots-dot {
+    height: 3em;
+    width: 3em;
+    margin-right: 2.4em;
+  }
+  .courses-item-wrapper {
+    padding: 15px;
+  }
+  .courses-item-title {
+    padding-left: 30px;
+    font-size: 1em;
+  }
+  .svg-trophy {
+    width: 40px;
+    height: 40px;
+  }
+
+  .skills-item-wrapper {
+    margin-bottom: 45px;
+  }
+  .skills-item-title {
+    width: 250px;
+    font-size: 1.4em;
+  }
+  .skill-point {
+    width: 26px;
+    height: 26px;
+    margin: 10px;
+  }
+  .road-map-item {
+    padding: 15px;
+  }
+  footer p {
+    font-size: 1.4em;
+  }
+  .footer-links {
+    gap: 50px;
+  }
+  .arrow-go-up {
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
   }
 }
 
