@@ -1,5 +1,12 @@
 "use strict";
-import { svg, svgDemo, svgGithub, arrowRight, arrowLeft } from "./svg.js";
+import {
+  svg,
+  svgDemo,
+  svgGithub,
+  arrowRight,
+  arrowLeft,
+  arrowUp,
+} from "./svg.js";
 
 const burgerMenu = document.getElementById("burger");
 const mobileMenu = document.getElementById("mobile-menu");
@@ -9,15 +16,19 @@ burgerMenu.addEventListener("click", () => {
   mobileMenu.classList.toggle("hidden");
 });
 
+//////////////////////////////////////////////////////////
 // menu smooth navigation
 document.getElementById("mobile-menu").addEventListener("click", function (e) {
   e.preventDefault();
   if (e.target.classList.contains("nav-link")) {
     const id = e.target.getAttribute("href");
     document.querySelector(id).scrollIntoView({ behavior: "smooth" });
+    mobileMenu.classList.add("hidden");
+    burgerMenu.checked = false;
   }
 });
 
+//////////////////////////////////////////////////////////
 //menu fade animation
 const nav = document.querySelector(".nav");
 const hendleHover = function (e) {
@@ -34,6 +45,7 @@ const hendleHover = function (e) {
 nav.addEventListener("mouseover", hendleHover.bind(0.3));
 nav.addEventListener("mouseout", hendleHover.bind(1));
 
+//////////////////////////////////////////////////////////
 // portfolio array
 const portfolio = [
   {
@@ -113,8 +125,9 @@ const portfolio = [
   },
 ];
 
+//////////////////////////////////////////////////////////
 // map through portfolio array to create html
-portfolio.map(item => {
+portfolio.forEach(item => {
   let html = `
     <li class="portfolio-item-wrapper">
     <div class="portfolio-title">
@@ -124,7 +137,7 @@ portfolio.map(item => {
     <div class="portfolio-tech">`;
 
   // rendering portfolio
-  item.tech.map(tech => (html += svg[tech]));
+  item.tech.forEach(tech => (html += svg[tech]));
 
   html += `</div><div class="portfolio-description">${item.description}</div></div>`;
 
@@ -132,7 +145,10 @@ portfolio.map(item => {
 
   for (let i = 1; i <= item.images; i++) {
     // console.log(`/portfolio/preview/${item.imgDir}/${i}.jpg`);
-    html += `<div class="slide"><img src="/portfolio/preview/${item.imgDir}/${i}.jpg" alt="Preview photo ${i}" class="portfolio-preview-image" /></div>`;
+    html += `<div class="slide">
+    <img src="/portfolio/preview/lazy/${item.imgDir}/${i}.jpg" 
+    data-src="/portfolio/preview/high-res/${item.imgDir}/${i}.jpg" 
+    alt="Preview photo ${i}" class="portfolio-preview-image lazy-img" /></div>`;
   }
 
   html += `<button class="slider-btn slider-btn-left">${arrowLeft}</button>
@@ -221,14 +237,16 @@ portfolio.map(item => {
   });
 });
 
+//////////////////////////////////////////////////////////
 // smooth go back to top of the page
 function scroolUp() {
   window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
 }
 
+// update observer position
 function update() {
-  const section = document.getElementById("section");
-  let positionFromTop = section.getBoundingClientRect().y;
+  const pageBody = document.body;
+  let positionFromTop = pageBody.getBoundingClientRect().y;
   const goUp = document.getElementById("goUp");
 
   //if btn exist in DOM - addevent
@@ -239,10 +257,69 @@ function update() {
 
   // if scrool below 1500px - insert btn
   if (positionFromTop < -1500 && !goUp)
-    section.insertAdjacentHTML(
+    pageBody.insertAdjacentHTML(
       "beforeend",
-      `<button class="arrow-go-up" id="goUp">UP</button>`
+      `<div class="arrow-go-up" id="goUp">${arrowUp}</div>`
     );
 }
-
 document.addEventListener("scroll", update);
+
+// force go to top page when refreshing
+// window.onbeforeunload = function () {
+//   window.scrollTo(0, 0);
+// };
+
+//////////////////////////////////////////////////////////
+// lazy loading img on portfolio sections
+// get all section from portfolio
+const portfolioTargets = document.querySelectorAll(".portfolio-preview");
+
+// load high res image for visible portfolio section
+const loadImg = function (entries, observer) {
+  const [entry] = entries;
+
+  if (!entry.isIntersecting) return;
+
+  const portfolioLoading = document.getElementById(entry.target.id);
+  const imgTargets = portfolioLoading.querySelectorAll("img[data-src]");
+
+  imgTargets.forEach(img => {
+    // replace lazy img with high res img
+    img.src = img.dataset.src;
+
+    // remove blur effect(class) when img is finish loading
+    img.addEventListener("load", () => img.classList.remove("lazy-img"));
+    observer.unobserve(entry.target);
+  });
+};
+
+// create observer for each section in portfolio
+const portfolioObserver = new IntersectionObserver(loadImg, {
+  root: null,
+  threshold: 0,
+  rootMargin: "250px",
+});
+
+portfolioTargets.forEach(portfolio => portfolioObserver.observe(portfolio));
+
+//////////////////////////////////////////////////////////
+// Reveal sections
+const allSections = document.querySelectorAll(".section-to-reveal");
+const revealSection = function (entries, observer) {
+  const [entry] = entries;
+
+  if (!entry.isIntersecting) return;
+
+  entry.target.classList.remove("section-hidden");
+  observer.unobserve(entry.target);
+};
+
+const sectionObserver = new IntersectionObserver(revealSection, {
+  root: null,
+  threshold: 0.15,
+});
+
+allSections.forEach(function (section) {
+  sectionObserver.observe(section);
+  section.classList.add("section-hidden");
+});
