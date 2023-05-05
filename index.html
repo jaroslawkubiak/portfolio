@@ -7,12 +7,23 @@
       Jarosław Kubiak - programer: Javascript, PHP, Python, HTML, CSS, MySQL
     </title>
     <script type="module" defer src="script.js"></script>
-    <link rel="stylesheet" href="style.css" />
+    <!-- add css file with version extension, to alway load new css file, preventing caching old css file -->
+    <script>
+      let fileVer = Date.now();
+      const head = document.getElementsByTagName("head")[0];
+      let link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.type = "text/css";
+      link.href = `style.css?v=${fileVer}`;
+      head.appendChild(link);
+    </script>
+
     <link rel="icon" href="/img/icon.png" />
   </head>
   <body>
-    <!-- <div class="test"></div> -->
+    <div class="test"></div>
     <header>
+      <!-- burger menu icon -->
       <label class="burger" for="burger">
         <input type="checkbox" id="burger" />
         <span></span>
@@ -21,7 +32,7 @@
       </label>
 
       <!-- <img src="/svg/logo.svg" class="svg-logo" alt="Logo" /> -->
-      <nav id="mobile-menu" class="hidden">
+      <nav id="mobile-menu" class="nav hidden">
         <a class="nav-link" href="#about-me">About me</a>
         <a class="nav-link" href="#portfolio">Portfolio</a>
         <a class="nav-link" href="#courses">Completed courses</a>
@@ -244,12 +255,9 @@
     </section>
 
     <footer>
-      <p>© 2023 Jarosław Kubiak</p>
+      <p>© Copyright by Jarosław Kubiak 2023</p>
       <div class="footer-logo">
-        <a
-          href="https://github.com/jaroslawkubiak"
-          target="_blank"
-        >
+        <a href="https://github.com/jaroslawkubiak" target="_blank">
           <svg
             width="24"
             height="24"
