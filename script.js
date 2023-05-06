@@ -18,7 +18,7 @@ const portfolioList = document.getElementById("portfolio-list");
 // };
 
 burgerMenu.addEventListener("click", () => {
-  mobileMenu.classList.toggle("hidden");
+  mobileMenu.classList.toggle("nav-hide");
 });
 
 //////////////////////////////////////////////////////////
@@ -26,9 +26,23 @@ burgerMenu.addEventListener("click", () => {
 document.getElementById("mobile-menu").addEventListener("click", function (e) {
   e.preventDefault();
   if (e.target.classList.contains("nav-link")) {
-    const id = e.target.getAttribute("href");
-    document.querySelector(id).scrollIntoView({ behavior: "smooth" });
-    mobileMenu.classList.add("hidden");
+    const element = document.getElementById(e.target.hash.slice(1));
+    // scrolling to section with class "section-to-reveal" has to be with shift in 300px. because section in revealing via css "section-hidden"
+    let transformSectionToReveal = 0;
+    if (element.classList.contains("section-to-reveal"))
+      transformSectionToReveal = 300;
+
+    console.log(transformSectionToReveal);
+    const y =
+      element.getBoundingClientRect().top +
+      window.scrollY -
+      transformSectionToReveal;
+    window.scroll({
+      top: y,
+      behavior: "smooth",
+    });
+
+    mobileMenu.classList.add("nav-hide");
     burgerMenu.checked = false;
   }
 });
@@ -42,13 +56,31 @@ const hendleHover = function (e) {
     const siblings = link.closest(".nav").querySelectorAll(".nav-link");
 
     siblings.forEach(el => {
-      const btn = el.classList.contains("nav-link--btn");
-      if (el !== link && !btn) el.style.opacity = this;
+      if (el !== link) el.style.opacity = this;
     });
   }
 };
-nav.addEventListener("mouseover", hendleHover.bind(0.3));
+nav.addEventListener("mouseover", hendleHover.bind(0.5));
 nav.addEventListener("mouseout", hendleHover.bind(1));
+
+//////////////////////////////////////////////////////////
+//sticky navigation observer API
+const aboutMe = document.getElementById("about-me");
+const header = document.querySelector(".header");
+
+const stickyNav = function (entries) {
+  const [entry] = entries;
+
+  if (!entry.isIntersecting) header.classList.add("sticky");
+  else header.classList.remove("sticky");
+};
+
+const headerObserver = new IntersectionObserver(stickyNav, {
+  root: null,
+  threshold: 0,
+  rootMargin: "500px",
+});
+headerObserver.observe(aboutMe);
 
 //////////////////////////////////////////////////////////
 // portfolio array
@@ -82,7 +114,7 @@ const portfolio = [
     github: "https://github.com/jaroslawkubiak/figures",
     imgDir: "figures",
     images: 3,
-    tech: ["react", "redux", "js"],
+    tech: ["js", "react", "redux"],
     description:
       "I'm a huge fan and collector of Lego Star Wars minifigures. When my collection had about 80 figures I started to get a bit lost, I needed a better list (with images), something better than excel. Being a programmer, I wrote a web page with a database of my figures. For this day i use this web page. This application is the next version, mainly written for learning JS and React. At the moment the database is in a JSON file, when I finish the Node.JS course I will be able to finish this application.",
   },
@@ -240,7 +272,6 @@ portfolio.forEach(item => {
     }
   });
 
-
   // swipe on images - changing slide
   let moveX;
   let moveY;
@@ -269,19 +300,17 @@ portfolio.forEach(item => {
       if (Math.abs(xDiff) > Math.abs(yDiff) && startTouch) {
         if (xDiff > 0) nextSlide();
         else previousSlide();
-      } 
-        startTouch = false;
-    
+      }
+      startTouch = false;
     },
     { passive: false }
   );
 });
 
-
 //////////////////////////////////////////////////////////
 // smooth go back to top of the page
 function scrollUp() {
-  window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  window.scroll({ top: 0, behavior: "smooth" });
 }
 
 // update observer position
@@ -300,7 +329,7 @@ function update() {
   if (positionFromTop < -1500 && !goUp)
     pageBody.insertAdjacentHTML(
       "beforeend",
-      `<div class="arrow-go-up" id="goUp" title="Go to to of the page">${arrowUp}</div>`
+      `<div class="arrow-go-up" id="goUp" title="Go to top">${arrowUp}</div>`
     );
 }
 document.addEventListener("scroll", update);
@@ -324,7 +353,9 @@ const loadImg = function (entries, observer) {
     img.src = img.dataset.src;
 
     // remove blur effect(class) when img is finish loading
-    img.addEventListener("load", () => img.classList.remove("portfolio-lazy-img"));
+    img.addEventListener("load", () =>
+      img.classList.remove("portfolio-lazy-img")
+    );
     observer.unobserve(entry.target);
   });
 };

@@ -50,11 +50,13 @@ body {
   margin: 0;
   padding: 0;
 }
-/* .svg-logo {
-  fill: #ff00ff;
-  width: 90px;
-} */
 
+.svg-logo {
+  width: 100px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
 .hidden {
   display: none;
 }
@@ -130,19 +132,9 @@ body {
   top: 21px;
   left: 4px;
 }
-
 header {
-  /* display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px; */
   background-color: var(--light-primary-color);
 }
-
-/* header img {
-  height: 80px;
-} */
-
 a {
   color: var(--primary-text);
   text-decoration: none;
@@ -150,20 +142,26 @@ a {
 }
 
 /* nav menu */
+.nav-hide {
+  display: none;
+}
 nav {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: all 2.5s;
+  transition: all 0.5s;
 }
 .nav-link {
-  padding: 10px;
+  padding: 10px 30px;
   border-bottom: 2px solid transparent;
+  transition: all 0.3s;
 }
 .nav-link:hover {
   border-bottom: 2px solid var(--accent-color);
 }
+
+
 .section-item {
   padding: 25px;
   display: flex;
@@ -173,12 +171,11 @@ nav {
 }
 .section-hidden {
   opacity: 0;
-  transform: translateY(8rem);
+  transform: translateY(100px);
 }
 .about p {
   text-align: justify;
 }
-
 .about img {
   float: left;
   margin-right: 10px;
@@ -212,7 +209,6 @@ li {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 1200px;
 }
 .portfolio-title {
   color: var(--accent-color);
@@ -229,6 +225,7 @@ li {
 .portfolio-tech {
   display: flex;
   justify-content: center;
+  margin-bottom: 20px;
 }
 .portfolio-description {
   line-height: 1.5;
@@ -236,6 +233,8 @@ li {
 .portfolio-preview {
   margin-top: 20px;
   width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
 }
 .portfolio-preview-images {
   position: relative;
@@ -427,12 +426,6 @@ li {
   cursor: pointer;
   padding-left: 20px;
 }
-.courses-item-no-link {
-  margin-right: 10px;
-  padding: 10px;
-  width: var(--size-link-box);
-  height: var(--size-link-box);
-}
 .courses-item-in-progress {
   position: relative;
   display: grid;
@@ -510,7 +503,6 @@ footer p {
   padding: 5px;
   cursor: pointer;
 }
-
 .test {
   position: fixed;
   top: 0;
@@ -599,13 +591,11 @@ footer p {
     height: 3em;
   }
   .arrow-go-up {
-    width: 40px;
-    height: 40px;
-    bottom: 30px;
-    right: 30px;
+    width: 50px;
+    height: 50px;
+    bottom: 40px;
+    right: 40px;
   }
-
-  
 }
 
 /*############################## Medium devices (landscape tablets, 768px and up) ##############################*/
@@ -625,7 +615,6 @@ footer p {
   li {
     padding: 15px;
   }
-
   .about img {
     margin-right: 20px;
     margin-top: 35px;
@@ -670,7 +659,6 @@ footer p {
   .portfolio-preview-btn-dots {
     padding: 30px;
   }
-
   .slider-btn {
     bottom: -25px;
     height: 4em;
@@ -713,15 +701,142 @@ footer p {
   .arrow-go-up {
     width: 60px;
     height: 60px;
-    bottom: 40px;
-    right: 40px;
   }
 }
 
 /*############################## Large devices (laptops/desktops, 992px and up) ##############################*/
 @media only screen and (min-width: 992px) {
+  :root {
+    /* border for tech svg icon */
+    --svg-border-width: 5px;
+    /* courses */
+    --size-link-box: 75px;
+  }
+
   .test {
     background-color: #1100ff;
+  }
+
+  body {
+    font-size: 1.6em;
+  }
+  header {
+    height: 100px;
+    display: grid;
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 2.4em;
+  }
+  li {
+    padding: 20px;
+  }
+  .svg-logo {
+    position: relative;
+    width: 160px;
+  }
+  .hide-burger-menu {
+    display: none;
+  }
+  .nav-hide {
+    display: flex;
+  }
+  .nav {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    transition: none;
+  }
+  .sticky {
+    position: fixed;
+    z-index: 999;
+    border-bottom: 2px solid var(--accent-color);
+    background-color: var(--light-primary-color);    
+    opacity: 0.9;
+  }
+  .about img {
+    margin-right: 40px;
+    margin-top: 15px;
+    width: 200px;
+  }
+  .portfolio-title {
+    font-size: 1.8em;
+  }
+  .portfolio-item-wrapper {
+    margin-top: 0px;
+  }
+  .portfolio-description {
+    font-size: 1.2em;
+  }
+  .portfolio-description-wrapper {
+    gap: 80px;
+  }
+  .portfolio-svg {
+    width: 52px;
+    height: 52px;
+  }
+  .portfolio-svg-wrapper {
+    width: 85px;
+    height: 85px;
+    margin: 20px;
+  }
+  .portfolio-footer {
+    font-size: 1.8em;
+  }
+  .portfolio-svg-demo {
+    width: 1.4em;
+    height: 1.4em;
+  }
+  .portfolio-svg-github {
+    width: 1.4em;
+    height: 1.4em;
+  }
+  .slider-btn {
+    height: 5em;
+    width: 5em;
+  }
+  .dots-dot {
+    height: 4em;
+    width: 4em;
+  }
+  .courses-item-title {
+    font-size: 1.2em;
+  }
+  .courses-svg-pdf {
+    width: 60px;
+    height: 60px;
+  }
+  .courses-item-in-progress {
+    border: 4px solid var(--svg-fill-color);
+    font-size: 1.2em;
+  }
+  .skills-item-title {
+    width: 300px;
+    font-size: 1.6em;
+  }
+  .skill-point {
+    width: 32px;
+    height: 32px;
+  }
+  .road-map-item {
+    padding: 20px;
+  }
+  footer p {
+    padding-bottom: 30px;
+  }
+  .footer-links {
+    gap: 50px;
+    padding-bottom: 20px;
+  }
+  .footer-svg {
+    width: 3em;
+    height: 3em;
+  }
+
+  .arrow-go-up {
+    width: 70px;
+    height: 70px;
   }
 }
 
@@ -730,11 +845,15 @@ footer p {
   .test {
     background-color: #f200ff;
   }
-  /* .arrow-up {
-    position: sticky;
-    font-size: 8em;
-    left: 100%;
-    bottom: 2%;
-    margin: 30px;
-  } */
+
+  section {
+    margin: 0 auto;
+    max-width: 1280px;
+  }
+  nav {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1280px;
+    padding: 0 25px;
+  }
 }
