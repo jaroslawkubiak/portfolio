@@ -65,8 +65,8 @@ body {
   z-index: 10;
   width: 30px;
   height: 24px;
-  top: 10px;
-  right: 10px;
+  top: 20px;
+  right: 20px;
   background: transparent;
   cursor: pointer;
   display: block;
@@ -164,10 +164,8 @@ nav {
 .nav-link:hover {
   border-bottom: 2px solid var(--accent-color);
 }
-
 .section-item {
-  margin-top: 20px;
-  padding: 15px;
+  padding: 25px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -189,16 +187,14 @@ nav {
   object-fit: contain;
   border-radius: 10px;
 }
-
 h1 {
   font-size: 2em;
-  margin-bottom: 10px;
+  margin: 30px 0;
   color: var(--secondary-text);
 }
-
 p {
   line-height: 1.5;
-  margin-bottom: 20px;
+  margin: 0;
 }
 ul {
   list-style: none;
@@ -207,20 +203,21 @@ ul {
 }
 li {
   margin-bottom: 10px;
+  padding: 5px;
 }
 
 /* portfolio section */
 .portfolio-item-wrapper {
-  margin-top: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  max-width: 1200px;
 }
 .portfolio-title {
   color: var(--accent-color);
   font-size: 1.2em;
-  margin: 20px;
+  margin: 20px 0;
 }
 .portfolio-description-wrapper {
   display: flex;
@@ -235,32 +232,40 @@ li {
 }
 .portfolio-description {
   line-height: 1.5;
-  padding: 0 10px;
 }
 .portfolio-preview {
   margin-top: 20px;
-  display: grid;
-  place-content: center;
+  width: 100%;
+}
+.portfolio-preview-images {
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: 25em;
+  aspect-ratio: 1/1;
 }
 .portfolio-preview-image {
   width: 100%;
   object-fit: contain;
 }
-.lazy-img {
+.portfolio-preview-btn-dots {
+  position: relative;
+  display: grid;
+  place-content: center;
+  padding: 15px;
+  margin-top: 15px;
+}
+.portfolio-lazy-img {
   filter: blur(20px);
 }
 .portfolio-footer {
-  margin: 20px 0 80px 0;
+  margin: 20px 0 50px 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   width: 100%;
+  height: auto;
+  font-size: 1em;
 }
 .portfolio-footer-github {
-  height: 40px;
   justify-self: center;
   align-self: center;
 }
@@ -281,7 +286,6 @@ li {
   fill: var(--accent-color);
 }
 .portfolio-footer-demo {
-  height: 40px;
   justify-self: center;
   align-self: center;
 }
@@ -357,7 +361,8 @@ li {
 }
 .slider-btn {
   position: absolute;
-  bottom: 0%;
+  top: 50%;
+  transform: translateY(-50%);
   z-index: 10;
   border: none;
   background: var(--primary-text);
@@ -374,19 +379,10 @@ li {
   background: var(--accent-color);
 }
 .slider-btn-left {
-  left: 7%;
-  transform: translate(-50%, -50%);
+  left: 2%;
 }
 .slider-btn-right {
-  right: 7%;
-  transform: translate(50%, -50%);
-}
-.dots {
-  position: absolute;
-  bottom: 5%;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
+  right: 2%;
 }
 .dots-dot {
   border: none;
@@ -398,7 +394,6 @@ li {
   margin-right: 1em;
   cursor: pointer;
   transition: all 0.5s;
-  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 1);
 }
 .dots-dot:last-child {
   margin: 0;
@@ -419,7 +414,6 @@ li {
   margin-bottom: 20px;
 }
 .courses-item-title {
-  width: auto;
   font-size: 0.8em;
 }
 .courses-item-title a {
@@ -430,15 +424,8 @@ li {
   border-bottom: 2px solid var(--accent-color);
 }
 .courses-item-link {
-  display: grid;
-  place-content: center;
-  border: 2px solid var(--svg-fill-color);
-  border-radius: 100%;
-  margin-right: 10px;
-  padding: 10px;
-  width: var(--size-link-box);
-  height: var(--size-link-box);
   cursor: pointer;
+  padding-left: 20px;
 }
 .courses-item-no-link {
   margin-right: 10px;
@@ -459,14 +446,13 @@ li {
   color: var(--svg-fill-color);
   font-size: 0.6em;
 }
-.courses-item-link:hover {
-  box-shadow: 0 0 5px 2px var(--svg-fill-color);
+.courses-item-link a {
+  padding: 0;
 }
-.svg-trophy {
-  width: 20px;
-  height: 20px;
+.courses-svg-pdf {
+  width: 30px;
+  height: 30px;
 }
-
 /* skils */
 .skills-item-wrapper {
   display: flex;
@@ -493,10 +479,6 @@ li {
 .skill-off {
   opacity: 0.3;
 }
-/* road-map */
-.road-map-item {
-  padding: 5px;
-}
 /* footer */
 footer {
   background-color: var(--light-primary-color);
@@ -517,11 +499,12 @@ footer p {
 }
 .arrow-go-up {
   position: fixed;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
   z-index: 10;
-  bottom: 20px;
-  right: 20px;
+  bottom: 30px;
+  right: 30px;
   color: var(--accent-color);
   background-color: var(--primary-text);
   padding: 5px;
@@ -552,6 +535,9 @@ footer p {
   body {
     font-size: 1.2em;
   }
+  li {
+    padding: 10px;
+  }
   .portfolio-title {
     font-size: 1.4em;
   }
@@ -567,17 +553,13 @@ footer p {
     height: 40px;
     margin: 6px;
   }
-  .portfolio-preview {
-    margin-top: 30px;
-    height: 35em;
+  .portfolio-footer {
+    font-size: 1.2em;
   }
   .slider-btn {
     bottom: -10px;
     height: 3em;
     width: 3em;
-  }
-  .dots {
-    bottom: 2%;
   }
   .dots-dot {
     height: 2em;
@@ -591,12 +573,9 @@ footer p {
   .courses-item-in-progress {
     font-size: 0.8em;
   }
-  .svg-trophy {
+  .courses-svg-pdf {
     width: 30px;
     height: 30px;
-  }
-  .skills-item-wrapper {
-    margin-bottom: 25px;
   }
   .skills-item-title {
     width: 150px;
@@ -625,6 +604,8 @@ footer p {
     bottom: 30px;
     right: 30px;
   }
+
+  
 }
 
 /*############################## Medium devices (landscape tablets, 768px and up) ##############################*/
@@ -641,6 +622,10 @@ footer p {
   body {
     font-size: 1.4em;
   }
+  li {
+    padding: 15px;
+  }
+
   .about img {
     margin-right: 20px;
     margin-top: 35px;
@@ -649,7 +634,6 @@ footer p {
   .portfolio-title {
     font-size: 1.6em;
   }
-
   .portfolio-item-wrapper {
     margin-top: 30px;
   }
@@ -665,15 +649,12 @@ footer p {
     height: 55px;
     margin: 10px;
   }
-  .portfolio-preview {
-    height: 40em;
-  }
-  .portoflio-footer {
-    margin: 30px 0 100px 0;
+  .portfolio-footer {
+    margin: 40px 0 100px 0;
+    font-size: 1.6em;
   }
   .portfolio-footer-demo span {
     padding: 16px;
-    font-size: 2em;
   }
   .portfolio-svg-demo {
     width: 1em;
@@ -681,20 +662,19 @@ footer p {
   }
   .portfolio-footer-github span {
     padding: 16px;
-    font-size: 2em;
   }
   .portfolio-svg-github {
     width: 1em;
     height: 1em;
+  }
+  .portfolio-preview-btn-dots {
+    padding: 30px;
   }
 
   .slider-btn {
     bottom: -25px;
     height: 4em;
     width: 4em;
-  }
-  .dots {
-    bottom: 1%;
   }
   .dots-dot {
     height: 3em;
@@ -708,13 +688,9 @@ footer p {
     padding-left: 30px;
     font-size: 1em;
   }
-  .svg-trophy {
+  .courses-svg-pdf {
     width: 40px;
     height: 40px;
-  }
-
-  .skills-item-wrapper {
-    margin-bottom: 45px;
   }
   .skills-item-title {
     width: 250px;

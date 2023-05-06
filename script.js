@@ -6,11 +6,16 @@ import {
   arrowRight,
   arrowLeft,
   arrowUp,
-} from "./svg.js";
+} from "./svg/svg.js";
 
 const burgerMenu = document.getElementById("burger");
 const mobileMenu = document.getElementById("mobile-menu");
 const portfolioList = document.getElementById("portfolio-list");
+
+// force go to top page when refreshing
+// window.onbeforeunload = function () {
+//   window.scrollTo(0, 0);
+// };
 
 burgerMenu.addEventListener("click", () => {
   mobileMenu.classList.toggle("hidden");
@@ -82,47 +87,47 @@ const portfolio = [
       "I'm a huge fan and collector of Lego Star Wars minifigures. When my collection had about 80 figures I started to get a bit lost, I needed a better list (with images), something better than excel. Being a programmer, I wrote a web page with a database of my figures. For this day i use this web page. This application is the next version, mainly written for learning JS and React. At the moment the database is in a JSON file, when I finish the Node.JS course I will be able to finish this application.",
   },
 
-  {
-    title: "Flag game",
-    link: "portfolio/flags",
-    github: "https://github.com/jaroslawkubiak/flag-game",
-    imgDir: "flag",
-    images: 2,
-    tech: ["js", "html", "css"],
-    description:
-      "Flag game Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu velit egestas, ultrices nisl vel, porta ipsum. Maecenas maximus felis a efficitur maximus. Sed elementum nisl lectus, a molestie tellus hendrerit in. Duis egestas velit et metus scelerisque, at placerat ipsum luctus. Duis auctor auctor ex, vel fringilla est pharetra a.",
-  },
-  {
-    title: "Snake game",
-    link: "portfolio/snake",
-    github: "https://github.com/jaroslawkubiak/snake",
-    imgDir: "snake",
-    images: 1,
-    tech: ["js", "html", "css"],
-    description:
-      " Snake game Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu velit egestas, ultrices nisl vel, porta ipsum. Maecenas maximus felis a efficitur maximus. Sed elementum nisl lectus, a molestie tellus hendrerit in. Duis egestas velit et metus scelerisque, at placerat ipsum luctus. Duis auctor auctor ex, vel fringilla est pharetra a.",
-  },
-  {
-    title: "Pig game",
-    link: "portfolio/pig",
-    github: "https://github.com/jaroslawkubiak/pig-game",
-    imgDir: "pig",
-    images: 1,
-    tech: ["js", "html", "css"],
-    description:
-      "Pig game Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu velit egestas, ultrices nisl vel, porta ipsum. Maecenas maximus felis a efficitur maximus. Sed elementum nisl lectus, a molestie tellus hendrerit in. Duis egestas velit et metus scelerisque, at placerat ipsum luctus. Duis auctor auctor ex, vel fringilla est pharetra a.",
-  },
+  // {
+  //   title: "Flag game",
+  //   link: "portfolio/flags",
+  //   github: "https://github.com/jaroslawkubiak/flag-game",
+  //   imgDir: "flag",
+  //   images: 2,
+  //   tech: ["js", "html", "css"],
+  //   description:
+  //     "Flag game Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu velit egestas, ultrices nisl vel, porta ipsum. Maecenas maximus felis a efficitur maximus. Sed elementum nisl lectus, a molestie tellus hendrerit in. Duis egestas velit et metus scelerisque, at placerat ipsum luctus. Duis auctor auctor ex, vel fringilla est pharetra a.",
+  // },
+  // {
+  //   title: "Snake game",
+  //   link: "portfolio/snake",
+  //   github: "https://github.com/jaroslawkubiak/snake",
+  //   imgDir: "snake",
+  //   images: 1,
+  //   tech: ["js", "html", "css"],
+  //   description:
+  //     " Snake game Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu velit egestas, ultrices nisl vel, porta ipsum. Maecenas maximus felis a efficitur maximus. Sed elementum nisl lectus, a molestie tellus hendrerit in. Duis egestas velit et metus scelerisque, at placerat ipsum luctus. Duis auctor auctor ex, vel fringilla est pharetra a.",
+  // },
+  // {
+  //   title: "Pig game",
+  //   link: "portfolio/pig",
+  //   github: "https://github.com/jaroslawkubiak/pig-game",
+  //   imgDir: "pig",
+  //   images: 1,
+  //   tech: ["js", "html", "css"],
+  //   description:
+  //     "Pig game Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu velit egestas, ultrices nisl vel, porta ipsum. Maecenas maximus felis a efficitur maximus. Sed elementum nisl lectus, a molestie tellus hendrerit in. Duis egestas velit et metus scelerisque, at placerat ipsum luctus. Duis auctor auctor ex, vel fringilla est pharetra a.",
+  // },
 
-  {
-    title: "F1 - reflex game",
-    link: "portfolio/f1",
-    github: "https://github.com/jaroslawkubiak/reflex",
-    imgDir: "f1",
-    images: 1,
-    tech: ["js", "html", "css"],
-    description:
-      "Inspired by one of the videos on Instagram where F1 driver Lando Norris tests his reflexes. I want to have a similar app, so in two afternoons I wrote it. At the start of the race, the best F1 drivers have a score of around 0.15s from turning off the lights to pressing the throttle. This app measures your reflexes with an accuracy of 0.0001 seconds. See how fast you are. ",
-  },
+  // {
+  //   title: "F1 - reflex game",
+  //   link: "portfolio/f1",
+  //   github: "https://github.com/jaroslawkubiak/reflex",
+  //   imgDir: "f1",
+  //   images: 1,
+  //   tech: ["js", "html", "css"],
+  //   description:
+  //     "Inspired by one of the videos on Instagram where F1 driver Lando Norris tests his reflexes. I want to have a similar app, so in two afternoons I wrote it. At the start of the race, the best F1 drivers have a score of around 0.15s from turning off the lights to pressing the throttle. This app measures your reflexes with an accuracy of 0.0001 seconds. See how fast you are. ",
+  // },
 ];
 
 //////////////////////////////////////////////////////////
@@ -141,20 +146,19 @@ portfolio.forEach(item => {
 
   html += `</div><div class="portfolio-description">${item.description}</div></div>`;
 
-  html += `<div class="portfolio-preview" id="${item.imgDir}">`;
+  html += `<div class="portfolio-preview" id="${item.imgDir}"><div class="portfolio-preview-images">`;
 
   for (let i = 1; i <= item.images; i++) {
-    // console.log(`/portfolio/preview/${item.imgDir}/${i}.jpg`);
     html += `<div class="slide">
-    <img src="/portfolio/preview/lazy/${item.imgDir}/${i}.jpg" 
+    <img src="/portfolio/preview/low-res/${item.imgDir}/${i}.jpg" 
     data-src="/portfolio/preview/high-res/${item.imgDir}/${i}.jpg" 
-    alt="Preview photo ${i}" class="portfolio-preview-image lazy-img" /></div>`;
+    alt="Preview photo ${i}" class="portfolio-preview-image portfolio-lazy-img" /></div>`;
   }
 
-  html += `<button class="slider-btn slider-btn-left">${arrowLeft}</button>
+  html += `</div><div class="portfolio-preview-btn-dots"><button class="slider-btn slider-btn-left">${arrowLeft}</button>
   <button class="slider-btn slider-btn-right">${arrowRight}</button>
   <div class="dots"></div>`;
-  html += `</div>`;
+  html += `</div></div>`;
 
   html += `<div class="portfolio-footer"><div class="portfolio-footer-github">`;
   if (item.github)
@@ -235,11 +239,48 @@ portfolio.forEach(item => {
       activeDot(slide);
     }
   });
+
+
+  // swipe on images - changing slide
+  let moveX;
+  let moveY;
+  let startTouch = false;
+  const el = document.getElementById(item.imgDir);
+  el.addEventListener(
+    "touchstart",
+    e => {
+      startTouch = true;
+      moveX = e.touches[0].clientX.toFixed(0);
+      moveY = e.touches[0].clientY.toFixed(0);
+    },
+    { passive: false }
+  );
+
+  el.addEventListener(
+    "touchmove",
+    e => {
+      if (!moveX || !moveY) {
+        return;
+      }
+
+      let xDiff = moveX - e.touches[0].clientX.toFixed(0);
+      let yDiff = moveY - e.touches[0].clientY.toFixed(0);
+
+      if (Math.abs(xDiff) > Math.abs(yDiff) && startTouch) {
+        if (xDiff > 0) nextSlide();
+        else previousSlide();
+      } 
+        startTouch = false;
+    
+    },
+    { passive: false }
+  );
 });
+
 
 //////////////////////////////////////////////////////////
 // smooth go back to top of the page
-function scroolUp() {
+function scrollUp() {
   window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
 }
 
@@ -250,7 +291,7 @@ function update() {
   const goUp = document.getElementById("goUp");
 
   //if btn exist in DOM - addevent
-  if (goUp) goUp.addEventListener("click", scroolUp);
+  if (goUp) goUp.addEventListener("click", scrollUp);
 
   //if scrooling up - remove btn
   if (goUp && positionFromTop > -1500) goUp.remove();
@@ -259,15 +300,10 @@ function update() {
   if (positionFromTop < -1500 && !goUp)
     pageBody.insertAdjacentHTML(
       "beforeend",
-      `<div class="arrow-go-up" id="goUp">${arrowUp}</div>`
+      `<div class="arrow-go-up" id="goUp" title="Go to to of the page">${arrowUp}</div>`
     );
 }
 document.addEventListener("scroll", update);
-
-// force go to top page when refreshing
-// window.onbeforeunload = function () {
-//   window.scrollTo(0, 0);
-// };
 
 //////////////////////////////////////////////////////////
 // lazy loading img on portfolio sections
@@ -288,7 +324,7 @@ const loadImg = function (entries, observer) {
     img.src = img.dataset.src;
 
     // remove blur effect(class) when img is finish loading
-    img.addEventListener("load", () => img.classList.remove("lazy-img"));
+    img.addEventListener("load", () => img.classList.remove("portfolio-lazy-img"));
     observer.unobserve(entry.target);
   });
 };

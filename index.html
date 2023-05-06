@@ -6,20 +6,26 @@
     <title>
       Jarosław Kubiak - programer: Javascript, HTML, CSS, PHP, MySQL
     </title>
-    <script type="module" defer src="script.js"></script>
-    <!-- add css file with version extension, to alway load new css file, preventing caching old css file -->
+
+    <!-- add css adn script file with version extension, to always load new files, preventing caching old files in browsers -->
     <script>
-      let fileVer = Date.now();
+      const fileVer = Date.now();
       const head = document.getElementsByTagName("head")[0];
+      let scriptLink = document.createElement("script");
+      scriptLink.defer = true;
+      scriptLink.type = "module";
+      scriptLink.src = `script.js?v=${fileVer}`;
+      head.appendChild(scriptLink);
+
       let link = document.createElement("link");
       link.rel = "stylesheet";
       link.type = "text/css";
       link.href = `style.css?v=${fileVer}`;
       head.appendChild(link);
     </script>
-
     <link rel="icon" href="/img/icon.png" />
   </head>
+
   <body>
     <div class="test"></div>
     <header>
@@ -72,11 +78,7 @@
       <h1>Courses</h1>
       <ul>
         <li class="courses-item-wrapper">
-          <div class="courses-item-link" title="View certyficate">
-            <a href="certyficate/javascript.pdf" target="_blank">
-              <img src="/svg/trophy.svg" alt="" class="svg-trophy"
-            /></a>
-          </div>
+          <div class="courses-item-in-progress" title="Done">100%</div>
           <div class="courses-item-title">
             <a
               href="https://www.udemy.com/course/the-complete-javascript-course/"
@@ -84,33 +86,40 @@
               >The Complete JavaScript Course 2023: From Zero to Expert!</a
             >
           </div>
+          <div class="courses-item-link" title="View certyficate">
+            <a href="certyficate/javascript.pdf" target="_blank">
+              <img src="/svg/pdf.svg" alt="" class="courses-svg-pdf"
+            /></a>
+          </div>
         </li>
 
         <li class="courses-item-wrapper">
-          <div class="courses-item-link" title="View certyficate">
-            <a href="certyficate/react-redux.pdf" target="_blank">
-              <img src="/svg/trophy.svg" alt="" class="svg-trophy"
-            /></a>
-          </div>
+          <div class="courses-item-in-progress" title="Done">100%</div>
           <div class="courses-item-title">
             <a href="https://www.udemy.com/course/react-redux/" target="_blank"
               >Modern React with Redux [2023 Update]</a
             >
           </div>
-        </li>
-        <li class="courses-item-wrapper">
           <div class="courses-item-link" title="View certyficate">
-            <a href="certyficate/python.pdf" target="_blank">
-              <img src="/svg/trophy.svg" alt="" class="svg-trophy"
+            <a href="certyficate/react-redux.pdf" target="_blank">
+              <img src="/svg/pdf.svg" alt="" class="courses-svg-pdf"
             /></a>
           </div>
+        </li>
 
+        <li class="courses-item-wrapper">
+          <div class="courses-item-in-progress" title="Done">100%</div>
           <div class="courses-item-title">
             <a
               href="https://www.udemy.com/course/python-dla-poczatkujacych/"
               target="_blank"
               >Python dla początkujących</a
             >
+          </div>
+          <div class="courses-item-link" title="View certyficate">
+            <a href="certyficate/react-redux.pdf" target="_blank">
+              <img src="/svg/pdf.svg" alt="" class="courses-svg-pdf"
+            /></a>
           </div>
         </li>
         <li class="courses-item-wrapper">
@@ -205,7 +214,7 @@
           <div class="skills-points">
             <span class="skill-point"></span>
             <span class="skill-point"></span>
-            <span class="skill-point skill-off"></span>
+            <span class="skill-point"></span>
             <span class="skill-point skill-off"></span>
             <span class="skill-point skill-off"></span>
           </div>
@@ -216,7 +225,7 @@
             <span class="skill-point"></span>
             <span class="skill-point"></span>
             <span class="skill-point"></span>
-            <span class="skill-point skill-off"></span>
+            <span class="skill-point"></span>
             <span class="skill-point skill-off"></span>
           </div>
         </li>
@@ -224,7 +233,7 @@
           <div class="skills-item-title">GIT</div>
           <div class="skills-points">
             <span class="skill-point"></span>
-            <span class="skill-point skill-off"></span>
+            <span class="skill-point"></span>
             <span class="skill-point skill-off"></span>
             <span class="skill-point skill-off"></span>
             <span class="skill-point skill-off"></span>
