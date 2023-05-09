@@ -56,6 +56,12 @@ body {
   top: 0px;
   left: 0px;
 }
+.png-logo {
+  width: 100px;
+  position: absolute;
+  top: 50px;
+  left: 10px;
+}
 .hidden {
   display: none;
 }
@@ -164,10 +170,10 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
+  opacity: 0.95;
   transition: all 0.4s ease;
   border-bottom: 2px solid var(--accent-color);
 }
-
 .about-me-move {
   transform: translateY(170px);
 }
@@ -375,6 +381,7 @@ li {
   transition: transform 1s;
 }
 .slider-btn {
+  all: unset;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -383,13 +390,11 @@ li {
   background: var(--primary-text);
   color: var(--accent-color);
   border-radius: 50%;
-  height: 2em;
-  width: 2em;
+  height: 1.4em;
+  width: 1.4em;
+  padding: 4px;
   cursor: pointer;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  transition: all 0.5s;
 }
 .slider-btn:hover {
   color: var(--primary-text);
@@ -405,8 +410,8 @@ li {
   border: none;
   background-color: var(--primary-text);
   opacity: 0.5;
-  height: 1em;
-  width: 1em;
+  height: 1.4em;
+  width: 1.4em;
   border-radius: 50%;
   margin-right: 2em;
   cursor: pointer;
@@ -509,6 +514,7 @@ footer p {
   height: 2em;
 }
 .arrow-go-up {
+  all: unset;
   position: fixed;
   width: 40px;
   height: 40px;
@@ -567,9 +573,8 @@ footer p {
     font-size: 1.2em;
   }
   .slider-btn {
-    bottom: -10px;
-    height: 3em;
-    width: 3em;
+    height: 2em;
+    width: 2em;
   }
   .dots-dot {
     height: 2em;
@@ -678,9 +683,9 @@ footer p {
     padding: 30px;
   }
   .slider-btn {
-    bottom: -25px;
-    height: 4em;
-    width: 4em;
+    height: 2.4em;
+    width: 2.4em;
+    padding: 6px;
   }
   .dots-dot {
     height: 3em;
@@ -743,7 +748,6 @@ footer p {
     display: grid;
     width: 100%;
   }
-
   h1 {
     font-size: 2.4em;
   }
@@ -754,24 +758,32 @@ footer p {
     position: relative;
     width: 160px;
   }
+  
+  .png-logo {
+    position: relative;
+    width: 80px;
+  }
+  
   .hide-burger-menu {
     display: none;
   }
   .nav-hide {
     display: flex;
+    transform: translateY(0%);
   }
   .nav {
+    position: relative;
+    background-color: var(--light-primary-color);
+    border-bottom: none;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    transition: none;
   }
   .sticky {
     position: fixed;
     z-index: 999;
     border-bottom: 2px solid var(--accent-color);
-    background-color: var(--light-primary-color);
-    opacity: 0.9;
+    opacity: 0.95;
   }
   .about img {
     margin-right: 40px;
@@ -810,10 +822,6 @@ footer p {
     width: 1.4em;
     height: 1.4em;
   }
-  .slider-btn {
-    height: 5em;
-    width: 5em;
-  }
   .dots-dot {
     height: 4em;
     width: 4em;
@@ -851,7 +859,6 @@ footer p {
     width: 3em;
     height: 3em;
   }
-
   .arrow-go-up {
     width: 70px;
     height: 70px;

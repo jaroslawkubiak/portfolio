@@ -10,7 +10,6 @@ import {
 
 const burgerMenu = document.getElementById("burger");
 const mobileMenu = document.getElementById("mobile-menu");
-const aboutMe = document.getElementById("about-me");
 const portfolioList = document.getElementById("portfolio-list");
 
 // force go to top page when refreshing
@@ -20,7 +19,6 @@ const portfolioList = document.getElementById("portfolio-list");
 
 burgerMenu.addEventListener("click", () => {
   mobileMenu.classList.toggle("nav-hide");
-  aboutMe.classList.toggle("about-me-move");
 });
 
 //////////////////////////////////////////////////////////
@@ -45,7 +43,6 @@ document.getElementById("mobile-menu").addEventListener("click", function (e) {
     });
 
     mobileMenu.classList.add("nav-hide");
-    aboutMe.classList.remove("about-me-move");
     burgerMenu.checked = false;
   }
 });
@@ -69,7 +66,7 @@ nav.addEventListener("mouseout", hendleHover.bind(1));
 //////////////////////////////////////////////////////////
 //sticky navigation observer API
 const header = document.querySelector(".header");
-
+const aboutMe = document.getElementById("about-me");
 const stickyNav = function (entries) {
   const [entry] = entries;
 
