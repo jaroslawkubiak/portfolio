@@ -51,16 +51,10 @@ body {
   padding: 0;
 }
 .svg-logo {
-  width: 100px;
+  width: 60px;
   position: absolute;
   top: 0px;
-  left: 0px;
-}
-.png-logo {
-  width: 100px;
-  position: absolute;
-  top: 50px;
-  left: 10px;
+  left: 30px;
 }
 .hidden {
   display: none;
@@ -69,7 +63,7 @@ body {
 /* burger menu */
 .burger {
   position: absolute;
-  z-index: 10;
+  z-index: 999;
   width: 30px;
   height: 24px;
   top: 20px;
@@ -147,22 +141,12 @@ a {
   padding: 10px;
 }
 /* nav menu */
-/* .nav-hide {
-  display: none;
-}
-nav {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: all 5s linear;
-} */
-
 .nav-hide {
   transform: translateY(-100%);
 }
 nav {
   position: absolute;
+  z-index: 99;
   top: 0;
   left: 0;
   right: 0;
@@ -174,9 +158,6 @@ nav {
   transition: all 0.4s ease;
   border-bottom: 2px solid var(--accent-color);
 }
-.about-me-move {
-  transform: translateY(170px);
-}
 .nav-link {
   padding: 10px 30px;
   border-bottom: 2px solid transparent;
@@ -186,7 +167,7 @@ nav {
   border-bottom: 2px solid var(--accent-color);
 }
 .section-item {
-  padding: 25px;
+  padding: 15px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -202,10 +183,11 @@ nav {
 .about img {
   float: left;
   margin-right: 10px;
-  margin-top: 20px;
+  margin-top: 10px;
   width: 100px;
   object-fit: contain;
   border-radius: 10px;
+  border: 3px solid var(--primary-text);
 }
 h1 {
   font-size: 2em;
@@ -223,7 +205,7 @@ ul {
 }
 li {
   margin-bottom: 10px;
-  padding: 5px;
+  padding: 0px;
 }
 /* portfolio section */
 .portfolio-item-wrapper {
@@ -241,7 +223,7 @@ li {
   display: flex;
   flex-direction: column;
   flex-flow: column-reverse;
-  gap: 10px;
+  gap: 20px;
   font-size: 0.8em;
 }
 .portfolio-tech {
@@ -272,7 +254,7 @@ li {
   position: relative;
   display: grid;
   place-content: center;
-  padding: 15px;
+  padding: 15px 0px;
   margin-top: 15px;
 }
 .portfolio-lazy-img {
@@ -401,19 +383,19 @@ li {
   background: var(--accent-color);
 }
 .slider-btn-left {
-  left: 2%;
+  left: 0%;
 }
 .slider-btn-right {
-  right: 2%;
+  right: 0%;
 }
 .dots-dot {
   border: none;
   background-color: var(--primary-text);
   opacity: 0.5;
-  height: 1.4em;
+  aspect-ratio: 1/1;
   width: 1.4em;
   border-radius: 50%;
-  margin-right: 2em;
+  margin-right: 1.2em;
   cursor: pointer;
   transition: all 0.5s;
 }
@@ -690,7 +672,7 @@ footer p {
   .dots-dot {
     height: 3em;
     width: 3em;
-    margin-right: 3.4em;
+    margin-right: 3em;
   }
   .courses-item-wrapper {
     padding: 15px;
@@ -825,6 +807,8 @@ footer p {
   .dots-dot {
     height: 4em;
     width: 4em;
+    margin-right: 2em;
+
   }
   .courses-item-title {
     font-size: 1.2em;

@@ -129,58 +129,9 @@ svg {
   opacity: 0.3;
 }
 
-.test {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 999;
-  width: 10px;
-  height: 30px;
-  background-color: rgb(255, 0, 0);
-}
-
 
 @media screen and (orientation: landscape) and (max-height: 400px) {
   html {
     transform: rotate(-90deg);
   }
-  body {
-    background-color: rgb(255, 159, 178); 
-  }
 }
-
-/*############################## Small devices (portrait tablets and large phones, 600px and up) ##############################*/
-@media only screen and (orientation: portrait) and (min-width: 600px) {
-  .test {
-    background-color: #ff9900;
-  }
-
-
-}
-
-
-/*############################## Medium devices (landscape tablets, 768px and up) ##############################*/
-@media only screen and (orientation: portrait) and (min-width: 768px) {
-  .test {
-    background-color: #008000;
-  }
-
-
-}
-
-/*############################## Large devices (laptops/desktops, 992px and up) ##############################*/
-@media only screen and (orientation: portrait) and (min-width: 992px) {
-  .test {
-    background-color: #1100ff;
-  }
-
-
-}
-
-/*############################## Extra large devices (large laptops and desktops, 1200px and up) ##############################*/
-@media only screen and (orientation: portrait) and (min-width: 1200px) {
-  .test {
-    background-color: #f200ff;
-  }
-}
-

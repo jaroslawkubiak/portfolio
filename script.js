@@ -112,10 +112,10 @@ const portfolio = [
     link: "portfolio/figures",
     github: "https://github.com/jaroslawkubiak/figures",
     imgDir: "figures",
-    images: 3,
+    images: 7,
     tech: ["js", "react", "redux"],
     description:
-      "I'm a huge fan and collector of Lego Star Wars minifigures. When my collection had about 80 figures I started to get a bit lost, I needed a better list (with images), something better than excel. Being a programmer, I wrote a web page with a database of my figures. For this day i use this web page. This application is the next version, mainly written for learning JS and React. At the moment the database is in a JSON file, when I finish the Node.JS course I will be able to finish this application.",
+      "I'm a huge fan and collector of Lego Star Wars minifigures. When my collection had about 80 figures, I needed a better way to track down my collection, I needed something better than excel, something with images. Being a programmer, I wrote a web page (PHP & MySQL) for better track what's in my collection of the minifigures. Till today i use this web page. This application is the next version, mainly written for learning JS and React. At the moment the database is in a JSON file, when I finish the Node.JS course I will be able to finish this application. I want to copy all my feature from php version to Node.JS, including sorting, statistics and many more.",
   },
 
   {
@@ -123,42 +123,32 @@ const portfolio = [
     link: "portfolio/flags",
     github: "https://github.com/jaroslawkubiak/flag-game",
     imgDir: "flag",
-    images: 2,
+    images: 6,
     tech: ["js", "html", "css"],
     description:
-      "Flag game Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu velit egestas, ultrices nisl vel, porta ipsum. Maecenas maximus felis a efficitur maximus. Sed elementum nisl lectus, a molestie tellus hendrerit in. Duis egestas velit et metus scelerisque, at placerat ipsum luctus. Duis auctor auctor ex, vel fringilla est pharetra a.",
+      "I like to travel and collect patches of the flags of the countries I visit and sew them onto my backpack. On my phone i have game, where you have to guess country flag. I play it often. During JS course we use API for country information. Then i wanted to write similar game from my phone. You can choose one or more continent, and try to guess all country flag. You always have 10 flags, which are drawn from a pool of selected continents to guess, no matter if you select 1 or 6 continents.",
   },
   {
     title: "Snake game",
     link: "portfolio/snake",
     github: "https://github.com/jaroslawkubiak/snake",
     imgDir: "snake",
-    images: 1,
+    images: 4,
     tech: ["js", "html", "css"],
     description:
-      " Snake game Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu velit egestas, ultrices nisl vel, porta ipsum. Maecenas maximus felis a efficitur maximus. Sed elementum nisl lectus, a molestie tellus hendrerit in. Duis egestas velit et metus scelerisque, at placerat ipsum luctus. Duis auctor auctor ex, vel fringilla est pharetra a.",
+      "I know, i know. Another snake game project in JS 😁 Everyone does it. I wanted to program this nokia 3310 styled game for training JS and CSS skills. You can play on PC usign arrow key and 'a, w, s, d' keys. On mobile you play using touch controls, swiping in desired direction, both in portrait and landscape mode.",
   },
-  {
-    title: "Pig game",
-    link: "portfolio/pig",
-    github: "https://github.com/jaroslawkubiak/pig-game",
-    imgDir: "pig",
-    images: 1,
-    tech: ["js", "html", "css"],
-    description:
-      "Pig game Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu velit egestas, ultrices nisl vel, porta ipsum. Maecenas maximus felis a efficitur maximus. Sed elementum nisl lectus, a molestie tellus hendrerit in. Duis egestas velit et metus scelerisque, at placerat ipsum luctus. Duis auctor auctor ex, vel fringilla est pharetra a.",
-  },
-
   {
     title: "F1 - reflex game",
     link: "portfolio/f1",
     github: "https://github.com/jaroslawkubiak/reflex",
     imgDir: "f1",
-    images: 1,
+    images: 4,
     tech: ["js", "html", "css"],
     description:
       "Inspired by one of the videos on Instagram where F1 driver Lando Norris tests his reflexes. I want to have a similar app, so in two afternoons I wrote it. At the start of the race, the best F1 drivers have a score of around 0.15s from turning off the lights to pressing the throttle. This app measures your reflexes with an accuracy of 0.0001 seconds. See how fast you are. ",
   },
+
 ];
 
 //////////////////////////////////////////////////////////

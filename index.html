@@ -34,6 +34,7 @@
 
   <body>
     <div class="test"></div>
+
     <header class="header">
       <!-- burger menu icon -->
       <label class="burger hide-burger-menu" for="burger">
@@ -44,8 +45,7 @@
       </label>
 
       <nav id="mobile-menu" class="nav nav-hide">
-        <!-- <img src="/svg/logo.svg" class="svg-logo" alt="Logo" /> -->
-        <img src="/img/logo.png" class="png-logo" alt="Logo" />
+        <img src="/svg/logo.svg" class="svg-logo" alt="Logo" />
         <a class="nav-link" href="#about-me">About me</a>
         <a class="nav-link" href="#portfolio">Portfolio</a>
         <a class="nav-link" href="#courses">Courses</a>
@@ -54,231 +54,234 @@
       </nav>
     </header>
 
-    <!-- about me -->
-    <section id="about-me" class="section-item">
-      <h1>About me</h1>
-      <article class="about">
-        <img src="img/Luke Avatar.png" alt="me" />
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu
-          velit egestas, ultrices nisl vel, porta ipsum. Maecenas maximus felis
-          a efficitur maximus. Sed elementum nisl lectus, a molestie tellus
-          hendrerit in. Duis egestas velit et metus scelerisque, at placerat
-          ipsum luctus.ed elementum nisl lectus, a molestie tellus hendrerit in.
-          Duis egestas velit et metus scelerisque, at placerat ipsum luctus.
-          Duis auctor auctor ex, vel fringilla est pharetra a. Fed elementum
-          nisl lectus, a molestie tellus hendrerit in. Duis egestas velit et
-          metus scelerisque, at placerat ipsum luctus.
-        </p>
-      </article>
-    </section>
+    <main>
+      <!-- about me -->
+      <section id="about-me" class="section-item">
+        <h1>About me</h1>
+        <article class="about">
+          <img src="img/me.jpg" alt="Jarosław Kubiak" />
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu
+            velit egestas, ultrices nisl vel, porta ipsum. Maecenas maximus
+            felis a efficitur maximus. Sed elementum nisl lectus, a molestie
+            tellus hendrerit in. Duis egestas velit et metus scelerisque, at
+            placerat ipsum luctus.ed elementum nisl lectus, a molestie tellus
+            hendrerit in. Duis egestas velit et metus scelerisque, at placerat
+            ipsum luctus. Duis auctor auctor ex, vel fringilla est pharetra a.
+            Fed elementum nisl lectus, a molestie tellus hendrerit in. Duis
+            egestas velit et metus scelerisque, at placerat ipsum luctus.
+          </p>
+        </article>
+      </section>
 
-    <!-- portfolio -->
-    <section id="portfolio" class="section-item">
-      <h1>Portfolio</h1>
-      <!-- portfolio add from js -->
-      <ul id="portfolio-list"></ul>
-    </section>
+      <!-- portfolio -->
+      <section id="portfolio" class="section-item">
+        <h1>Portfolio</h1>
+        <!-- portfolio add from js -->
+        <ul id="portfolio-list"></ul>
+      </section>
 
-    <!-- courses -->
-    <section id="courses" class="section-to-reveal section-item">
-      <h1>Courses</h1>
-      <ul>
-        <li class="courses-item-wrapper">
-          <div class="courses-item-in-progress" title="Done">100%</div>
-          <div class="courses-item-title">
-            <a
-              href="https://www.udemy.com/course/the-complete-javascript-course/"
-              target="_blank"
-              >The Complete JavaScript Course 2023: From Zero to Expert!</a
-            >
-          </div>
-          <div class="courses-item-link" title="Download certificate">
-            <a href="certificates/javascript.pdf" target="_blank">
-              <img
-                src="/svg/pdf.svg"
-                alt="Download certificate"
-                class="courses-svg-pdf"
-            /></a>
-          </div>
-        </li>
+      <!-- courses -->
+      <section id="courses" class="section-to-reveal section-item">
+        <h1>Courses</h1>
+        <ul>
+          <li class="courses-item-wrapper">
+            <div class="courses-item-in-progress" title="Done">100%</div>
+            <div class="courses-item-title">
+              <a
+                href="https://www.udemy.com/course/the-complete-javascript-course/"
+                target="_blank"
+                >The Complete JavaScript Course 2023: From Zero to Expert!</a
+              >
+            </div>
+            <div class="courses-item-link" title="Download certificate">
+              <a href="certificates/javascript.pdf" target="_blank">
+                <img
+                  src="/svg/pdf.svg"
+                  alt="Download certificate"
+                  class="courses-svg-pdf"
+              /></a>
+            </div>
+          </li>
 
-        <li class="courses-item-wrapper">
-          <div class="courses-item-in-progress" title="Done">100%</div>
-          <div class="courses-item-title">
-            <a href="https://www.udemy.com/course/react-redux/" target="_blank"
-              >Modern React with Redux [2023 Update]</a
-            >
-          </div>
-          <div class="courses-item-link" title="Download certificate">
-            <a href="certificates/react-redux.pdf" target="_blank">
-              <img
-                src="/svg/pdf.svg"
-                alt="Download certificate"
-                class="courses-svg-pdf"
-            /></a>
-          </div>
-        </li>
+          <li class="courses-item-wrapper">
+            <div class="courses-item-in-progress" title="Done">100%</div>
+            <div class="courses-item-title">
+              <a
+                href="https://www.udemy.com/course/react-redux/"
+                target="_blank"
+                >Modern React with Redux [2023 Update]</a
+              >
+            </div>
+            <div class="courses-item-link" title="Download certificate">
+              <a href="certificates/react-redux.pdf" target="_blank">
+                <img
+                  src="/svg/pdf.svg"
+                  alt="Download certificate"
+                  class="courses-svg-pdf"
+              /></a>
+            </div>
+          </li>
 
-        <li class="courses-item-wrapper">
-          <div class="courses-item-in-progress" title="Done">100%</div>
-          <div class="courses-item-title">
-            <a
-              href="https://www.udemy.com/course/python-dla-poczatkujacych/"
-              target="_blank"
-              >Python dla początkujących</a
-            >
-          </div>
-          <div class="courses-item-link" title="Download certificate">
-            <a href="certificates/react-redux.pdf" target="_blank">
-              <img
-                src="/svg/pdf.svg"
-                alt="Download certificate"
-                class="courses-svg-pdf"
-            /></a>
-          </div>
-        </li>
-        <li class="courses-item-wrapper">
-          <div class="courses-item-in-progress" title="Done">100%</div>
-          <div class="courses-item-title">
-            <a
-              href="https://www.udemy.com/course/web-design-secrets/"
-              target="_blank"
-              >Web Design for Web Developers: Build Beautiful Websites!</a
-            >
-          </div>
-        </li>
-        <li class="courses-item-wrapper">
-          <div class="courses-item-in-progress" title="In progress">50%</div>
-          <div class="courses-item-title">
-            <a
-              href="https://www.udemy.com/course/design-and-develop-a-killer-website-with-html5-and-css3/"
-              target="_blank"
-              >Build Responsive Real-World Websites with HTML and CSS</a
-            >
-          </div>
-        </li>
-        <li class="courses-item-wrapper">
-          <div class="courses-item-in-progress" title="In progress">0%</div>
-          <div class="courses-item-title">
-            <a
-              href="https://www.udemy.com/course/nodejs-express-mongodb-bootcamp/"
-              target="_blank"
-              >Node.js, Express, MongoDB & More: The Complete Bootcamp</a
-            >
-          </div>
-        </li>
-        <li class="courses-item-wrapper">
-          <div class="courses-item-in-progress" title="In progress">30%</div>
-          <div class="courses-item-title">
-            <a
-              href="https://www.udemy.com/course/kurs-git-i-github-od-podstaw/"
-              target="_blank"
-              >Wprowadzenie do Git i GitHub</a
-            >
-          </div>
-        </li>
-        <li class="courses-item-wrapper">
-          <div class="courses-item-in-progress" title="In progress">20%</div>
-          <div class="courses-item-title">
-            <a
-              href="https://www.udemy.com/course/advanced-css-and-sass/"
-              target="_blank"
-              >Advanced CSS and Sass: Flexbox, Grid, Animations and More!</a
-            >
-          </div>
-        </li>
-      </ul>
-    </section>
+          <li class="courses-item-wrapper">
+            <div class="courses-item-in-progress" title="Done">100%</div>
+            <div class="courses-item-title">
+              <a
+                href="https://www.udemy.com/course/python-dla-poczatkujacych/"
+                target="_blank"
+                >Python dla początkujących</a
+              >
+            </div>
+            <div class="courses-item-link" title="Download certificate">
+              <a href="certificates/react-redux.pdf" target="_blank">
+                <img
+                  src="/svg/pdf.svg"
+                  alt="Download certificate"
+                  class="courses-svg-pdf"
+              /></a>
+            </div>
+          </li>
+          <li class="courses-item-wrapper">
+            <div class="courses-item-in-progress" title="Done">100%</div>
+            <div class="courses-item-title">
+              <a
+                href="https://www.udemy.com/course/web-design-secrets/"
+                target="_blank"
+                >Web Design for Web Developers: Build Beautiful Websites!</a
+              >
+            </div>
+          </li>
+          <li class="courses-item-wrapper">
+            <div class="courses-item-in-progress" title="In progress">50%</div>
+            <div class="courses-item-title">
+              <a
+                href="https://www.udemy.com/course/design-and-develop-a-killer-website-with-html5-and-css3/"
+                target="_blank"
+                >Build Responsive Real-World Websites with HTML and CSS</a
+              >
+            </div>
+          </li>
+          <li class="courses-item-wrapper">
+            <div class="courses-item-in-progress" title="In progress">0%</div>
+            <div class="courses-item-title">
+              <a
+                href="https://www.udemy.com/course/nodejs-express-mongodb-bootcamp/"
+                target="_blank"
+                >Node.js, Express, MongoDB & More: The Complete Bootcamp</a
+              >
+            </div>
+          </li>
+          <li class="courses-item-wrapper">
+            <div class="courses-item-in-progress" title="In progress">30%</div>
+            <div class="courses-item-title">
+              <a
+                href="https://www.udemy.com/course/kurs-git-i-github-od-podstaw/"
+                target="_blank"
+                >Wprowadzenie do Git i GitHub</a
+              >
+            </div>
+          </li>
+          <li class="courses-item-wrapper">
+            <div class="courses-item-in-progress" title="In progress">20%</div>
+            <div class="courses-item-title">
+              <a
+                href="https://www.udemy.com/course/advanced-css-and-sass/"
+                target="_blank"
+                >Advanced CSS and Sass: Flexbox, Grid, Animations and More!</a
+              >
+            </div>
+          </li>
+        </ul>
+      </section>
 
-    <!-- skills -->
-    <section id="skills" class="section-to-reveal section-item">
-      <h1>Skills</h1>
-      <ul>
-        <li class="skills-item-wrapper">
-          <div class="skills-item-title">JavaScript</div>
-          <div class="skills-points">
-            <span class="skill-point"></span>
-            <span class="skill-point"></span>
-            <span class="skill-point"></span>
-            <span class="skill-point"></span>
-            <span class="skill-point skill-off"></span>
-          </div>
-        </li>
-        <li class="skills-item-wrapper">
-          <div class="skills-item-title">React & Redux</div>
-          <div class="skills-points">
-            <span class="skill-point"></span>
-            <span class="skill-point"></span>
-            <span class="skill-point skill-off"></span>
-            <span class="skill-point skill-off"></span>
-            <span class="skill-point skill-off"></span>
-          </div>
-        </li>
-        <li class="skills-item-wrapper">
-          <div class="skills-item-title">PHP</div>
-          <div class="skills-points">
-            <span class="skill-point"></span>
-            <span class="skill-point"></span>
-            <span class="skill-point"></span>
-            <span class="skill-point"></span>
-            <span class="skill-point skill-off"></span>
-          </div>
-        </li>
-        <li class="skills-item-wrapper">
-          <div class="skills-item-title">MySQL</div>
-          <div class="skills-points">
-            <span class="skill-point"></span>
-            <span class="skill-point"></span>
-            <span class="skill-point"></span>
-            <span class="skill-point skill-off"></span>
-            <span class="skill-point skill-off"></span>
-          </div>
-        </li>
-        <li class="skills-item-wrapper">
-          <div class="skills-item-title">HTML + CSS</div>
-          <div class="skills-points">
-            <span class="skill-point"></span>
-            <span class="skill-point"></span>
-            <span class="skill-point"></span>
-            <span class="skill-point"></span>
-            <span class="skill-point skill-off"></span>
-          </div>
-        </li>
-        <li class="skills-item-wrapper">
-          <div class="skills-item-title">GIT</div>
-          <div class="skills-points">
-            <span class="skill-point"></span>
-            <span class="skill-point"></span>
-            <span class="skill-point skill-off"></span>
-            <span class="skill-point skill-off"></span>
-            <span class="skill-point skill-off"></span>
-          </div>
-        </li>
-        <li class="skills-item-wrapper">
-          <div class="skills-item-title">VS Code</div>
-          <div class="skills-points">
-            <span class="skill-point"></span>
-            <span class="skill-point"></span>
-            <span class="skill-point"></span>
-            <span class="skill-point skill-off"></span>
-            <span class="skill-point skill-off"></span>
-          </div>
-        </li>
-      </ul>
-    </section>
+      <!-- skills -->
+      <section id="skills" class="section-to-reveal section-item">
+        <h1>Skills</h1>
+        <ul>
+          <li class="skills-item-wrapper">
+            <div class="skills-item-title">JavaScript</div>
+            <div class="skills-points">
+              <span class="skill-point"></span>
+              <span class="skill-point"></span>
+              <span class="skill-point"></span>
+              <span class="skill-point"></span>
+              <span class="skill-point skill-off"></span>
+            </div>
+          </li>
+          <li class="skills-item-wrapper">
+            <div class="skills-item-title">React & Redux</div>
+            <div class="skills-points">
+              <span class="skill-point"></span>
+              <span class="skill-point"></span>
+              <span class="skill-point skill-off"></span>
+              <span class="skill-point skill-off"></span>
+              <span class="skill-point skill-off"></span>
+            </div>
+          </li>
+          <li class="skills-item-wrapper">
+            <div class="skills-item-title">PHP</div>
+            <div class="skills-points">
+              <span class="skill-point"></span>
+              <span class="skill-point"></span>
+              <span class="skill-point"></span>
+              <span class="skill-point"></span>
+              <span class="skill-point skill-off"></span>
+            </div>
+          </li>
+          <li class="skills-item-wrapper">
+            <div class="skills-item-title">MySQL</div>
+            <div class="skills-points">
+              <span class="skill-point"></span>
+              <span class="skill-point"></span>
+              <span class="skill-point skill-off"></span>
+              <span class="skill-point skill-off"></span>
+              <span class="skill-point skill-off"></span>
+            </div>
+          </li>
+          <li class="skills-item-wrapper">
+            <div class="skills-item-title">HTML + CSS</div>
+            <div class="skills-points">
+              <span class="skill-point"></span>
+              <span class="skill-point"></span>
+              <span class="skill-point"></span>
+              <span class="skill-point"></span>
+              <span class="skill-point skill-off"></span>
+            </div>
+          </li>
+          <li class="skills-item-wrapper">
+            <div class="skills-item-title">GIT</div>
+            <div class="skills-points">
+              <span class="skill-point"></span>
+              <span class="skill-point"></span>
+              <span class="skill-point skill-off"></span>
+              <span class="skill-point skill-off"></span>
+              <span class="skill-point skill-off"></span>
+            </div>
+          </li>
+          <li class="skills-item-wrapper">
+            <div class="skills-item-title">VS Code</div>
+            <div class="skills-points">
+              <span class="skill-point"></span>
+              <span class="skill-point"></span>
+              <span class="skill-point"></span>
+              <span class="skill-point skill-off"></span>
+              <span class="skill-point skill-off"></span>
+            </div>
+          </li>
+        </ul>
+      </section>
 
-    <!-- road map -->
-    <section id="road-map" class="section-to-reveal section-item">
-      <h1>Road Map</h1>
-      <ul>
-        <li class="road-map-item">Node.JS</li>
-        <li class="road-map-item">Express</li>
-        <li class="road-map-item">TypeScript</li>
-        <li class="road-map-item">React Native</li>
-      </ul>
-    </section>
-
+      <!-- road map -->
+      <section id="road-map" class="section-to-reveal section-item">
+        <h1>Road Map</h1>
+        <ul>
+          <li class="road-map-item">Node.JS</li>
+          <li class="road-map-item">Express</li>
+          <li class="road-map-item">TypeScript</li>
+          <li class="road-map-item">React Native</li>
+        </ul>
+      </section>
+    </main>
     <!-- footer -->
     <footer>
       <p>© Copyright by Jarosław Kubiak 2023</p>
