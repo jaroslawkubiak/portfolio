@@ -88,10 +88,10 @@ const portfolio = [
     title: "ERP System",
     link: "portfolio/panel",
     imgDir: "panel",
-    images: 4,
+    images: ["Photo 1", "Photo 2", "Photo 3", "Photo 4"],
     tech: ["php", "mysql", "html", "css"],
     description: `This system is for a manufacturing company.
-      Project is started with jutr two tables in data base: customer and orders. For over 7 years of adding new functionalities, the system has grow to:
+      Project is started with just two tables in data base: customer and orders. For over 7 years of adding new functionalities, the system has grow to:
       <ul>
         <li>- warehouse, register of purchases and suppliers</li>
         <li>- offers for customers sent by e-mail</li>
@@ -99,20 +99,28 @@ const portfolio = [
         <li>- issuing invoices for orders + generating PDF with sending to e-mail</li>
         <li>- implementation of the tasks of production employees</li>
         <li>- transport orders </li>
-        <li>- detailed various data analysis reports</li>
-        <li>- valuations for clients</li>
-        <li>- daily reports</li>
-        <li>- managing users and a number of different settings</li>
-        <li>- separate login panel for drivers and customers.</li>
+        <li>- detailed data analysis report to help you organize your work</li>
+        <li>- daily reports send by e-mail</li>
+        <li>- valuation of orders for customers before their implementation</li>
+        <li>- management of users and a number of different settings: order list view, numbering, email templates</li>
+        <li>- separate login panel for client drivers and customers.</li>
       </ul>
-      Everything is programmed as agreed with the client wish.`,
+      Everything is programmed as agreed with the client wish and design. Before i started work on this project, client work mostly in Excel, so all project is based on tables, basically copying excel sheets into html.`,
   },
   {
     title: "Lego Star Wars Minifigure Collection",
     link: "portfolio/figures",
     github: "https://github.com/jaroslawkubiak/figures",
     imgDir: "figures",
-    images: 7,
+    images: [
+      "Minifigure card view",
+      "Add minifigure form with validation",
+      "Expandable filters: number, name, year and series",
+      "Edit minifigure form with delete option",
+      "Comparasion of card view and R2D2 style view with more datail about figure",
+      "Dropdown list in filters",
+      "Modal windows with large preview of minifigure photo",
+    ],
     tech: ["js", "react", "redux"],
     description:
       "I'm a huge fan and collector of Lego Star Wars minifigures. When my collection had about 80 figures, I needed a better way to track down my collection, I needed something better than excel, something with images. Being a programmer, I wrote a web page (PHP & MySQL) for better track what's in my collection of the minifigures. Till today i use this web page. This application is the next version, mainly written for learning JS and React. At the moment the database is in a JSON file, when I finish the Node.JS course I will be able to finish this application. I want to copy all my feature from php version to Node.JS, including sorting, statistics and many more.",
@@ -123,7 +131,15 @@ const portfolio = [
     link: "portfolio/flags",
     github: "https://github.com/jaroslawkubiak/flag-game",
     imgDir: "flag",
-    images: 6,
+    images: [
+      "Select continent",
+      "You can start game",
+      "Your answer is wrong",
+      "Select answer (mobile landscape view)",
+      "Your answer is corect (mobile portrait view)",
+      "Your answer is wrong (mobile portrait view)",
+      "Game over - view your score and game statistics",
+    ],
     tech: ["js", "html", "css"],
     description:
       "I like to travel and collect patches of the flags of the countries I visit and sew them onto my backpack. On my phone i have game, where you have to guess country flag. I play it often. During JS course we use API for country information. Then i wanted to write similar game from my phone. You can choose one or more continent, and try to guess all country flag. You always have 10 flags, which are drawn from a pool of selected continents to guess, no matter if you select 1 or 6 continents.",
@@ -133,7 +149,12 @@ const portfolio = [
     link: "portfolio/snake",
     github: "https://github.com/jaroslawkubiak/snake",
     imgDir: "snake",
-    images: 4,
+    images: [
+      "Game in mobile landscape view",
+      "Game in mobile portrait view",
+      "Game in PC",
+      "Game over - best score is stored in browser memory",
+    ],
     tech: ["js", "html", "css"],
     description:
       "I know, i know. Another snake game project in JS 😁 Everyone does it. I wanted to program this nokia 3310 styled game for training JS and CSS skills. You can play on PC usign arrow key and 'a, w, s, d' keys. On mobile you play using touch controls, swiping in desired direction, both in portrait and landscape mode.",
@@ -143,12 +164,11 @@ const portfolio = [
     link: "portfolio/f1",
     github: "https://github.com/jaroslawkubiak/reflex",
     imgDir: "f1",
-    images: 4,
+    images: ["Your result", "Get ready", "Your result", "You click too soon"],
     tech: ["js", "html", "css"],
     description:
       "Inspired by one of the videos on Instagram where F1 driver Lando Norris tests his reflexes. I want to have a similar app, so in two afternoons I wrote it. At the start of the race, the best F1 drivers have a score of around 0.15s from turning off the lights to pressing the throttle. This app measures your reflexes with an accuracy of 0.0001 seconds. See how fast you are. ",
   },
-
 ];
 
 //////////////////////////////////////////////////////////
@@ -156,24 +176,31 @@ const portfolio = [
 portfolio.forEach(item => {
   let html = `
     <li class="portfolio-item-wrapper"><article>
-    <div class="portfolio-title">
+    <h6 class="portfolio-title">
     ${item.title}
-    </div>
-    <div class="portfolio-description-wrapper">
-    <div class="portfolio-tech">`;
+    </h6>
+    <div class="portfolio-description-wrapper">`;
 
-  // rendering portfolio
+  // portfolio description
+  html += `<p class="portfolio-description">${item.description}</p></div>`;
+
+  // portfolio tech stack
+  html += `<div class="portfolio-tech">`;
   item.tech.forEach(tech => (html += svg[tech]));
+  html += `</div>`;
 
-  html += `</div><div class="portfolio-description">${item.description}</div></div>`;
-
+  //portfolio images
   html += `<div class="portfolio-preview" id="${item.imgDir}"><div class="portfolio-preview-images">`;
 
-  for (let i = 1; i <= item.images; i++) {
-    html += `<div class="slide">
-    <img src="/portfolio/preview/low-res/${item.imgDir}/${i}.jpg" 
-    data-src="/portfolio/preview/high-res/${item.imgDir}/${i}.jpg" 
-    alt="Preview photo ${i}" class="portfolio-preview-image portfolio-lazy-img" /></div>`;
+  for (let i = 0; i < item.images.length; i++) {
+    html += `<div class="slide"><figure>
+    <img src="/portfolio/preview/low-res/${item.imgDir}/${i + 1}.jpg" 
+    data-src="/portfolio/preview/high-res/${item.imgDir}/${i + 1}.jpg" 
+    alt="${item.images[i]}" title="${
+      item.images[i]
+    }" class="portfolio-preview-image portfolio-lazy-img" />
+    <figcaption class="portfolio-image-caption">${item.images[i]}</figcaption>
+    </figure></div>`;
   }
 
   html += `</div><div class="portfolio-preview-btn-dots"><button class="slider-btn slider-btn-left">${arrowLeft}</button>
@@ -330,22 +357,22 @@ const portfolioTargets = document.querySelectorAll(".portfolio-preview");
 
 // load high res image for visible portfolio section
 const loadImg = function (entries, observer) {
-  const [entry] = entries;
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
 
-  if (!entry.isIntersecting) return;
+    const portfolioLoading = document.getElementById(entry.target.id);
+    const imgTargets = portfolioLoading.querySelectorAll("img[data-src]");
 
-  const portfolioLoading = document.getElementById(entry.target.id);
-  const imgTargets = portfolioLoading.querySelectorAll("img[data-src]");
+    imgTargets.forEach(img => {
+      // replace lazy img with high res img
+      img.src = img.dataset.src;
 
-  imgTargets.forEach(img => {
-    // replace lazy img with high res img
-    img.src = img.dataset.src;
-
-    // remove blur effect(class) when img is finish loading
-    img.addEventListener("load", () =>
-      img.classList.remove("portfolio-lazy-img")
-    );
-    observer.unobserve(entry.target);
+      // remove blur effect(class) when img is finish loading
+      img.addEventListener("load", () => {
+        img.classList.remove("portfolio-lazy-img");
+        observer.unobserve(entry.target);
+      });
+    });
   });
 };
 
@@ -355,7 +382,6 @@ const portfolioObserver = new IntersectionObserver(loadImg, {
   threshold: 0,
   rootMargin: "250px",
 });
-
 portfolioTargets.forEach(portfolio => portfolioObserver.observe(portfolio));
 
 //////////////////////////////////////////////////////////

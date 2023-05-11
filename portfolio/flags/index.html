@@ -4,30 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Guess flag game</title>
-
-    <script>
-      const fileVer = Date.now();
-      const head = document.getElementsByTagName("head")[0];
-
-      let mainCss = document.createElement("link");
-      mainCss.rel = "stylesheet";
-      mainCss.type = "text/css";
-      mainCss.href = `css/main.css?v=${fileVer}`;
-      head.appendChild(mainCss);
-
-      let btnCss = document.createElement("link");
-      btnCss.rel = "stylesheet";
-      btnCss.type = "text/css";
-      btnCss.href = `css/btn.css?v=${fileVer}`;
-      head.appendChild(btnCss);
-
-      let questionCss = document.createElement("link");
-      questionCss.rel = "stylesheet";
-      questionCss.type = "text/css";
-      questionCss.href = `css/questions.css?v=${fileVer}`;
-      head.appendChild(questionCss);
-    </script>
+    <title>Guess flag - game</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/btn.css" />
+    <link rel="stylesheet" href="css/questions.css" />
 
     <script type="module" src="js/script.js"></script>
   </head>
