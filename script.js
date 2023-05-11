@@ -194,8 +194,8 @@ portfolio.forEach(item => {
 
   for (let i = 0; i < item.images.length; i++) {
     html += `<div class="slide"><figure>
-    <img src="/portfolio/preview/low-res/${item.imgDir}/${i + 1}.jpg" 
-    data-src="/portfolio/preview/high-res/${item.imgDir}/${i + 1}.jpg" 
+    <img src="/img/portfolio-preview/${item.imgDir}/low-res/${i + 1}.jpg" 
+    data-src="/img/portfolio-preview/${item.imgDir}/${i + 1}.jpg" 
     alt="${item.images[i]}" title="${
       item.images[i]
     }" class="portfolio-preview-image portfolio-lazy-img" />
@@ -217,6 +217,7 @@ portfolio.forEach(item => {
 
   portfolioList.insertAdjacentHTML("beforeEnd", html);
 
+  //////////////////////////////////////////////////////////
   // slider effect
   const containerId = document.getElementById(item.imgDir);
   const slides = containerId.querySelectorAll(".slide");
@@ -248,6 +249,7 @@ portfolio.forEach(item => {
 
   // changing slides
   const goToSlide = function (slide) {
+    curSlide = slide;
     slides.forEach(
       (s, i) => (s.style.transform = `translateX(${100 * (i - slide)}%)`)
     );
@@ -283,8 +285,8 @@ portfolio.forEach(item => {
   dotContainer.addEventListener("click", function (e) {
     if (e.target.classList.contains("dots-dot")) {
       const { slide } = e.target.dataset;
-      goToSlide(slide);
-      activeDot(slide);
+      goToSlide(Number(slide));
+      activeDot(Number(slide));
     }
   });
 
