@@ -485,11 +485,12 @@ li {
 /* footer */
 footer {
   background-color: var(--light-primary-color);
-  padding: 20px;
+  padding: 10px;
   text-align: center;
 }
+
 footer p {
-  margin: 0;
+  padding: 20px;
 }
 .footer-links {
   display: flex;

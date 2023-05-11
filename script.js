@@ -32,7 +32,6 @@ document.getElementById("mobile-menu").addEventListener("click", function (e) {
     if (element.classList.contains("section-to-reveal"))
       transformSectionToReveal = 300;
 
-    console.log(transformSectionToReveal);
     const y =
       element.getBoundingClientRect().top +
       window.scrollY -
@@ -390,12 +389,12 @@ portfolioTargets.forEach(portfolio => portfolioObserver.observe(portfolio));
 // Reveal sections
 const allSections = document.querySelectorAll(".section-to-reveal");
 const revealSection = function (entries, observer) {
-  const [entry] = entries;
 
-  if (!entry.isIntersecting) return;
-
-  entry.target.classList.remove("section-hidden");
-  observer.unobserve(entry.target);
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.remove("section-hidden");
+    observer.unobserve(entry.target);
+  });
 };
 
 const sectionObserver = new IntersectionObserver(revealSection, {
