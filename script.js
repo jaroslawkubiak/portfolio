@@ -389,7 +389,6 @@ portfolioTargets.forEach(portfolio => portfolioObserver.observe(portfolio));
 // Reveal sections
 const allSections = document.querySelectorAll(".section-to-reveal");
 const revealSection = function (entries, observer) {
-
   entries.forEach(entry => {
     if (!entry.isIntersecting) return;
     entry.target.classList.remove("section-hidden");
@@ -405,4 +404,11 @@ const sectionObserver = new IntersectionObserver(revealSection, {
 allSections.forEach(function (section) {
   sectionObserver.observe(section);
   section.classList.add("section-hidden");
+});
+
+//////////////////////////////////////////////////////////
+// slider on me images
+const meWrapper = document.querySelector(".me-wrapper");
+document.querySelector(".me-slider").addEventListener("input", e => {
+  meWrapper.style.setProperty("--position", `${e.target.value}%`);
 });

@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <title>Javascript developer</title>
     <meta
       name="description"
@@ -29,7 +30,6 @@
       link.href = `style.css?v=${fileVer}`;
       head.appendChild(link);
     </script>
-    <link rel="icon" href="/img/icon.png" />
   </head>
 
   <body>
@@ -58,8 +58,46 @@
       <!-- about me -->
       <section id="about-me" class="section-item">
         <h1>About me</h1>
-        <article class="about">
-          <img src="img/me.jpg" alt="Jarosław Kubiak" title="Jarosław Kubiak" />
+        <article>
+          <div class="me-wrapper">
+            <div class="me-image-container">
+              <img
+                src="img/me.jpg"
+                class="me-slider-image me-image-before"
+                alt="Jarosław Kubiak"
+                title="Jarosław Kubiak"
+              />
+              <img
+                src="img/me2.jpg"
+                class="me-slider-image"
+                alt="Jarosław Kubiak"
+                title="Jarosław Kubiak"
+              />
+            </div>
+            <input
+              type="range"
+              min="0"
+              max="100"
+              class="me-slider"
+              aria-label="Percent of image show"
+            />
+
+            <div class="me-slider-line"></div>
+            <div class="me-slider-button" aria-hidden="true">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="30"
+                height="30"
+                fill="currentcolor"
+                viewBox="0 0 256 256"
+              >
+                <path
+                  d="M128,28A100,100,0,1,0,228,128,100.11,100.11,0,0,0,128,28Zm0,192a92,92,0,1,1,92-92A92.1,92.1,0,0,1,128,220Zm34.83-118.83a4,4,0,0,1-5.66,5.66L128,77.66,98.83,106.83a4,4,0,0,1-5.66-5.66l32-32a4,4,0,0,1,5.66,0Zm0,48a4,4,0,0,1,0,5.66l-32,32a4,4,0,0,1-5.66,0l-32-32a4,4,0,0,1,5.66-5.66L128,178.34l29.17-29.17A4,4,0,0,1,162.83,149.17Z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu
             velit egestas, ultrices nisl vel, porta ipsum. Maecenas maximus

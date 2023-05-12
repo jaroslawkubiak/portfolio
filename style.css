@@ -181,14 +181,87 @@ nav {
   text-align: justify;
 }
 .about img {
-  float: left;
+  display: block;
+  min-width: 100%;
+  /* float: left;
   margin-right: 10px;
   margin-top: 10px;
   width: 100px;
   object-fit: contain;
   border-radius: 10px;
-  border: 3px solid var(--primary-text);
+  border: 3px solid var(--primary-text); */
 }
+
+.me-wrapper {
+  box-sizing: border-box;
+  float: left;
+  border-radius: 10px;
+  border: 3px solid var(--primary-text);
+
+  display: grid;
+  place-content: center;
+  position: relative;
+  overflow: hidden;
+  width: 200px;
+  --position: 90%;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.me-slider-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left;
+}
+
+.me-image-before {
+  position: absolute;
+  inset: 0;
+  width: var(--position);
+}
+
+.me-slider {
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.me-slider:active ~ .me-slider-button,
+.me-slider:active ~ .me-slider-line {
+  background-color: var(--accent-color); 
+}
+
+.me-slider-line {
+  position: absolute;
+  inset: 0;
+  width: 0.2rem;
+  z-index: 10;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  left: var(--position);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.me-slider-button {
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  padding: 0;
+  border-radius: 100vw;
+  display: grid;
+  place-content: center;
+  top: 50%;
+  left: var(--position);
+  transform: translate(-50%, -50%) rotate(90deg);
+  pointer-events: none;
+  z-index: 20;
+}
+
 h1 {
   font-size: 2em;
   margin: 30px 0;
@@ -206,6 +279,7 @@ ul {
 li {
   margin-bottom: 10px;
   padding: 0px;
+  line-height: 1.5;
 }
 /* portfolio section */
 .portfolio-item-wrapper {
@@ -232,7 +306,7 @@ li {
   margin: 20px 0;
 }
 .portfolio-description {
-  line-height: 1.5;
+  line-height: 2;
 }
 .portfolio-preview {
   margin-top: 20px;
@@ -250,7 +324,7 @@ li {
   width: 100%;
   object-fit: contain;
 }
-.portfolio-image-caption{
+.portfolio-image-caption {
   font-size: 0.8em;
   text-align: center;
   margin-top: 15px;
@@ -336,6 +410,7 @@ li {
 }
 .svg-html-fill {
   fill: var(--svg-html-fill);
+  
 }
 .svg-php {
   border: var(--svg-border-width) solid var(--svg-php-fill);
@@ -729,7 +804,7 @@ footer p {
   }
 
   body {
-    font-size: 1.6em;
+    font-size: 1.4em;
   }
   header {
     height: 100px;
@@ -737,14 +812,14 @@ footer p {
     width: 100%;
   }
   h1 {
-    font-size: 2.4em;
+    font-size: 2em;
   }
   li {
-    padding: 20px;
+    padding: 15px;
   }
   .svg-logo {
     position: relative;
-    width:80px;
+    width: 80px;
   }
 
   .png-logo {
