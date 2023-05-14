@@ -177,34 +177,27 @@ nav {
   opacity: 0;
   transform: translateY(100px);
 }
-.about p {
+
+.about-me {
   text-align: justify;
+  line-height: 2;
 }
-.about img {
-  display: block;
-  min-width: 100%;
-  /* float: left;
-  margin-right: 10px;
-  margin-top: 10px;
-  width: 100px;
-  object-fit: contain;
-  border-radius: 10px;
-  border: 3px solid var(--primary-text); */
-}
+
 
 .me-wrapper {
   box-sizing: border-box;
   float: left;
   border-radius: 10px;
   border: 3px solid var(--primary-text);
-
   display: grid;
   place-content: center;
   position: relative;
   overflow: hidden;
-  width: 200px;
+  --img-width: 100px;
+  width: var(--img-width);
+  height: calc(var(--img-width) * 1.5);
   --position: 90%;
-  margin-right: 10px;
+  margin-right: 15px;
   margin-top: 10px;
 }
 
@@ -232,7 +225,7 @@ nav {
 
 .me-slider:active ~ .me-slider-button,
 .me-slider:active ~ .me-slider-line {
-  background-color: var(--accent-color); 
+  background-color: var(--accent-color);
 }
 
 .me-slider-line {
@@ -410,7 +403,6 @@ li {
 }
 .svg-html-fill {
   fill: var(--svg-html-fill);
-  
 }
 .svg-php {
   border: var(--svg-border-width) solid var(--svg-php-fill);
@@ -701,10 +693,10 @@ footer p {
   li {
     padding: 15px;
   }
-  .about img {
+  .me-wrapper {
     margin-right: 20px;
-    margin-top: 35px;
-    width: 150px;
+    margin-top: 15px;
+    --img-width: 150px;
   }
   .portfolio-title {
     font-size: 1.6em;
@@ -848,11 +840,13 @@ footer p {
     border-bottom: 2px solid var(--accent-color);
     opacity: 0.95;
   }
-  .about img {
-    margin-right: 40px;
+
+  .me-wrapper {
+    margin-right: 30px;
     margin-top: 15px;
-    width: 200px;
+    --img-width: 200px;
   }
+
   .portfolio-title {
     font-size: 1.8em;
   }

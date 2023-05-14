@@ -87,7 +87,15 @@ const portfolio = [
     title: "ERP System",
     link: "portfolio/panel",
     imgDir: "panel",
-    images: ["Photo 1", "Photo 2", "Photo 3", "Photo 4"],
+    images: [
+      "Clients table and edit client form",
+      "Invoice table view and side menu left and right",
+      "Invoice PDF preview",
+      "Edit order form",
+      "Edit evaluation of order",
+      "Production plan with orders to do",
+      "Construction drawings",
+    ],
     tech: ["php", "mysql", "html", "css"],
     description: `This system is for a manufacturing company.
       Project is started with just two tables in data base: customer and orders. For over 7 years of adding new functionalities, the system has grow to:
@@ -100,7 +108,7 @@ const portfolio = [
         <li>- transport orders </li>
         <li>- detailed data analysis report to help you organize your work</li>
         <li>- daily reports send by e-mail</li>
-        <li>- valuation of orders for customers before their implementation</li>
+        <li>- evaluation of orders for customers before their implementation</li>
         <li>- management of users and a number of different settings: order list view, numbering, email templates</li>
         <li>- separate login panel for client drivers and customers.</li>
       </ul>
@@ -193,7 +201,7 @@ portfolio.forEach(item => {
 
   for (let i = 0; i < item.images.length; i++) {
     html += `<div class="slide"><figure>
-    <img src="/img/portfolio-preview/${item.imgDir}/low-res/${i + 1}.jpg" 
+    <img src="/img/img-preview.jpg" 
     data-src="/img/portfolio-preview/${item.imgDir}/${i + 1}.jpg" 
     alt="${item.images[i]}" title="${
       item.images[i]
