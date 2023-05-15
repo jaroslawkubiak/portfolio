@@ -49,4 +49,3 @@ export const arrowRight = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 
 export const arrowLeft = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5"><defs><style>.cls-63ce7424ea57ea6c8380057f-1{fill:none;stroke:currentColor;stroke-miterlimit:10;}</style></defs><line class="cls-63ce7424ea57ea6c8380057f-1" x1="2.5" y1="12" x2="23.5" y2="12"></line><polyline class="cls-63ce7424ea57ea6c8380057f-1" points="10.14 4.36 2.5 12 10.14 19.64"></polyline></svg>`;
 export const arrowUp = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5"><defs><style>.cls-63ce7424ea57ea6c838005a8-1{fill:none;stroke:currentColor;stroke-miterlimit:10;}</style></defs><line class="cls-63ce7424ea57ea6c838005a8-1" x1="12" y1="2.5" x2="12" y2="23.5"></line><polyline class="cls-63ce7424ea57ea6c838005a8-1" points="4.36 10.14 12 2.5 19.64 10.14"></polyline></svg>`;
 
-

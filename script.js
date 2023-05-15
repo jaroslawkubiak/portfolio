@@ -100,19 +100,28 @@ const portfolio = [
     description: `This system is for a manufacturing company.
       Project is started with just two tables in data base: customer and orders. For over 7 years of adding new functionalities, the system has grow to:
       <ul>
-        <li>- warehouse, register of purchases and suppliers</li>
-        <li>- offers for customers sent by e-mail</li>
-        <li>- register of customers and orders (adding, editing and deleting)</li>
-        <li>- issuing invoices for orders + generating PDF with sending to e-mail</li>
-        <li>- implementation of the tasks of production employees</li>
-        <li>- transport orders </li>
-        <li>- detailed data analysis report to help you organize your work</li>
-        <li>- daily reports send by e-mail</li>
-        <li>- evaluation of orders for customers before their implementation</li>
-        <li>- management of users and a number of different settings: order list view, numbering, email templates</li>
-        <li>- separate login panel for client drivers and customers.</li>
+        <li>•  warehouse, register of purchases and suppliers</li>
+        <li>•  offers for customers sent by e-mail</li>
+        <li>•  register of customers and orders (adding, editing and deleting)</li>
+        <li>•  issuing invoices for orders + generating PDF with sending to e-mail</li>
+        <li>•  implementation of the tasks of production employees</li>
+        <li>•  transport orders </li>
+        <li>•  detailed data analysis report to help you organize your work</li>
+        <li>•  daily reports send by e-mail</li>
+        <li>•  evaluation of orders for customers before their implementation</li>
+        <li>•  management of users and a number of different settings: order list view, numbering, email templates</li>
+        <li>•  separate login panel for client drivers and customers.</li>
       </ul>
-      Everything is programmed as agreed with the client wish and design. Before i started work on this project, client work mostly in Excel, so all project is based on tables, basically copying excel sheets into html.`,
+      Everything is programmed as agreed with the client wish and design. Before i started work on this project, client work mostly in Excel, so all project is based on tables, basically copying excel sheets into html.
+      In project I use couple external libraries: 
+      <ul>
+      <li>•  PHPMailer - for sending emails with attachments</li>
+      <li>•  FPDF - for creating pdf files, ex: invoice and order confirmation</li>
+      <li>•  Signature Pad - for the customer signed the receipt of the order</li>
+      </ul>
+
+
+      `,
   },
   {
     title: "Lego Star Wars Minifigure Collection",
@@ -210,9 +219,8 @@ portfolio.forEach(item => {
     </figure></div>`;
   }
 
-  html += `</div><div class="portfolio-preview-btn-dots"><button class="slider-btn slider-btn-left">${arrowLeft}</button>
-  <button class="slider-btn slider-btn-right">${arrowRight}</button>
-  <div class="dots"></div>`;
+  html += `</div><button class="slider-btn slider-btn-left">${arrowLeft}</button><button class="slider-btn slider-btn-right">${arrowRight}</button>`;
+  html += `<div class="portfolio-preview-btn-dots"><div class="dots"></div>`;
   html += `</div></div>`;
 
   html += `<div class="portfolio-footer"><div class="portfolio-footer-github">`;
@@ -419,4 +427,22 @@ allSections.forEach(function (section) {
 const meWrapper = document.querySelector(".me-wrapper");
 document.querySelector(".me-slider").addEventListener("input", e => {
   meWrapper.style.setProperty("--position", `${e.target.value}%`);
+});
+
+//////////////////////////////////////////////////////////
+// abotu me show more content
+const aboutMeShowMore = document.getElementById("about-me-show-more");
+aboutMeShowMore.addEventListener("click", () => {
+  document.getElementById("about-me-more").classList.toggle("hidden");
+  let showContent = aboutMeShowMore.innerHTML;
+  switch (showContent) {
+    case "show more...":
+      aboutMeShowMore.innerHTML = "show less";
+      break;
+    case "show less":
+      aboutMeShowMore.innerHTML = "show more...";
+      break;
+    default:
+      break;
+  }
 });

@@ -179,10 +179,20 @@ nav {
 }
 
 .about-me {
-  text-align: justify;
   line-height: 2;
+  font-size: 0.8em;
 }
 
+.about-me-show-more {
+  cursor: pointer;
+  font-size: 0.8em;
+  color: var(--primary-text);
+  margin: 20px 0px;
+  display: block;
+}
+.about-me-show-more:hover {
+  color: var(--accent-color);
+}
 
 .me-wrapper {
   box-sizing: border-box;
@@ -301,12 +311,15 @@ li {
 .portfolio-description {
   line-height: 2;
 }
+
 .portfolio-preview {
+  position: relative;
   margin-top: 20px;
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
 }
+
 .portfolio-preview-images {
   position: relative;
   overflow: hidden;
@@ -437,7 +450,7 @@ li {
 .slider-btn {
   all: unset;
   position: absolute;
-  top: 50%;
+  top: 40%;
   transform: translateY(-50%);
   z-index: 10;
   border: none;
@@ -455,19 +468,19 @@ li {
   background: var(--accent-color);
 }
 .slider-btn-left {
-  left: 0%;
+  left: -2%;
 }
 .slider-btn-right {
-  right: 0%;
+  right: -2%;
 }
 .dots-dot {
   border: none;
   background-color: var(--primary-text);
   opacity: 0.5;
   aspect-ratio: 1/1;
-  width: 1.4em;
+  width: 1.2em;
   border-radius: 50%;
-  margin-right: 1.2em;
+  margin-right: 1.4em;
   cursor: pointer;
   transition: all 0.5s;
 }
@@ -484,11 +497,11 @@ li {
 
 /* courses section */
 .courses-item-wrapper {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   margin-bottom: 20px;
 }
+
 .courses-item-title {
   font-size: 0.8em;
 }
@@ -631,9 +644,17 @@ footer p {
     height: 2em;
     width: 2em;
   }
+  .slider-btn-left {
+    left: -4%;
+  }
+  .slider-btn-right {
+    right: -4%;
+  }
+  
   .dots-dot {
-    height: 2em;
-    width: 2em;
+    height: 1.6em;
+    width: 1.6em;
+    aspect-ratio: 1/1;
     border-radius: 50%;
     margin-right: 2.4em;
   }
@@ -742,9 +763,17 @@ footer p {
     width: 2.4em;
     padding: 6px;
   }
+
+  .slider-btn-left {
+    left: 0%;
+  }
+  .slider-btn-right {
+    right: 0%;
+  }
+  
   .dots-dot {
-    height: 3em;
-    width: 3em;
+    height: 2em;
+    width: 2em;
     margin-right: 3em;
   }
   .courses-item-wrapper {
@@ -799,7 +828,7 @@ footer p {
     font-size: 1.4em;
   }
   header {
-    height: 100px;
+    height: 60px;
     display: grid;
     width: 100%;
   }
@@ -811,12 +840,7 @@ footer p {
   }
   .svg-logo {
     position: relative;
-    width: 80px;
-  }
-
-  .png-logo {
-    position: relative;
-    width: 80px;
+    width: 50px;
   }
 
   .hide-burger-menu {
@@ -863,6 +887,14 @@ footer p {
     width: 52px;
     height: 52px;
   }
+  
+  .portfolio-preview-image {
+    width: 90%;
+    object-fit: contain;
+    display: flex;
+    margin: 0 auto;
+  }
+  
   .portfolio-svg-wrapper {
     width: 85px;
     height: 85px;
@@ -880,9 +912,9 @@ footer p {
     height: 1.4em;
   }
   .dots-dot {
-    height: 4em;
-    width: 4em;
-    margin-right: 2em;
+    height: 3em;
+    width: 3em;
+    margin-right: 3em;
   }
   .courses-item-title {
     font-size: 1.2em;
