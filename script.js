@@ -11,10 +11,6 @@ import {
 const burgerMenu = document.getElementById("burger");
 const mobileMenu = document.getElementById("mobile-menu");
 const portfolioList = document.getElementById("portfolio-list");
-const firstLink = document.getElementById("firstLink");
-
-// inserting logo to menu
-firstLink.insertAdjacentHTML('beforebegin', '<img src="/svg/logo-laptop.svg" class="svg-logo" alt="Logo"/>');
 
 burgerMenu.addEventListener("click", () => {
   mobileMenu.classList.toggle("nav-hide");
@@ -147,7 +143,7 @@ const portfolio = [
     github: "https://github.com/jaroslawkubiak/flag-game",
     imgDir: "flag",
     images: [
-      "Select continent",
+      "Select continent to start game",
       "You can start game",
       "Your answer is wrong",
       "Select answer (mobile landscape view)",
@@ -222,12 +218,18 @@ portfolio.forEach(item => {
   html += `<div class="portfolio-preview-btn-dots"><div class="dots"></div>`;
   html += `</div></div>`;
 
+  // html += `<div class="portfolio-footer"><div class="portfolio-footer-github">`;
+  // if (item.github)
+  //   html += `<a href="${item.github}" target="_blank"><span>${svgGithub}</span> <span>GitHub</span></a>`;
+  // html += `</div><div class="portfolio-footer-demo"><a href="${item.link}" target="_blank"><span>${svgDemo}</span> <span>Live demo</span></a></div>`;
+
+  //second version
   html += `<div class="portfolio-footer"><div class="portfolio-footer-github">`;
   if (item.github)
-    html += `<a href="${item.github}" target="_blank"><span>${svgGithub}</span> <span>GitHub</span></a>`;
-  html += `</div><div class="portfolio-footer-demo"><a href="${item.link}" target="_blank"><span>${svgDemo}</span> <span>Live demo</span></a></div>`;
+    html += `<a href="${item.github}" target="_blank"><button class="portfolio-btn">${svgGithub}<p class="btn-text">GitHub</p></button></a>`;
+  html += `</div><div class="portfolio-footer-demo"><a href="${item.link}" target="_blank"><button class="portfolio-btn">${svgDemo}<p class="btn-text">Live demo</p></button></a></div>`;
 
-  html += `</div></article></li>`;
+  html += `</div></article></li><hr/>`;
 
   portfolioList.insertAdjacentHTML("beforeEnd", html);
 
@@ -399,9 +401,6 @@ const portfolioObserver = new IntersectionObserver(loadImg, {
   rootMargin: "250px",
 });
 portfolioTargets.forEach(portfolio => portfolioObserver.observe(portfolio));
-
-
-
 
 //////////////////////////////////////////////////////////
 // Reveal sections
