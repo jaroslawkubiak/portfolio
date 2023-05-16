@@ -11,11 +11,10 @@ import {
 const burgerMenu = document.getElementById("burger");
 const mobileMenu = document.getElementById("mobile-menu");
 const portfolioList = document.getElementById("portfolio-list");
+const firstLink = document.getElementById("firstLink");
 
-// force go to top page when refreshing
-// window.onbeforeunload = function () {
-//   window.scrollTo(0, 0);
-// };
+// inserting logo to menu
+firstLink.insertAdjacentHTML('beforebegin', '<img src="/svg/logo-laptop.svg" class="svg-logo" alt="Logo"/>');
 
 burgerMenu.addEventListener("click", () => {
   mobileMenu.classList.toggle("nav-hide");
@@ -173,7 +172,7 @@ const portfolio = [
     ],
     tech: ["js", "html", "css"],
     description:
-      "I know, i know. Another snake game project in JS 😁 Everyone does it. I wanted to program this nokia 3310 styled game for training JS and CSS skills. You can play on PC usign arrow key and 'a, w, s, d' keys. On mobile you play using touch controls, swiping in desired direction, both in portrait and landscape mode.",
+      "I know, i know. Another snake game project in JS 😁 Everyone does it. This project is great opportunity to learn JS. I wanted to program this nokia 3310 styled game for training JS and CSS skills. You can play on PC usign arrow key and 'a, w, s, d' keys. On mobile you play using touch controls, swiping in desired direction, both in portrait and landscape mode.",
   },
   {
     title: "F1 - reflex game",
@@ -401,6 +400,9 @@ const portfolioObserver = new IntersectionObserver(loadImg, {
 });
 portfolioTargets.forEach(portfolio => portfolioObserver.observe(portfolio));
 
+
+
+
 //////////////////////////////////////////////////////////
 // Reveal sections
 const allSections = document.querySelectorAll(".section-to-reveal");
@@ -433,7 +435,7 @@ document.querySelector(".me-slider").addEventListener("input", e => {
 // abotu me show more content
 const aboutMeShowMore = document.getElementById("about-me-show-more");
 aboutMeShowMore.addEventListener("click", () => {
-  document.getElementById("about-me-more").classList.toggle("hidden");
+  document.getElementById("about-me-more").classList.toggle("hidden-about-me");
   let showContent = aboutMeShowMore.innerHTML;
   switch (showContent) {
     case "show more...":

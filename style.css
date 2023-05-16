@@ -1,27 +1,34 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
 
 :root {
-  --dark-primary-color: #1c2331;
-  --light-primary-color: #0f1624;
+  --light-primary-color: #1c2331;
+  --dark-primary-color: #0f1624;
   --primary-text: #e8e4e4;
   --secondary-text: #5daeb4;
   --accent-color: #e31948;
 
-  /* --dark-primary-color: #C2185B;
---light-primary-color: #F8BBD0;
---primary-color: #E91E63;
---accent-color: #536DFE;
---primary-text: #212121;
---secondary-text:#757575; */
+  /* british palette */
+  /* --light-primary-color: #192a56;
+  --dark-primary-color: #1c2331;
+  --primary-text: #f5f6fa;
+  --secondary-text: #00a8ff;
+  --accent-color: #e84118; */
 
-  /* --dark-primary-color: #2f3c42;
---light-primary-color: #CFD8DC;
---primary-color: #607D8B;
---accent-color: #5da3f8;
+  /* aussie  */
+  /* --light-primary-color: #30336b;
+  --dark-primary-color: #130f40;
+  --primary-text: #dff9fb;
+  --secondary-text: #f9ca24;
+  --accent-color: #eb4d4b; */
 
---primary-text:#efeeee;
---secondary-text: #212121; */
+  /* indian  */
+  /* --light-primary-color: #141f3d;
+  --dark-primary-color: #0c0f12;
+  --primary-text: #dfedef;
+  --secondary-text: #f86b38;
+  --accent-color: #f62f6a; */
 
+  
   /* colors for tech svg  */
   --svg-fill-color: #e335e9;
   --svg-js-fill: #f7df1e;
@@ -43,7 +50,7 @@
 }
 
 body {
-  background-color: var(--dark-primary-color);
+  background-color: var(--light-primary-color);
   color: var(--primary-text);
   font-family: "Lato", sans-serif;
   font-size: 1em;
@@ -59,7 +66,13 @@ body {
 .hidden {
   display: none;
 }
+.hidden-about-me {
+  display: none;
+}
 
+.hidden-about-me-show-more {
+  display: block;
+}
 /* burger menu */
 .burger {
   position: absolute;
@@ -133,7 +146,7 @@ body {
 }
 header {
   position: relative;
-  background-color: var(--light-primary-color);
+  background-color: var(--dark-primary-color);
 }
 a {
   color: var(--primary-text);
@@ -244,7 +257,7 @@ nav {
   width: 0.2rem;
   z-index: 10;
   height: 100%;
-  background-color: rgb(255, 255, 255);
+  background-color: var(--primary-text);
   left: var(--position);
   transform: translateX(-50%);
   pointer-events: none;
@@ -252,8 +265,8 @@ nav {
 
 .me-slider-button {
   position: absolute;
-  background-color: rgb(255, 255, 255);
-  color: rgb(0, 0, 0);
+  background-color: var(--primary-text);
+  color: var(--dark-primary-color);
   padding: 0;
   border-radius: 100vw;
   display: grid;
@@ -564,7 +577,7 @@ li {
 }
 /* footer */
 footer {
-  background-color: var(--light-primary-color);
+  background-color: var(--dark-primary-color);
   padding: 10px;
   text-align: center;
 }
@@ -650,7 +663,7 @@ footer p {
   .slider-btn-right {
     right: -4%;
   }
-  
+
   .dots-dot {
     height: 1.6em;
     width: 1.6em;
@@ -770,7 +783,7 @@ footer p {
   .slider-btn-right {
     right: 0%;
   }
-  
+
   .dots-dot {
     height: 2em;
     width: 2em;
@@ -820,6 +833,17 @@ footer p {
     --size-link-box: 75px;
   }
 
+  .hidden-about-me {
+    display: block;
+  }
+  .hidden-about-me-show-more {
+    display: none;
+  }
+
+  #about-me-more {
+    margin-top: 30px;
+  }
+
   .test {
     background-color: #1100ff;
   }
@@ -840,7 +864,7 @@ footer p {
   }
   .svg-logo {
     position: relative;
-    width: 50px;
+    width: 60px;
   }
 
   .hide-burger-menu {
@@ -852,7 +876,7 @@ footer p {
   }
   .nav {
     position: relative;
-    background-color: var(--light-primary-color);
+    background-color: var(--dark-primary-color);
     border-bottom: none;
     flex-direction: row;
     align-items: center;
@@ -887,14 +911,14 @@ footer p {
     width: 52px;
     height: 52px;
   }
-  
+
   .portfolio-preview-image {
     width: 90%;
     object-fit: contain;
     display: flex;
     margin: 0 auto;
   }
-  
+
   .portfolio-svg-wrapper {
     width: 85px;
     height: 85px;

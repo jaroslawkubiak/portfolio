@@ -53,8 +53,8 @@
       </label>
 
       <nav id="mobile-menu" class="nav nav-hide">
-        <img src="/svg/logo-laptop.svg" class="svg-logo" alt="Logo" />
-        <a class="nav-link" href="#about-me">About me</a>
+        <!-- Logo is inserting here via JS -->
+        <a class="nav-link" href="#about-me" id="firstLink">About me</a>
         <a class="nav-link" href="#portfolio">Portfolio</a>
         <a class="nav-link" href="#courses">Courses</a>
         <a class="nav-link" href="#skills">Skills</a>
@@ -107,7 +107,7 @@
           </div>
 
           <p class="about-me">
-            Hello. My name is Jarek. After graduated Uniwersytet Kazimierza
+            Hello. My name is Jarek. After graduate Uniwersytet Kazimierza
             Wielkiego in Bydgoszcz i get a freelancer job to write system for
             window manufacturing company in my region. At first this was a very
             simple web page, where customer could login and adds customers,
@@ -120,18 +120,20 @@
             (more than 60000 lines of code), as for one person. More about this
             ERP system you can read in portfolio section.
           </p>
-          <span id="about-me-show-more" class="about-me-show-more"
+          <span
+            id="about-me-show-more"
+            class="about-me-show-more hidden-about-me-show-more"
             >show more...</span
           >
-          <p id="about-me-more" class="about-me hidden">
-            Apart from this project, I have written several websites, for my
+          <p id="about-me-more" class="about-me hidden-about-me">
+            Apart from this project, I have written several websites, for
             friends. First web page was written in Notatnik, without spell
             checking, IDE hints, highlighting errors, LiveServer or Prettier 😊
             Now with Visual Studio Code and its extensions it's much easier.
-            Last year I decided to change my job, and become a full-time
+            Last year I decided that I wanted to become a full-time employee
             programmer. PHP every year it becomes less and less popular, it is
             replaced by Python. So I don't want to stay in PHP, I wanted to
-            supplement my backend experience for frontend knowledge. That's how
+            supplement my backend experience with frontend knowledge. That's how
             I started learning JavaScript and React. Nowadays, the web is a very
             powerful branch of business. Every self-respecting company must
             exist on the web. So I think it was a step in the right direction. I
