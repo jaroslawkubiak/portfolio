@@ -15,16 +15,6 @@
   --secondary-text: #01e3cd;
   --accent-color: #ef5e4d;
 
-  /* colors for tech svg  */
-  --svg-fill-color: #e335e9;
-  /* --svg-js-fill: #f7df1e;
-  --svg-php-fill: #777bb3;
-  --svg-css-fill: #264de4;
-  --svg-mysql-fill: #e48e00;
-  --svg-html-fill: #ef652a;
-  --svg-react-fill: #61dafb;
-  --svg-redux-fill: #764abc; */
-
   --svg-grayscale: #f0f0f0;
 
   /* border for tech svg icon */
@@ -243,7 +233,7 @@ nav {
   transition: all 0.3s;
 }
 .nav-link:hover {
-  border-bottom: 2px solid var(--accent-color);
+  color: var(--accent-color);
 }
 .about-me {
   line-height: 2;
@@ -377,9 +367,8 @@ nav {
 }
 
 .portfolio-description {
-  /* line-height: 2; */
+  line-height: 2;
 }
-
 .portfolio-preview {
   position: relative;
   margin-top: 20px;
@@ -412,17 +401,6 @@ nav {
 .portfolio-lazy-img {
   filter: blur(20px);
 }
-
-
-
-
-
-
-
-
-
-
-
 .portfolio-footer {
   margin: 10px 0 50px 0;
   display: grid;
@@ -430,21 +408,16 @@ nav {
   width: 100%;
   height: auto;
   font-size: 0.7em;
-  /* border: 2px solid red; */
 }
-
 .portfolio-footer-github {
   justify-self: center;
   align-self: center;
   display: block;
 }
-
 .portfolio-footer-demo {
   justify-self: center;
   align-self: center;
 }
-
-
 .portfolio-btn {
   display: flex;
   justify-content: center;
@@ -457,7 +430,6 @@ nav {
   transition: 400ms;
   border: none;
 }
-
 .portfolio-btn .btn-text {
   color: var(--dark-primary-color);
   font-size: 0.8em;
@@ -465,7 +437,7 @@ nav {
   transition: 400ms;
 }
 .portfolio-btn:hover {
-  background-color: var(--secondary-text);
+  background-color: var(--accent-color);
 }
 .portfolio-btn:hover .btn-text {
   color: var(--primary-text);
@@ -490,45 +462,6 @@ nav {
 }
 
 
-
-
-
-
-/* .portfolio-footer-github:hover {
-  color: var(--accent-color);
-  fill: var(--accent-color);
-}
-
-.portfolio-footer-github span {
-  vertical-align: middle;
-  padding: 3px;
-  display: inline-block;
-} */
-/* .portfolio-footer-github span:hover {
-  color: var(--accent-color);
-} */
-
-
-
-/* .portfolio-svg-github:hover {
-  fill: var(--accent-color);
-} */
-/* 
-.portfolio-footer-demo span {
-  vertical-align: middle;
-  padding: 3px;
-  display: inline-block;
-}
-.portfolio-footer-demo span:hover {
-  color: var(--accent-color);
-}
-
-.portfolio-svg-demo:hover {
-  color: var(--accent-color);
-} */
-
-
-
 /* image slider */
 .slide {
   position: absolute;
@@ -541,11 +474,11 @@ nav {
   all: unset;
   position: absolute;
   /* top: 40%; */
-  bottom: 4px;
+  bottom: 3px;
   transform: translateY(-50%);
   z-index: 10;
   border: none;
-  background: var(--primary-text);
+  background-color: var(--primary-text);
   color: var(--dark-primary-color);
   border-radius: 50%;
   height: 1em;
@@ -553,10 +486,11 @@ nav {
   padding: 4px;
   cursor: pointer;
   transition: all 0.5s;
+  display: grid;
 }
 .slider-btn:hover {
   color: var(--primary-text);
-  background: var(--accent-color);
+  background-color: var(--accent-color);
 }
 .slider-btn-left {
   left: 4%;
@@ -589,9 +523,11 @@ nav {
 /* courses section */
 .courses-item-wrapper {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  align-items: start;
+  grid-template-columns: 50px 1fr auto;
   margin-bottom: 20px;
-  border: 2px solid green;
+  height: 50px;
+  gap: 5px;
 }
 
 .courses-item-title {
@@ -599,35 +535,55 @@ nav {
 }
 .courses-item-title a {
   padding: 0px;
-  border-bottom: 2px solid transparent;
 }
+
 .courses-item-title a:hover {
-  border-bottom: 2px solid var(--accent-color);
+  color: var(--accent-color);
 }
 .courses-item-link {
   cursor: pointer;
-  padding-left: 20px;
 }
-.courses-item-in-progress {
-  position: relative;
-  display: grid;
-  place-content: center;
-  border: 1px solid var(--svg-fill-color);
-  border-radius: 100%;
-  margin-right: 10px;
-  padding: 10px;
-  width: var(--size-link-box);
-  height: var(--size-link-box);
-  color: var(--svg-fill-color);
-  font-size: 0.4em;
-}
+
 .courses-item-link a {
   padding: 0;
+  margin: 0;
+  display: grid;
+  place-content: center;
 }
 .courses-svg-pdf {
-  width: 20px;
-  height: 20px;
+  width: 25px;
 }
+.courses-item-circular-progress{
+  --progress-bar-size: 46px;
+  position: relative;
+  height: var(--progress-bar-size);
+  width: var(--progress-bar-size);
+  border-radius: 50%;
+  /* background is set from JS */
+  background: conic-gradient(var(--accent-color) 270deg, var(--dark-primary-color) 0deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.courses-item-circular-progress::before {
+  --progress-bar-whdth: 5px;
+  content: "";
+  position: absolute;
+  height: calc(var(--progress-bar-size) - var(--progress-bar-whdth));
+  width: calc(var(--progress-bar-size) - var(--progress-bar-whdth));
+  border-radius: 50%;
+  background-color: var(--light-primary-color);
+}
+
+.courses-item-progress-value {
+  position: relative;
+  font-size: 0.6em;
+  color: var(--accent-color);
+}
+
+
+
 /* skils */
 .skills-item-wrapper {
   display: flex;
@@ -1046,10 +1002,6 @@ footer p {
   .courses-svg-pdf {
     width: 60px;
     height: 60px;
-  }
-  .courses-item-in-progress {
-    border: 4px solid var(--svg-fill-color);
-    font-size: 1.2em;
   }
   .skills-item-title {
     width: 300px;

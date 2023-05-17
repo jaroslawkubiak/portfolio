@@ -218,12 +218,6 @@ portfolio.forEach(item => {
   html += `<div class="portfolio-preview-btn-dots"><div class="dots"></div>`;
   html += `</div></div>`;
 
-  // html += `<div class="portfolio-footer"><div class="portfolio-footer-github">`;
-  // if (item.github)
-  //   html += `<a href="${item.github}" target="_blank"><span>${svgGithub}</span> <span>GitHub</span></a>`;
-  // html += `</div><div class="portfolio-footer-demo"><a href="${item.link}" target="_blank"><span>${svgDemo}</span> <span>Live demo</span></a></div>`;
-
-  //second version
   html += `<div class="portfolio-footer"><div class="portfolio-footer-github">`;
   if (item.github)
     html += `<a href="${item.github}" target="_blank"><button class="portfolio-btn">${svgGithub}<p class="btn-text">GitHub</p></button></a>`;
@@ -403,12 +397,44 @@ const portfolioObserver = new IntersectionObserver(loadImg, {
 portfolioTargets.forEach(portfolio => portfolioObserver.observe(portfolio));
 
 //////////////////////////////////////////////////////////
+// courses animation
+const animateCoursesCircle = function () {
+  const circularProgress = document.querySelectorAll(
+    ".courses-item-circular-progress"
+  );
+  const progressValue = document.querySelectorAll(
+    ".courses-item-progress-value"
+  );
+  const progressSpeed = 25;
+
+  // drawing circles for courses
+  circularProgress.forEach((circle, index) => {
+    let progressCounter = 0;
+
+    // get percent from current course
+    const progressEndValue = Number(progressValue[index].dataset["start"]);
+
+    const progress = setInterval(() => {
+      progressCounter++;
+      if (progressCounter === progressEndValue) clearInterval(progress);
+
+      progressValue[index].textContent = `${progressCounter}%`;
+
+      circle.style.background = `conic-gradient(var(--accent-color) ${
+        progressCounter * 3.6
+      }deg, #292f53 0deg)`;
+    }, progressSpeed);
+  });
+};
+
+//////////////////////////////////////////////////////////
 // Reveal sections
 const allSections = document.querySelectorAll(".section-to-reveal");
 const revealSection = function (entries, observer) {
   entries.forEach(entry => {
     if (!entry.isIntersecting) return;
     entry.target.classList.remove("section-hidden");
+    if (entry.target.id === "courses") animateCoursesCircle();
     observer.unobserve(entry.target);
   });
 };
