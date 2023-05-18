@@ -184,7 +184,7 @@ const portfolio = [
 
 //////////////////////////////////////////////////////////
 // map through portfolio array to create html
-portfolio.forEach(item => {
+portfolio.forEach((item, index) => {
   let html = `
     <li class="portfolio-item-wrapper"><article>
     <h6 class="portfolio-title">
@@ -223,7 +223,10 @@ portfolio.forEach(item => {
     html += `<a href="${item.github}" target="_blank"><button class="portfolio-btn">${svgGithub}<p class="btn-text">GitHub</p></button></a>`;
   html += `</div><div class="portfolio-footer-demo"><a href="${item.link}" target="_blank"><button class="portfolio-btn">${svgDemo}<p class="btn-text">Live demo</p></button></a></div>`;
 
-  html += `</div></article></li><hr/>`;
+  html += `</div></article></li>`;
+
+  // if load last portfolio - don't put a <hr> tag
+  if (index !== portfolio.length - 1) html += `<hr/>`;
 
   portfolioList.insertAdjacentHTML("beforeEnd", html);
 
@@ -419,11 +422,34 @@ const animateCoursesCircle = function () {
       if (progressCounter === progressEndValue) clearInterval(progress);
 
       progressValue[index].textContent = `${progressCounter}%`;
-
       circle.style.background = `conic-gradient(var(--accent-color) ${
         progressCounter * 3.6
       }deg, #292f53 0deg)`;
     }, progressSpeed);
+  });
+};
+
+//////////////////////////////////////////////////////////
+// skills animation
+const animateSkillsPoints = function () {
+  const skillPoint = document.querySelectorAll(".skill-point");
+
+  skillPoint.forEach(point => {
+    if (point.classList.contains("point-1")) {
+      point.classList.add("point-move-1");
+    }
+    if (point.classList.contains("point-2")) {
+      point.classList.add("point-move-2");
+    }
+    if (point.classList.contains("point-3")) {
+      point.classList.add("point-move-3");
+    }
+    if (point.classList.contains("point-4")) {
+      point.classList.add("point-move-4");
+    }
+    if (point.classList.contains("point-5")) {
+      point.classList.add("point-move-5");
+    }
   });
 };
 
@@ -435,6 +461,7 @@ const revealSection = function (entries, observer) {
     if (!entry.isIntersecting) return;
     entry.target.classList.remove("section-hidden");
     if (entry.target.id === "courses") animateCoursesCircle();
+    if (entry.target.id === "skills") setTimeout(animateSkillsPoints, 1000);
     observer.unobserve(entry.target);
   });
 };

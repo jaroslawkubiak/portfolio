@@ -1,27 +1,33 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@400;700&display=swap'); */
-
 @import url("https://fonts.googleapis.com/css2?family=Aleo:wght@400;700&family=Montserrat:wght@400;700&display=swap");
 
 :root {
-  /* --light-primary-color: #568187;
-  --dark-primary-color: #0f1624;
-  --primary-text: #e8e4e4;
-  --secondary-text: #5daeb4;
-  --accent-color: #e31948; */
-
   --light-primary-color: #202542;
   --dark-primary-color: #03081b;
   --primary-text: #f0f0f0;
   --secondary-text: #01e3cd;
   --accent-color: #ef5e4d;
 
-  --svg-grayscale: #f0f0f0;
+  /* --light-primary-color: #1f315d;
+  --dark-primary-color: #0d0825;
+  --primary-text: #f0f0f0;
+  --secondary-text: #48d9ee;
+  --accent-color: #bdbdf7; */
 
+  /* --light-primary-color: #14102c;
+  --dark-primary-color: #080321;
+  --primary-text: #f0f0f0;
+  --secondary-text: #8ba6ff;
+  --accent-color: #3e7dff; */
+
+  /* --light-primary-color: #171616;
+  --dark-primary-color: #010101;
+  --primary-text: #f0f0f0;
+  --secondary-text: #19ddce;
+  --accent-color: #00c0aa; */
+
+  --svg-grayscale: #f0f0f0;
   /* border for tech svg icon */
   --svg-border-width: 1.5px;
-
-  /* courses */
-  --size-link-box: 15px;
 
   /* skilss */
   --offset-skill-point: 15px;
@@ -39,6 +45,7 @@ body {
   font-size: 1em;
   display: grid;
   justify-content: center;
+  position: relative;
 }
 main {
   display: grid;
@@ -63,7 +70,6 @@ section {
   margin: 25px 0;
   justify-self: center;
 }
-
 .section-hidden {
   opacity: 0;
   transform: translateY(100px);
@@ -73,23 +79,11 @@ section > div {
   max-width: 1280px;
   padding: 20px;
 }
-
-.svg-logo {
-  width: 40px;
-  position: absolute;
-  top: 10px;
-  left: 30px;
-}
 .hidden {
   display: none;
 }
-.hidden-about-me {
-  display: none;
-}
-.hidden-about-me-show-more {
-  display: block;
-}
-/* burger menu */
+
+/* burger menu on mobile*/
 .burger {
   position: absolute;
   z-index: 999;
@@ -160,6 +154,8 @@ section > div {
   top: 18px;
   left: 4px;
 }
+
+/* general style to tags */
 header {
   position: relative;
   background-color: var(--dark-primary-color);
@@ -168,15 +164,8 @@ header {
   display: flex;
   justify-content: center;
 }
-
-.header {
-  position: relative;
-  max-width: 1280px;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
 hr {
+  margin: 20px 0;
   border: 0;
   height: 2px;
   background-image: linear-gradient(
@@ -209,9 +198,14 @@ li {
   margin-bottom: 10px;
   line-height: 1.5;
 }
-.nav-hide {
-  transform: translateY(-100%);
+.header {
+  position: relative;
+  max-width: 1280px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
+
 /* mobile menu layout */
 nav {
   position: absolute;
@@ -235,6 +229,17 @@ nav {
 .nav-link:hover {
   color: var(--accent-color);
 }
+.nav-hide {
+  transform: translateY(-100%);
+}
+.svg-logo {
+  width: 40px;
+  position: absolute;
+  top: 10px;
+  left: 30px;
+}
+
+/* about me section and show more button, visible only on mobile */
 .about-me {
   line-height: 2;
   font-size: 0.7em;
@@ -249,6 +254,14 @@ nav {
 .about-me-show-more:hover {
   color: var(--accent-color);
 }
+.hidden-about-me {
+  display: none;
+}
+.hidden-about-me-show-more {
+  display: block;
+}
+
+/* wrapper, and slider to my images in about section */
 .me-wrapper {
   box-sizing: border-box;
   float: left;
@@ -337,6 +350,7 @@ nav {
   gap: 10px;
   font-size: 0.7em;
 }
+/* portfolio - tech to project */
 .portfolio-tech {
   display: flex;
   justify-content: center;
@@ -365,10 +379,11 @@ nav {
 .svg-grayscale-stroke {
   stroke: var(--svg-grayscale);
 }
-
 .portfolio-description {
   line-height: 2;
 }
+
+/* portfolio - image container */
 .portfolio-preview {
   position: relative;
   margin-top: 20px;
@@ -401,6 +416,8 @@ nav {
 .portfolio-lazy-img {
   filter: blur(20px);
 }
+
+/* portfolio - footer with github and live demo link */
 .portfolio-footer {
   margin: 10px 0 50px 0;
   display: grid;
@@ -461,8 +478,7 @@ nav {
   fill: var(--primary-text);
 }
 
-
-/* image slider */
+/* portfolio - image slider and dots*/
 .slide {
   position: absolute;
   top: 0;
@@ -529,21 +545,18 @@ nav {
   height: 50px;
   gap: 5px;
 }
-
 .courses-item-title {
   font-size: 0.7em;
 }
 .courses-item-title a {
   padding: 0px;
 }
-
 .courses-item-title a:hover {
   color: var(--accent-color);
 }
 .courses-item-link {
   cursor: pointer;
 }
-
 .courses-item-link a {
   padding: 0;
   margin: 0;
@@ -553,19 +566,22 @@ nav {
 .courses-svg-pdf {
   width: 25px;
 }
-.courses-item-circular-progress{
+/* courses - circular drawing */
+.courses-item-circular-progress {
   --progress-bar-size: 46px;
   position: relative;
   height: var(--progress-bar-size);
   width: var(--progress-bar-size);
   border-radius: 50%;
   /* background is set from JS */
-  background: conic-gradient(var(--accent-color) 270deg, var(--dark-primary-color) 0deg);
+  background: conic-gradient(
+    var(--accent-color) 270deg,
+    var(--dark-primary-color) 0deg
+  );
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
 .courses-item-circular-progress::before {
   --progress-bar-whdth: 5px;
   content: "";
@@ -575,32 +591,43 @@ nav {
   border-radius: 50%;
   background-color: var(--light-primary-color);
 }
-
 .courses-item-progress-value {
   position: relative;
   font-size: 0.6em;
   color: var(--accent-color);
 }
 
-
-
 /* skils */
+.skills-section {
+  display: flex;
+  flex-direction: column;
+}
 .skills-item-wrapper {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   margin-bottom: 20px;
+  font-size: 0.7em;
 }
 .skills-item-title {
   width: 100px;
-  font-size: 0.7em;
-  border: 2px solid green;
 }
 .skills-points {
   position: relative;
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  width: 120px;
+  height: 22px;
+}
+.skills-points::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 20px;
+  width: 120px;
+  height: 15px;
+  background-color: var(--dark-primary-color); 
 }
 .skill-point {
   width: 10px;
@@ -608,10 +635,38 @@ nav {
   border-radius: 20px;
   background-color: var(--accent-color);
   margin: 3px;
+  transition: all 1.5s ease;
 }
 .skill-off {
   opacity: 0.3;
 }
+.point-1, .point-2, .point-3, .point-4, .point-5 {
+  position: absolute;
+  top: 20px;
+  --distance: 18px;
+}
+.point-move-1 {
+  transform: translateY(calc(var(--distance) * -1));
+  left: var(--distance);
+}
+.point-move-2 {
+  transform: translateY(calc(var(--distance) * -1));
+  left: calc(2 * var(--distance));
+}
+.point-move-3 {
+  transform: translateY(calc(var(--distance) * -1));
+  left: calc(3 * var(--distance));
+}
+.point-move-4 {
+  transform: translateY(calc(var(--distance) * -1));
+  left: calc(4 * var(--distance));
+}
+.point-move-5 {
+  transform: translateY(calc(var(--distance) * -1));
+  left: calc(5 * var(--distance));
+}
+
+
 /* footer */
 footer {
   background-color: var(--dark-primary-color);
@@ -660,8 +715,6 @@ footer p {
   :root {
     /* border for tech svg icon */
     --svg-border-width: 2px;
-    /* courses */
-    --size-link-box: 30px;
   }
   .test {
     background-color: #ff9900;
@@ -752,8 +805,6 @@ footer p {
   :root {
     /* border for tech svg icon */
     --svg-border-width: 3px;
-    /* courses */
-    --size-link-box: 45px;
   }
   .test {
     background-color: #008000;
@@ -867,8 +918,6 @@ footer p {
   :root {
     /* border for tech svg icon */
     --svg-border-width: 5px;
-    /* courses */
-    --size-link-box: 75px;
   }
   .test {
     background-color: #1100ff;
