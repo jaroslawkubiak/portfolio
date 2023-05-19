@@ -5,8 +5,13 @@
   --dark-primary-color: #03081b;
   --primary-text: #f0f0f0;
   --secondary-text: #01e3cd;
-  --tertiary-text: #202020;
   --accent-color: #ef5e4d;
+
+  /* --light-primary-color: #212751;
+  --dark-primary-color: #171d48;
+  --primary-text: #b3a59f;
+  --secondary-text: #4eaab0;
+  --accent-color: #eb6166; */
 
   /* --light-primary-color: #1f315d;
   --dark-primary-color: #0d0825;
@@ -43,7 +48,7 @@ body {
   background-color: var(--light-primary-color);
   color: var(--primary-text);
   font-family: "Montserrat", sans-serif;
-  font-size: 1em;
+  font-size: 16px;
   display: grid;
   justify-content: center;
   position: relative;
@@ -169,7 +174,7 @@ header {
   justify-content: center;
 }
 hr {
-  margin: 20px 0;
+  margin: 50px 0;
   border: 0;
   height: 2px;
   background-image: linear-gradient(
@@ -187,7 +192,7 @@ a {
 h1 {
   font-family: "Aleo", serif;
   letter-spacing: 2px;
-  font-size: 1em;
+  font-size: 1rem;
   margin: 10px 0;
   color: var(--secondary-text);
   text-transform: uppercase;
@@ -253,11 +258,11 @@ nav {
 /* about me section and show more button, visible only on mobile */
 .about-me {
   line-height: 2;
-  font-size: 0.7em;
+  font-size: 0.7rem;
 }
 .about-me-show-more {
   cursor: pointer;
-  font-size: 0.7em;
+  font-size: 0.7rem;
   color: var(--secondary-text);
   margin: 15px 0px;
   display: inline-block;
@@ -315,7 +320,7 @@ nav {
 .me-slider-line {
   position: absolute;
   inset: 0;
-  width: 0.1rem;
+  width: 0.1rrem;
   z-index: 10;
   height: 100%;
   background-color: var(--primary-text);
@@ -341,7 +346,7 @@ nav {
 /* portfolio section */
 .portfolio-overview {
   line-height: 2;
-  font-size: 0.7em;
+  font-size: 0.7rem;
 }
 .portfolio-item-wrapper {
   display: flex;
@@ -351,16 +356,15 @@ nav {
 }
 .portfolio-title {
   color: var(--accent-color);
-  font-size: 0.8em;
+  font-size: 0.8rem;
   text-transform: uppercase;
   margin: 10px 0;
 }
-.portfolio-description-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  font-size: 0.7em;
+.portfolio-description-wrapper div {
+  font-size: 0.7rem;
+  line-height: 2;
 }
+
 /* portfolio - tech to project */
 .portfolio-tech {
   display: flex;
@@ -390,9 +394,6 @@ nav {
 .svg-grayscale-stroke {
   stroke: var(--svg-grayscale);
 }
-.portfolio-description {
-  line-height: 2;
-}
 
 /* portfolio - image container */
 .portfolio-preview {
@@ -415,7 +416,7 @@ nav {
   margin: 0 auto;
 }
 .portfolio-image-caption {
-  font-size: 0.8em;
+  font-size: 0.8rem;
   text-align: center;
   margin-top: 10px;
 }
@@ -431,12 +432,11 @@ nav {
 
 /* portfolio - footer with github and live demo link */
 .portfolio-footer {
-  margin: 10px 0 50px 0;
+  margin: 10px 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   width: 100%;
   height: auto;
-  font-size: 0.7em;
 }
 .portfolio-footer-github {
   justify-self: center;
@@ -461,7 +461,7 @@ nav {
 }
 .portfolio-btn .btn-text {
   color: var(--dark-primary-color);
-  font-size: 0.8em;
+  font-size: 0.8rem;
   font-weight: 700;
   transition: 400ms;
 }
@@ -501,7 +501,6 @@ nav {
 .slider-btn {
   all: unset;
   position: absolute;
-  /* top: 40%; */
   bottom: 3px;
   transform: translateY(-50%);
   z-index: 10;
@@ -509,8 +508,8 @@ nav {
   background-color: var(--primary-text);
   color: var(--dark-primary-color);
   border-radius: 50%;
-  height: 1em;
-  width: 1em;
+  height: 1rem;
+  width: 1rem;
   padding: 4px;
   cursor: pointer;
   transition: all 0.5s;
@@ -533,9 +532,9 @@ nav {
   background-color: var(--primary-text);
   opacity: 0.5;
   aspect-ratio: 1/1;
-  width: 0.6em;
+  width: 0.6rem;
   border-radius: 50%;
-  margin-right: 1.4em;
+  margin-right: 1.4rem;
   cursor: pointer;
   transition: all 0.5s;
 }
@@ -560,7 +559,7 @@ nav {
   gap: 5px;
 }
 .courses-item-title {
-  font-size: 0.7em;
+  font-size: 0.7rem;
 }
 .courses-item-title a {
   padding: 0px;
@@ -607,7 +606,7 @@ nav {
 }
 .courses-item-progress-value {
   position: relative;
-  font-size: 0.6em;
+  font-size: 0.6rem;
   color: var(--accent-color);
 }
 
@@ -621,7 +620,7 @@ nav {
   justify-content: flex-start;
   align-items: center;
   margin-bottom: 20px;
-  font-size: 0.7em;
+  font-size: 0.7rem;
 }
 .skills-item-title {
   width: 100px;
@@ -753,7 +752,7 @@ nav {
   background-color: var(--dark-primary-color);
   position: relative;
   border-radius: 6px;
-  font-size: 0.8em;
+  font-size: 0.8rem;
   color: var(--primary-text);
 }
 .road-map-left-container {
@@ -826,37 +825,20 @@ footer p {
   display: flex;
   justify-content: center;
   gap: 20px;
+  padding: 10px;
 }
 .footer-links a {
   display: grid;
   place-content: center;
   border-radius: 50%;
 }
-.footer-links a:hover{
-  background-color:var(--accent-color); 
-  animation: footer-links-animation 0.4s linear;
-}
 .footer-svg {
-  width: 2em;
-  height: 2em;
+  width: 2rem;
+  height: 2rem;
   fill: #e8e4e4;
 }
-@keyframes footer-links-animation {
-  40% {
-    transform: scale(1.4);
-  }
-
-  60% {
-    transform: scale(0.8);
-  }
-
-  80% {
-    transform: scale(1.2);
-  }
-
-  100% {
-    transform: scale(1);
-  }
+.footer-svg:hover {
+  fill: var(--accent-color);
 }
 .arrow-go-up {
   all: unset;
@@ -891,78 +873,183 @@ footer p {
   .test {
     background-color: #ff9900;
   }
-  body {
-    font-size: 1.2em;
+  h1 {
+    font-size: 1.4rem;
+  }
+  .about-me,
+  .about-me-show-more,
+  .portfolio-overview,
+  .portfolio-description-wrapper div {
+    font-size: 1rem;
   }
   li {
     padding: 10px;
+    margin: 0;
   }
   .portfolio-title {
-    font-size: 1.4em;
-  }
-  .portfolio-description-wrapper {
-    gap: 30px;
+    font-size: 1.6rem;
   }
   .portfolio-svg {
-    width: 22px;
-    height: 22px;
+    width: 28px;
+    height: 28px;
   }
   .portfolio-svg-wrapper {
-    width: 40px;
-    height: 40px;
-    margin: 6px;
-  }
-  .portfolio-footer {
-    font-size: 1.2em;
+    width: 48px;
+    height: 48px;
+    margin: 10px;
   }
   .slider-btn {
-    height: 2em;
-    width: 2em;
+    height: 2.4rem;
+    width: 2.4rem;
   }
   .slider-btn-left {
-    left: -4%;
+    left: 0%;
   }
   .slider-btn-right {
-    right: -4%;
+    right: 0%;
   }
-
+  .slider-btn {
+    bottom: -14px;
+  }
   .dots-dot {
-    height: 1.6em;
-    width: 1.6em;
+    height: 1.6rem;
+    width: 1.6rem;
     aspect-ratio: 1/1;
     border-radius: 50%;
-    margin-right: 2.4em;
+    margin-right: 2.4rem;
+  }
+
+  .portfolio-btn {
+    padding: 10px 15px;
+    border-radius: 8px;
+  }
+  .portfolio-btn .btn-text {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+  .portfolio-svg-demo {
+    width: 26px;
+    height: 26px;
+  }
+  .portfolio-svg-github {
+    width: 26px;
+    height: 26px;
   }
   .courses-item-wrapper {
-    padding: 15px;
+    grid-template-columns: 70px 1fr auto;
+    margin-bottom: 25px;
+    height: 70px;
+    gap: 15px;
   }
-  .courses-item-in-progress {
-    font-size: 0.8em;
+  .courses-item-title {
+    font-size: 1.2rem;
   }
   .courses-svg-pdf {
-    width: 30px;
-    height: 30px;
+    width: 36px;
+  }
+  /* courses - circular border drawing */
+  .courses-item-circular-progress {
+    --progress-bar-size: 56px;
+    justify-self: center;
+  }
+  .courses-item-circular-progress::before {
+    --progress-bar-whdth: 7px;
+  }
+  .courses-item-progress-value {
+    font-size: 0.8rem;
+  }
+
+  /* skils */
+  .skills-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .skills-item-wrapper {
+    margin-bottom: 30px;
+    font-size: 1.2rem;
   }
   .skills-item-title {
     width: 150px;
   }
-  .skill-point {
-    width: 18px;
-    height: 18px;
-    margin: 5px;
+  .skills-points {
+    width: 150px;
   }
-  .road-map-item {
-    padding: 10px;
+  .skills-points::after {
+    top: 20px;
+    width: 150px;
+    height: 30px;
+  }
+  .skill-point {
+    width: 15px;
+    height: 15px;
+    margin: 6px;
+  }
+  .point-1,
+  .point-2,
+  .point-3,
+  .point-4,
+  .point-5 {
+    top: 17px;
+    --distance: 22px;
+  }
+  .skills-soft {
+    height: 520px;
+  }
+
+  /* road map */
+  .road-map-line::after {
+    width: 5px;
+  }
+  .road-map-container {
+    padding: 10px 30px;
+    width: 30%;
+  }
+  .road-map-text {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+  .road-map-left-container {
+    right: -20%;
+  }
+  .road-map-container img {
+    --img-width: 30px;
+  }
+  .left-container-arrow {
+    right: -7px;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 8px solid var(--dark-primary-color);
+  }
+  .right-container-arrow {
+    left: -7px;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 8px solid var(--dark-primary-color);
+  }
+
+  /* footer */
+  footer {
+    padding-bottom: 40px;
   }
   footer p {
-    font-size: 1.2em;
+    padding: 20px;
+    font-size: 1.2rem;
   }
   .footer-links {
-    gap: 30px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  .footer-links a {
+    display: grid;
+    place-content: center;
+    border-radius: 50%;
   }
   .footer-svg {
-    width: 3em;
-    height: 3em;
+    width: 2.4rem;
+    height: 2.4rem;
   }
   .arrow-go-up {
     width: 50px;
@@ -982,7 +1069,7 @@ footer p {
     background-color: #008000;
   }
   body {
-    font-size: 1.4em;
+    font-size: 1.4rem;
   }
   li {
     padding: 15px;
@@ -993,14 +1080,12 @@ footer p {
     --img-width: 150px;
   }
   .portfolio-title {
-    font-size: 1.6em;
+    font-size: 1.6rem;
   }
   .portfolio-item-wrapper {
     margin-top: 30px;
   }
-  .portfolio-description-wrapper {
-    gap: 50px;
-  }
+
   .portfolio-svg {
     width: 32px;
     height: 32px;
@@ -1013,28 +1098,28 @@ footer p {
 
   .portfolio-footer {
     margin: 40px 0 100px 0;
-    font-size: 1.6em;
+    font-size: 1.6rem;
   }
   .portfolio-footer-demo span {
     padding: 16px;
   }
   .portfolio-svg-demo {
-    width: 1em;
-    height: 1em;
+    width: 1rem;
+    height: 1rem;
   }
   .portfolio-footer-github span {
     padding: 16px;
   }
   .portfolio-svg-github {
-    width: 1em;
-    height: 1em;
+    width: 1rem;
+    height: 1rem;
   }
   .portfolio-preview-btn-dots {
     padding: 30px;
   }
   .slider-btn {
-    height: 2.4em;
-    width: 2.4em;
+    height: 2.4rem;
+    width: 2.4rem;
     padding: 6px;
   }
 
@@ -1046,16 +1131,16 @@ footer p {
   }
 
   .dots-dot {
-    height: 1em;
-    width: 1em;
-    margin-right: 3em;
+    height: 1rem;
+    width: 1rem;
+    margin-right: 3rem;
   }
   .courses-item-wrapper {
     padding: 15px;
   }
   .courses-item-title {
     padding-left: 30px;
-    font-size: 1em;
+    font-size: 1rem;
   }
   .courses-svg-pdf {
     width: 40px;
@@ -1063,7 +1148,7 @@ footer p {
   }
   .skills-item-title {
     width: 250px;
-    font-size: 1.4em;
+    font-size: 1.4rem;
   }
   .skill-point {
     width: 26px;
@@ -1074,7 +1159,7 @@ footer p {
     padding: 15px;
   }
   footer p {
-    font-size: 1.4em;
+    font-size: 1.4rem;
   }
   .footer-links {
     gap: 50px;
@@ -1107,7 +1192,7 @@ footer p {
   }
 
   body {
-    font-size: 1.4em;
+    font-size: 1.4rem;
   }
 
   header {
@@ -1127,7 +1212,7 @@ footer p {
   }
 
   h1 {
-    font-size: 1.4em;
+    font-size: 1.4rem;
   }
   li {
     padding: 1px;
@@ -1155,7 +1240,7 @@ footer p {
     justify-content: flex-end;
     justify-self: flex-end;
     text-transform: uppercase;
-    font-size: 0.8rem;
+    font-size: 0.8rrem;
     font-weight: 700;
     letter-spacing: 2px;
     padding: 0 20px;
@@ -1175,17 +1260,12 @@ footer p {
   }
 
   .portfolio-title {
-    font-size: 1.2em;
+    font-size: 1.2rem;
   }
   .portfolio-item-wrapper {
     margin-top: 0px;
   }
-  .portfolio-description {
-    font-size: 1.2em;
-  }
-  .portfolio-description-wrapper {
-    gap: 40px;
-  }
+
   .portfolio-svg {
     width: 52px;
     height: 52px;
@@ -1204,23 +1284,23 @@ footer p {
     margin: 20px;
   }
   .portfolio-footer {
-    font-size: 1.8em;
+    font-size: 1.8rem;
   }
   .portfolio-svg-demo {
-    width: 1.4em;
-    height: 1.4em;
+    width: 1.4rem;
+    height: 1.4rem;
   }
   .portfolio-svg-github {
-    width: 1.4em;
-    height: 1.4em;
+    width: 1.4rem;
+    height: 1.4rem;
   }
   .dots-dot {
-    height: 1em;
-    width: 1em;
-    margin-right: 3em;
+    height: 1rem;
+    width: 1rem;
+    margin-right: 3rem;
   }
   .courses-item-title {
-    font-size: 1.2em;
+    font-size: 1.2rem;
   }
   .courses-svg-pdf {
     width: 60px;
@@ -1228,7 +1308,7 @@ footer p {
   }
   .skills-item-title {
     width: 300px;
-    font-size: 1.6em;
+    font-size: 1.6rem;
   }
   .skill-point {
     width: 32px;
@@ -1245,8 +1325,8 @@ footer p {
     padding-bottom: 20px;
   }
   .footer-svg {
-    width: 3em;
-    height: 3em;
+    width: 3rem;
+    height: 3rem;
   }
   .arrow-go-up {
     width: 70px;

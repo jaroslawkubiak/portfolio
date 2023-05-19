@@ -92,7 +92,7 @@ const portfolio = [
       "Construction drawings",
     ],
     tech: ["php", "mysql", "html", "css"],
-    description: `This system is for a manufacturing company.
+    description: `<div>This system is for a manufacturing company.
       Project is started with just two tables in data base: customer and orders. For over 7 years of adding new functionalities, the system has grow to:
       <ul>
         <li>•  warehouse, register of purchases and suppliers</li>
@@ -107,16 +107,14 @@ const portfolio = [
         <li>•  management of users and a number of different settings: order list view, numbering, email templates</li>
         <li>•  separate login panel for client drivers and customers.</li>
       </ul>
-      Everything is programmed as agreed with the client wish and design. Before i started work on this project, client work mostly in Excel, so all project is based on tables, basically copying excel sheets into html.
-      In project I use couple external libraries: 
+       
+       Everything is programmed as agreed with the client wish and design. Before i started work on this project, client work mostly in Excel, so all project is based on tables, basically copying excel sheets into html.
+      In project I use couple external libraries:
       <ul>
-      <li>•  PHPMailer - for sending emails with attachments</li>
-      <li>•  FPDF - for creating pdf files, ex: invoice and order confirmation</li>
-      <li>•  Signature Pad - for the customer signed the receipt of the order</li>
-      </ul>
-
-
-      `,
+        <li>•  PHPMailer - for sending emails with attachments</li>
+        <li>•  FPDF - for creating pdf files, ex: invoice and order confirmation</li>
+        <li>•  Signature Pad - for the customer signed the receipt of the order</li>
+      </ul></div>`,
   },
   {
     title: "Lego Star Wars Minifigure Collection",
@@ -134,7 +132,7 @@ const portfolio = [
     ],
     tech: ["js", "react", "redux"],
     description:
-      "I'm a huge fan and collector of Lego Star Wars minifigures. When my collection had about 80 figures, I needed a better way to track down my collection, I needed something better than excel, something with images. Being a programmer, I wrote a web page (PHP & MySQL) for better track what's in my collection of the minifigures. Till today i use this web page. This application is the next version, mainly written for learning JS and React. At the moment the database is in a JSON file, when I finish the Node.JS course I will be able to finish this application. I want to copy all my feature from php version to Node.JS, including sorting, statistics and many more.",
+      "<div>I'm a huge fan and collector of Lego Star Wars minifigures. When my collection had about 80 figures, I needed a better way to track down my collection, I needed something better than excel, something with images. Being a programmer, I wrote a web page (PHP & MySQL) for better track what's in my collection of the minifigures. Till today i use this web page. This application is the next version, mainly written for learning JS and React. At the moment the database is in a JSON file, when I finish the Node.JS course I will be able to finish this application. I want to copy all my feature from php version to Node.JS, including sorting, statistics and many more.</div>",
   },
 
   {
@@ -153,7 +151,7 @@ const portfolio = [
     ],
     tech: ["js", "html", "css"],
     description:
-      "I like to travel and collect patches of the flags of the countries I visit and sew them onto my backpack. On my phone i have game, where you have to guess country flag. I play it often. During JS course we use API for country information. Then i wanted to write similar game from my phone. You can choose one or more continent, and try to guess all country flag. You always have 10 flags, which are drawn from a pool of selected continents to guess, no matter if you select 1 or 6 continents.",
+      "<div>I like to travel and collect patches of the flags of the countries I visit and sew them onto my backpack. On my phone i have game, where you have to guess country flag. I play it often. During JS course we use API for country information. Then i wanted to write similar game from my phone. You can choose one or more continent, and try to guess all country flag. You always have 10 flags, which are drawn from a pool of selected continents to guess, no matter if you select 1 or 6 continents.</div>",
   },
   {
     title: "Snake game",
@@ -168,7 +166,7 @@ const portfolio = [
     ],
     tech: ["js", "html", "css"],
     description:
-      "I know, i know. Another snake game project in JS 😁 Everyone does it. This project is great opportunity to learn JS. I wanted to program this nokia 3310 styled game for training JS and CSS skills. You can play on PC usign arrow key and 'a, w, s, d' keys. On mobile you play using touch controls, swiping in desired direction, both in portrait and landscape mode.",
+      "<div>I know, i know. Another snake game project in JS 😁 Everyone does it. This project is great opportunity to learn JS. I wanted to program this nokia 3310 styled game for training JS and CSS skills. You can play on PC usign arrow key and 'a, w, s, d' keys. On mobile you play using touch controls, swiping in desired direction, both in portrait and landscape mode.</div>",
   },
   {
     title: "F1 - reflex game",
@@ -178,7 +176,7 @@ const portfolio = [
     images: ["Your result", "Get ready", "Your result", "You click too soon"],
     tech: ["js", "html", "css"],
     description:
-      "Inspired by one of the videos on Instagram where F1 driver Lando Norris tests his reflexes. I want to have a similar app, so in two afternoons I wrote it. At the start of the race, the best F1 drivers have a score of around 0.15s from turning off the lights to pressing the throttle. This app measures your reflexes with an accuracy of 0.0001 seconds. See how fast you are. ",
+      "<div>Inspired by one of the videos on Instagram where F1 driver Lando Norris tests his reflexes. I want to have a similar app, so in two afternoons I wrote it. At the start of the race, the best F1 drivers have a score of around 0.15s from turning off the lights to pressing the throttle. This app measures your reflexes with an accuracy of 0.0001 seconds. See how fast you are.</div>",
   },
 ];
 
@@ -189,11 +187,10 @@ portfolio.forEach((item, index) => {
     <li class="portfolio-item-wrapper"><article>
     <h6 class="portfolio-title">
     ${item.title}
-    </h6>
-    <div class="portfolio-description-wrapper">`;
+    </h6>`;
 
   // portfolio description
-  html += `<p class="portfolio-description">${item.description}</p></div>`;
+  html += `<div class="portfolio-description-wrapper">${item.description}</div>`;
 
   // portfolio tech stack
   html += `<div class="portfolio-tech">`;
@@ -430,7 +427,7 @@ const animateCoursesCircle = function () {
 };
 
 //////////////////////////////////////////////////////////
-// texh and soft skills animation
+// tech and soft skills animation
 const animateTechSkillsPoints = function () {
   const skillPoint = document.querySelectorAll(".skill-point");
   skillPoint.forEach(point => {
@@ -465,7 +462,6 @@ const animateSoftSkills = function () {
 
   // calc value of one row height
   const rowHeight = Math.floor(skillContainerHeight / skillSoft.length);
-
   // start from 10 px minus row heighttop position
   let topStart = 10 - rowHeight;
 
