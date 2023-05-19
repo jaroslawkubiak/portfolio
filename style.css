@@ -5,6 +5,7 @@
   --dark-primary-color: #03081b;
   --primary-text: #f0f0f0;
   --secondary-text: #01e3cd;
+  --tertiary-text: #202020;
   --accent-color: #ef5e4d;
 
   /* --light-primary-color: #1f315d;
@@ -112,6 +113,9 @@ section > div {
   -webkit-transition: 0.25s ease-in-out;
   transition: 0.25s ease-in-out;
 }
+.burger:hover > span {
+  background-color: var(--accent-color);
+}
 .burger span:nth-of-type(1) {
   top: 0px;
   -webkit-transform-origin: left center;
@@ -205,6 +209,9 @@ li {
   display: flex;
   justify-content: space-between;
 }
+.text-align-right {
+  text-align: right;
+}
 
 /* mobile menu layout */
 nav {
@@ -217,12 +224,16 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-weight: 700;
+  letter-spacing: 2px;
+
   opacity: 0.95;
   transition: all 0.4s ease;
   border-bottom: 2px solid var(--accent-color);
 }
 .nav-link {
-  padding: 10px 30px;
+  padding: 0;
+  margin: 10px 30px;
   border-bottom: 2px solid transparent;
   transition: all 0.3s;
 }
@@ -621,13 +632,13 @@ nav {
   height: 22px;
 }
 .skills-points::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 20px;
   width: 120px;
   height: 15px;
-  background-color: var(--dark-primary-color); 
+  background-color: var(--dark-primary-color);
 }
 .skill-point {
   width: 10px;
@@ -640,7 +651,11 @@ nav {
 .skill-off {
   opacity: 0.3;
 }
-.point-1, .point-2, .point-3, .point-4, .point-5 {
+.point-1,
+.point-2,
+.point-3,
+.point-4,
+.point-5 {
   position: absolute;
   top: 20px;
   --distance: 18px;
@@ -665,13 +680,133 @@ nav {
   transform: translateY(calc(var(--distance) * -1));
   left: calc(5 * var(--distance));
 }
+.skills-soft {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
 
+/* road map */
+.road-map-line {
+  position: relative;
+}
+.road-map-line::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 100%;
+  background-color: var(--dark-primary-color);
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+  animation: moveline 4.5s linear forwards;
+}
+
+.road-map-container {
+  padding: 10px 20px;
+  position: relative;
+}
+.road-map-container-animation {
+  animation: movedown 1s linear forwards;
+  opacity: 0;
+}
+@keyframes movedown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+.road-map-container:nth-child(1) {
+  animation-delay: 0s;
+}
+.road-map-container:nth-child(2) {
+  animation-delay: 1s;
+}
+.road-map-container:nth-child(3) {
+  animation-delay: 2s;
+}
+.road-map-container:nth-child(4) {
+  animation-delay: 3s;
+}
+.road-map-text {
+  padding: 10px;
+  background-color: var(--dark-primary-color);
+  position: relative;
+  border-radius: 6px;
+  font-size: 0.8em;
+  color: var(--primary-text);
+}
+.road-map-left-container {
+  left: -50%;
+  text-align: right;
+}
+.road-map-right-container {
+  left: 50%;
+}
+.road-map-container img {
+  position: absolute;
+  --img-width: 25px;
+  padding: 4px;
+  border-radius: 5px;
+  right: calc((var(--img-width) - var(--img-width) / 2) * -1);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background-color: var(--dark-primary-color);
+}
+.road-map-right-container img {
+  left: calc((var(--img-width) - var(--img-width) / 2) * -1);
+}
+.road-map-svg {
+  height: var(--img-width);
+  width: var(--img-width);
+}
+
+
+@keyframes moveline {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 100%;
+  }
+}
+.left-container-arrow {
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -4px;
+  z-index: -1;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid var(--dark-primary-color);
+}
+.right-container-arrow {
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -4px;
+  z-index: -1;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-right: 5px solid var(--dark-primary-color);
+}
 
 /* footer */
 footer {
   background-color: var(--dark-primary-color);
   padding: 10px;
   text-align: center;
+  margin-bottom: 400px;
 }
 
 footer p {
@@ -984,6 +1119,8 @@ footer p {
     justify-self: flex-end;
     text-transform: uppercase;
     font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
     padding: 0 20px;
   }
 

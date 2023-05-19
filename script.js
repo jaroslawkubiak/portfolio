@@ -433,7 +433,6 @@ const animateCoursesCircle = function () {
 // skills animation
 const animateSkillsPoints = function () {
   const skillPoint = document.querySelectorAll(".skill-point");
-
   skillPoint.forEach(point => {
     if (point.classList.contains("point-1")) {
       point.classList.add("point-move-1");
@@ -454,6 +453,18 @@ const animateSkillsPoints = function () {
 };
 
 //////////////////////////////////////////////////////////
+// road map animation
+const animateRoadMap = function () {
+  const timeline = document.getElementById("road-map-timeline");
+  const roadMapItems = document.querySelectorAll(".road-map-container");
+
+  timeline.classList.add("road-map-line");
+  roadMapItems.forEach(item => {
+    item.classList.add("road-map-container-animation");
+  });
+};
+
+//////////////////////////////////////////////////////////
 // Reveal sections
 const allSections = document.querySelectorAll(".section-to-reveal");
 const revealSection = function (entries, observer) {
@@ -462,6 +473,7 @@ const revealSection = function (entries, observer) {
     entry.target.classList.remove("section-hidden");
     if (entry.target.id === "courses") animateCoursesCircle();
     if (entry.target.id === "skills") setTimeout(animateSkillsPoints, 1000);
+    if (entry.target.id === "road-map") setTimeout(animateRoadMap, 500);
     observer.unobserve(entry.target);
   });
 };
