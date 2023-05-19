@@ -6,7 +6,7 @@ import {
   arrowRight,
   arrowLeft,
   arrowUp,
-} from "./svg/svg.js";
+} from "./svg/svg-icons.js";
 
 const burgerMenu = document.getElementById("burger");
 const mobileMenu = document.getElementById("mobile-menu");
@@ -83,12 +83,12 @@ const portfolio = [
     link: "portfolio/panel",
     imgDir: "panel",
     images: [
-      "Clients table and edit client form",
+      "Production plan with orders to do",
       "Invoice table view and side menu left and right",
       "Invoice PDF preview",
       "Edit order form",
       "Edit evaluation of order",
-      "Production plan with orders to do",
+      "Clients table and edit client form",
       "Construction drawings",
     ],
     tech: ["php", "mysql", "html", "css"],
@@ -430,8 +430,8 @@ const animateCoursesCircle = function () {
 };
 
 //////////////////////////////////////////////////////////
-// skills animation
-const animateSkillsPoints = function () {
+// texh and soft skills animation
+const animateTechSkillsPoints = function () {
   const skillPoint = document.querySelectorAll(".skill-point");
   skillPoint.forEach(point => {
     if (point.classList.contains("point-1")) {
@@ -449,6 +449,33 @@ const animateSkillsPoints = function () {
     if (point.classList.contains("point-5")) {
       point.classList.add("point-move-5");
     }
+  });
+};
+const animateSoftSkills = function () {
+  // positioning soft skills
+  const skillContainer = document.querySelector(".skills-soft");
+  const skillContainerHeight = Number(
+    window
+      .getComputedStyle(skillContainer)
+      .getPropertyValue("height")
+      .slice(0, 3)
+  );
+
+  const skillSoft = document.querySelectorAll(".skill-absolute");
+
+  // calc value of one row height
+  const rowHeight = Math.floor(skillContainerHeight / skillSoft.length);
+
+  // start from 10 px minus row heighttop position
+  let topStart = 10 - rowHeight;
+
+  skillSoft.forEach((skill, index) => {
+    skill.classList.remove("skill-absolute");
+    skill.classList.add("skill-relative");
+    skill.style.right = "10px";
+
+    topStart += rowHeight;
+    skill.style.top = `${topStart}px`;
   });
 };
 
@@ -472,7 +499,9 @@ const revealSection = function (entries, observer) {
     if (!entry.isIntersecting) return;
     entry.target.classList.remove("section-hidden");
     if (entry.target.id === "courses") animateCoursesCircle();
-    if (entry.target.id === "skills") setTimeout(animateSkillsPoints, 1000);
+    if (entry.target.id === "tech-skills")
+      setTimeout(animateTechSkillsPoints, 1000);
+    if (entry.target.id === "soft-skills") setTimeout(animateSoftSkills, 1000);
     if (entry.target.id === "road-map") setTimeout(animateRoadMap, 500);
     observer.unobserve(entry.target);
   });

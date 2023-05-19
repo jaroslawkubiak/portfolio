@@ -175,7 +175,7 @@ hr {
   background-image: linear-gradient(
     to right,
     var(--dark-primary-color),
-    var(--primary-text),
+    var(--secondary-text),
     var(--dark-primary-color)
   );
 }
@@ -409,14 +409,15 @@ nav {
   aspect-ratio: 1/1;
 }
 .portfolio-preview-image {
-  width: 100%;
+  width: 90%;
   object-fit: contain;
+  display: grid;
+  margin: 0 auto;
 }
 .portfolio-image-caption {
   font-size: 0.8em;
   text-align: center;
-  margin-top: 15px;
-  width: 100%;
+  margin-top: 10px;
 }
 .portfolio-preview-btn-dots {
   position: relative;
@@ -525,6 +526,8 @@ nav {
 .slider-btn-right {
   right: 4%;
 }
+
+/* portfolio - dots under images */
 .dots-dot {
   border: none;
   background-color: var(--primary-text);
@@ -577,7 +580,7 @@ nav {
 .courses-svg-pdf {
   width: 25px;
 }
-/* courses - circular drawing */
+/* courses - circular border drawing */
 .courses-item-circular-progress {
   --progress-bar-size: 46px;
   position: relative;
@@ -684,6 +687,18 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: end;
+  position: relative;
+  height: 320px;
+}
+.skill-absolute {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(-50%, -50%);
+}
+.skill-relative {
+  position: absolute;
+  transition: all 1.5s ease;
 }
 
 /* road map */
@@ -702,10 +717,10 @@ nav {
   z-index: -1;
   animation: moveline 4.5s linear forwards;
 }
-
 .road-map-container {
   padding: 10px 20px;
   position: relative;
+  width: 50%;
 }
 .road-map-container-animation {
   animation: movedown 1s linear forwards;
@@ -742,7 +757,6 @@ nav {
   color: var(--primary-text);
 }
 .road-map-left-container {
-  left: -50%;
   text-align: right;
 }
 .road-map-right-container {
@@ -766,8 +780,6 @@ nav {
   height: var(--img-width);
   width: var(--img-width);
 }
-
-
 @keyframes moveline {
   0% {
     height: 0%;
@@ -804,11 +816,9 @@ nav {
 /* footer */
 footer {
   background-color: var(--dark-primary-color);
-  padding: 10px;
+  padding: 20px 5px;
   text-align: center;
-  margin-bottom: 400px;
 }
-
 footer p {
   padding: 20px;
 }
@@ -817,9 +827,36 @@ footer p {
   justify-content: center;
   gap: 20px;
 }
+.footer-links a {
+  display: grid;
+  place-content: center;
+  border-radius: 50%;
+}
+.footer-links a:hover{
+  background-color:var(--accent-color); 
+  animation: footer-links-animation 0.4s linear;
+}
 .footer-svg {
   width: 2em;
   height: 2em;
+  fill: #e8e4e4;
+}
+@keyframes footer-links-animation {
+  40% {
+    transform: scale(1.4);
+  }
+
+  60% {
+    transform: scale(0.8);
+  }
+
+  80% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 .arrow-go-up {
   all: unset;
