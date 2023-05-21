@@ -18,21 +18,56 @@ burgerMenu.addEventListener("click", () => {
 
 //////////////////////////////////////////////////////////
 // menu smooth navigation
+const windowWidth = window.innerWidth;
+// getting header height
+const headerElement = document.querySelector("header");
+let headerHeight = window
+  .getComputedStyle(headerElement)
+  .getPropertyValue("height");
+headerHeight = Number(headerHeight.substring(0, headerHeight.length - 2));
+
 document.getElementById("mobile-menu").addEventListener("click", function (e) {
   e.preventDefault();
+
   if (e.target.classList.contains("nav-link")) {
     const element = document.getElementById(e.target.hash.slice(1));
-    // scrolling to section with class "section-to-reveal" has to be with shift in 300px. because section in revealing via css "section-hidden"
-    let transformSectionToReveal = 0;
-    if (element.classList.contains("section-to-reveal"))
-      transformSectionToReveal = 300;
+    let elDistanceToTop;
 
-    const y =
-      element.getBoundingClientRect().top +
-      window.scrollY -
-      transformSectionToReveal;
+    switch (element.id) {
+      case "about-me":
+        elDistanceToTop =
+          window.pageYOffset + element.getBoundingClientRect().top;
+        break;
+      case "portfolio":
+        elDistanceToTop =
+          window.pageYOffset + element.getBoundingClientRect().top;
+        break;
+      case "courses":
+        elDistanceToTop =
+          window.pageYOffset +
+          element.getBoundingClientRect().top -
+          headerHeight -
+          50;
+        break;
+      case "skills":
+        if (windowWidth < 768) headerHeight = 0;
+        elDistanceToTop =
+          window.pageYOffset +
+          element.getBoundingClientRect().top -
+          headerHeight;
+        break;
+      case "road-map":
+        elDistanceToTop =
+          window.pageYOffset +
+          element.getBoundingClientRect().top -
+          headerHeight;
+        break;
+      default:
+        break;
+    }
+
     window.scroll({
-      top: y,
+      top: elDistanceToTop,
       behavior: "smooth",
     });
 
@@ -59,7 +94,7 @@ nav.addEventListener("mouseout", hendleHover.bind(1));
 
 //////////////////////////////////////////////////////////
 //sticky navigation observer API
-const header = document.querySelector(".header");
+const header = document.querySelector("header");
 const aboutMe = document.getElementById("about-me");
 const stickyNav = function (entries) {
   const [entry] = entries;
@@ -338,6 +373,7 @@ portfolio.forEach((item, index) => {
 //////////////////////////////////////////////////////////
 // smooth go back to top of the page
 function scrollUp() {
+  console.log('scroll up');
   window.scroll({ top: 0, behavior: "smooth" });
 }
 
@@ -356,7 +392,7 @@ function update() {
   // if scrool below 1500px - insert btn
   if (positionFromTop < -1500 && !goUp)
     pageBody.insertAdjacentHTML(
-      "beforeend",
+      "afterbegin",
       `<div class="arrow-go-up" id="goUp" title="Go to top">${arrowUp}</div>`
     );
 }
@@ -451,18 +487,18 @@ const animateTechSkillsPoints = function () {
 const animateSoftSkills = function () {
   // positioning soft skills
   const skillContainer = document.querySelector(".skills-soft");
-  const skillContainerHeight = Number(
-    window
-      .getComputedStyle(skillContainer)
-      .getPropertyValue("height")
-      .slice(0, 3)
+  let skillContainerHeight = window
+    .getComputedStyle(skillContainer)
+    .getPropertyValue("height");
+  skillContainerHeight = Number(
+    skillContainerHeight.substring(0, skillContainerHeight.length - 2)
   );
 
   const skillSoft = document.querySelectorAll(".skill-absolute");
 
   // calc value of one row height
   const rowHeight = Math.floor(skillContainerHeight / skillSoft.length);
-  // start from 10 px minus row heighttop position
+  // start from 10 px minus row height top position
   let topStart = 10 - rowHeight;
 
   skillSoft.forEach((skill, index) => {
@@ -493,12 +529,15 @@ const allSections = document.querySelectorAll(".section-to-reveal");
 const revealSection = function (entries, observer) {
   entries.forEach(entry => {
     if (!entry.isIntersecting) return;
+
+    // console.log("widze=", entry.target.id);
     entry.target.classList.remove("section-hidden");
+
     if (entry.target.id === "courses") animateCoursesCircle();
     if (entry.target.id === "tech-skills")
-      setTimeout(animateTechSkillsPoints, 1000);
-    if (entry.target.id === "soft-skills") setTimeout(animateSoftSkills, 1000);
-    if (entry.target.id === "road-map") setTimeout(animateRoadMap, 500);
+      setTimeout(animateTechSkillsPoints, 200);
+    if (entry.target.id === "soft-skills") setTimeout(animateSoftSkills, 200);
+    if (entry.target.id === "road-map") animateRoadMap();
     observer.unobserve(entry.target);
   });
 };

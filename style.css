@@ -56,7 +56,9 @@ body {
 main {
   display: grid;
 }
-
+#tech-skills, #soft-skills {
+  transition: transform 1s, opacity 1s;
+}
 #portfolio,
 #skills {
   background-color: var(--dark-primary-color);
@@ -78,6 +80,8 @@ section {
 }
 .section-hidden {
   opacity: 0;
+  visibility: hidden;
+
   transform: translateY(100px);
 }
 section > div {
@@ -89,6 +93,94 @@ section > div {
   display: none;
 }
 
+/* general style to tags */
+header {
+  position: relative;
+  background-color: var(--dark-primary-color);
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+}
+.header {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+hr {
+  margin: 50px 0;
+  border: 0;
+  height: 2px;
+  background-image: linear-gradient(
+    to right,
+    var(--dark-primary-color),
+    var(--secondary-text),
+    var(--dark-primary-color)
+  );
+}
+a {
+  color: var(--primary-text);
+  text-decoration: none;
+  padding: 10px;
+}
+h1 {
+  font-family: "Aleo", serif;
+  letter-spacing: 2px;
+  font-size: 1rem;
+  margin: 10px 0;
+  color: var(--secondary-text);
+  text-transform: uppercase;
+}
+p {
+  line-height: 1.5;
+}
+ul {
+  list-style: none;
+}
+li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+.text-align-right {
+  text-align: right;
+}
+
+/* mobile menu layout */
+nav {
+  position: absolute;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--dark-primary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 700;
+  letter-spacing: 2px;
+  opacity: 0.95;
+  transition: all 0.4s ease;
+  border-bottom: 2px solid var(--accent-color);
+}
+.nav-link {
+  padding: 0;
+  margin: 10px 30px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s;
+}
+.nav-link:hover {
+  color: var(--accent-color);
+}
+.nav-hide {
+  transform: translateY(-100%);
+}
+.svg-logo {
+  width: 40px;
+  position: absolute;
+  top: 10px;
+  left: 20px;
+}
 /* burger menu on mobile*/
 .burger {
   position: absolute;
@@ -164,97 +256,6 @@ section > div {
   left: 4px;
 }
 
-/* general style to tags */
-header {
-  position: relative;
-  background-color: var(--dark-primary-color);
-  width: 100%;
-  height: 60px;
-  display: flex;
-  justify-content: center;
-}
-hr {
-  margin: 50px 0;
-  border: 0;
-  height: 2px;
-  background-image: linear-gradient(
-    to right,
-    var(--dark-primary-color),
-    var(--secondary-text),
-    var(--dark-primary-color)
-  );
-}
-a {
-  color: var(--primary-text);
-  text-decoration: none;
-  padding: 10px;
-}
-h1 {
-  font-family: "Aleo", serif;
-  letter-spacing: 2px;
-  font-size: 1rem;
-  margin: 10px 0;
-  color: var(--secondary-text);
-  text-transform: uppercase;
-}
-p {
-  line-height: 1.5;
-}
-ul {
-  list-style: none;
-}
-li {
-  margin-bottom: 10px;
-  line-height: 1.5;
-}
-.header {
-  position: relative;
-  max-width: 1280px;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-.text-align-right {
-  text-align: right;
-}
-
-/* mobile menu layout */
-nav {
-  position: absolute;
-  z-index: 99;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: var(--dark-primary-color);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-weight: 700;
-  letter-spacing: 2px;
-
-  opacity: 0.95;
-  transition: all 0.4s ease;
-  border-bottom: 2px solid var(--accent-color);
-}
-.nav-link {
-  padding: 0;
-  margin: 10px 30px;
-  border-bottom: 2px solid transparent;
-  transition: all 0.3s;
-}
-.nav-link:hover {
-  color: var(--accent-color);
-}
-.nav-hide {
-  transform: translateY(-100%);
-}
-.svg-logo {
-  width: 40px;
-  position: absolute;
-  top: 10px;
-  left: 30px;
-}
-
 /* about me section and show more button, visible only on mobile */
 .about-me {
   line-height: 2;
@@ -320,7 +321,7 @@ nav {
 .me-slider-line {
   position: absolute;
   inset: 0;
-  width: 0.1rrem;
+  width: 2px;
   z-index: 10;
   height: 100%;
   background-color: var(--primary-text);
@@ -341,6 +342,10 @@ nav {
   transform: translate(-50%, -50%) rotate(90deg);
   pointer-events: none;
   z-index: 20;
+}
+.me-slider-button svg {
+  width: 20px;
+  height: 20px;
 }
 
 /* portfolio section */
@@ -412,7 +417,7 @@ nav {
 .portfolio-preview-image {
   width: 90%;
   object-fit: contain;
-  display: grid;
+  display: flex;
   margin: 0 auto;
 }
 .portfolio-image-caption {
@@ -593,6 +598,7 @@ nav {
   );
   display: flex;
   align-items: center;
+  align-self: center;
   justify-content: center;
 }
 .courses-item-circular-progress::before {
@@ -846,7 +852,7 @@ footer p {
   width: 40px;
   height: 40px;
   border-radius: 100%;
-  z-index: 10;
+  z-index: 9999;
   bottom: 30px;
   right: 30px;
   color: var(--accent-color);
@@ -927,10 +933,7 @@ footer p {
     font-size: 1rem;
     font-weight: 700;
   }
-  .portfolio-svg-demo {
-    width: 26px;
-    height: 26px;
-  }
+  .portfolio-svg-demo,
   .portfolio-svg-github {
     width: 26px;
     height: 26px;
@@ -968,9 +971,7 @@ footer p {
     margin-bottom: 30px;
     font-size: 1.2rem;
   }
-  .skills-item-title {
-    width: 150px;
-  }
+  .skills-item-title,
   .skills-points {
     width: 150px;
   }
@@ -982,7 +983,6 @@ footer p {
   .skill-point {
     width: 15px;
     height: 15px;
-    margin: 6px;
   }
   .point-1,
   .point-2,
@@ -1068,105 +1068,67 @@ footer p {
   .test {
     background-color: #008000;
   }
-  body {
-    font-size: 1.4rem;
+  hr {
+    margin: 50px 0;
+    border: 0;
+    height: 4px;
+  }
+  h1 {
+    font-size: 1.6rem;
+  }
+  .about-me,
+  .about-me-show-more,
+  .portfolio-overview,
+  .portfolio-description-wrapper div {
+    font-size: 1.1rem;
   }
   li {
     padding: 15px;
   }
-  .me-wrapper {
-    margin-right: 20px;
-    margin-top: 15px;
-    --img-width: 150px;
-  }
   .portfolio-title {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
-  .portfolio-item-wrapper {
-    margin-top: 30px;
-  }
-
   .portfolio-svg {
-    width: 32px;
-    height: 32px;
+    width: 34px;
+    height: 34px;
   }
   .portfolio-svg-wrapper {
-    width: 55px;
-    height: 55px;
-    margin: 10px;
+    width: 56px;
+    height: 56px;
+    margin: 15px;
   }
-
-  .portfolio-footer {
-    margin: 40px 0 100px 0;
-    font-size: 1.6rem;
+  .portfolio-image-caption {
+    font-size: 1.2rem;
+    margin-top: 15px;
   }
-  .portfolio-footer-demo span {
-    padding: 16px;
-  }
-  .portfolio-svg-demo {
-    width: 1rem;
-    height: 1rem;
-  }
-  .portfolio-footer-github span {
-    padding: 16px;
-  }
-  .portfolio-svg-github {
-    width: 1rem;
-    height: 1rem;
-  }
-  .portfolio-preview-btn-dots {
-    padding: 30px;
-  }
-  .slider-btn {
-    height: 2.4rem;
-    width: 2.4rem;
-    padding: 6px;
-  }
-
-  .slider-btn-left {
-    left: -10%;
-  }
-  .slider-btn-right {
-    right: -10%;
-  }
-
   .dots-dot {
-    height: 1rem;
-    width: 1rem;
-    margin-right: 3rem;
+    height: 1.8rem;
+    width: 1.8rem;
   }
-  .courses-item-wrapper {
-    padding: 15px;
+  .portfolio-btn {
+    padding: 14px 20px;
+    border-radius: 12px;
   }
-  .courses-item-title {
-    padding-left: 30px;
-    font-size: 1rem;
+  .portfolio-footer {
+    margin: 30px 0;
+    width: 100%;
   }
-  .courses-svg-pdf {
-    width: 40px;
-    height: 40px;
+  .skills-points {
+    width: 150px;
   }
-  .skills-item-title {
-    width: 250px;
-    font-size: 1.4rem;
+  .skills-points::after {
+    left: -5px;
+    top: 25px;
+    width: 180px;
+    height: 30px;
   }
-  .skill-point {
-    width: 26px;
-    height: 26px;
-    margin: 10px;
-  }
-  .road-map-item {
-    padding: 15px;
-  }
-  footer p {
-    font-size: 1.4rem;
-  }
-  .footer-links {
-    gap: 50px;
-  }
-  .arrow-go-up {
-    width: 60px;
-    height: 60px;
+  .point-1,
+  .point-2,
+  .point-3,
+  .point-4,
+  .point-5 {
+    top: 25px;
+    --distance: 28px;
   }
 }
 
@@ -1174,27 +1136,25 @@ footer p {
 @media only screen and (min-width: 992px) {
   :root {
     /* border for tech svg icon */
-    --svg-border-width: 5px;
+    --svg-border-width: 4px;
   }
   .test {
     background-color: #1100ff;
   }
-
   .hidden-about-me {
     display: block;
   }
   .hidden-about-me-show-more {
     display: none;
   }
-
-  #about-me-more {
-    margin-top: 30px;
+  .portfolio-overview,
+  .portfolio-description-wrapper div,
+  .about-me {
+    font-size: 1.2rem;
   }
-
-  body {
-    font-size: 1.4rem;
+  #about-me {
+    margin-top: 100px;
   }
-
   header {
     position: absolute;
     width: 100%;
@@ -1202,26 +1162,26 @@ footer p {
     display: flex;
     justify-content: center;
   }
-
   .header {
     position: relative;
     max-width: 1280px;
     width: 100%;
     display: flex;
     justify-content: space-between;
+    background-color: var(--dark-primary-color);
   }
-
   h1 {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
   }
   li {
-    padding: 1px;
+    padding: 20px;
   }
   .svg-logo {
     position: relative;
-    width: 50px;
+    width: 80px;
+    top: 5px;
+    left: 20px;
   }
-
   .hide-burger-menu {
     display: none;
   }
@@ -1229,9 +1189,8 @@ footer p {
     display: flex;
     transform: translateY(0%);
   }
-  /* pc menu layout */
   .nav {
-    width: 80%;
+    width: 90%;
     position: relative;
     background-color: var(--dark-primary-color);
     border-bottom: none;
@@ -1240,89 +1199,186 @@ footer p {
     justify-content: flex-end;
     justify-self: flex-end;
     text-transform: uppercase;
-    font-size: 0.8rrem;
+    font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 2px;
     padding: 0 20px;
   }
-
   .sticky {
     position: fixed;
     z-index: 999;
     border-bottom: 2px solid var(--accent-color);
     opacity: 0.95;
   }
-
   .me-wrapper {
+    border-radius: 20px;
+    border: 4px solid var(--primary-text);
     margin-right: 30px;
     margin-top: 15px;
     --img-width: 200px;
   }
-
+  .me-slider-line {
+    width: 4px;
+  }
+  .me-slider-button {
+    padding: 3px;
+  }
+  .me-slider-button svg {
+    width: 40px;
+    height: 40px;
+  }
   .portfolio-title {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
+    padding: 20px 0;
   }
   .portfolio-item-wrapper {
     margin-top: 0px;
   }
-
   .portfolio-svg {
-    width: 52px;
-    height: 52px;
+    width: 48px;
+    height: 48px;
   }
-
-  .portfolio-preview-image {
-    width: 90%;
-    object-fit: contain;
-    display: flex;
-    margin: 0 auto;
-  }
-
   .portfolio-svg-wrapper {
     width: 85px;
     height: 85px;
-    margin: 20px;
+    margin: 25px;
   }
-  .portfolio-footer {
-    font-size: 1.8rem;
+  .portfolio-image-caption {
+    font-size: 1.4rem;
+    margin-top: 20px;
   }
-  .portfolio-svg-demo {
-    width: 1.4rem;
-    height: 1.4rem;
+  .portfolio-preview-btn-dots {
+    position: relative;
+    display: grid;
+    place-content: center;
+    padding: 15px 0px;
   }
-  .portfolio-svg-github {
-    width: 1.4rem;
-    height: 1.4rem;
+  .slider-btn {
+    top: 40%;
+    height: 3rem;
+    width: 3rem;
+    padding: 8px;
+  }
+  .slider-btn-left {
+    left: -8%;
+  }
+  .slider-btn-right {
+    right: -8%;
   }
   .dots-dot {
-    height: 1rem;
-    width: 1rem;
-    margin-right: 3rem;
+    width: 2rem;
+    height: 2rem;
+    margin-right: 2.4rem;
   }
-  .courses-item-title {
-    font-size: 1.2rem;
+  .portfolio-btn {
+    padding: 18px 25px;
+    border-radius: 15px;
   }
-  .courses-svg-pdf {
-    width: 60px;
-    height: 60px;
-  }
-  .skills-item-title {
-    width: 300px;
+  .portfolio-btn .btn-text {
     font-size: 1.6rem;
   }
-  .skill-point {
-    width: 32px;
-    height: 32px;
+  .portfolio-footer {
+    padding: 10px;
   }
-  .road-map-item {
-    padding: 20px;
+  .portfolio-svg-demo,
+  .portfolio-svg-github {
+    width: 36px;
+    height: 36px;
+  }
+  .courses-item-title {
+    font-size: 1.4rem;
+  }
+  .courses-svg-pdf {
+    width: 70px;
+    height: 70px;
+  }
+  .courses-item-wrapper {
+    grid-template-columns: 100px 1fr auto;
+    height: 100px;
+    gap: 20px;
+    padding: 0;
+  }
+  .courses-item-link {
+    align-self: center;
+  }
+  .courses-item-circular-progress {
+    --progress-bar-size: 86px;
+  }
+  .courses-item-circular-progress::before {
+    --progress-bar-whdth: 9px;
+  }
+  .courses-item-progress-value {
+    font-size: 1.2rem;
+  }
+  .skills-item-wrapper {
+    font-size: 1.4rem;
+  }
+  .skills-item-title {
+    width: 200px;
+  }
+  .skills-points {
+    width: 150px;
+    height: 40px;
+  }
+  .skills-points::after {
+    top: 35px;
+    width: 250px;
+    height: 40px;
+  }
+  .skill-point {
+    width: 25px;
+    height: 25px;
+  }
+  .point-1,
+  .point-2,
+  .point-3,
+  .point-4,
+  .point-5 {
+    top: 38px;
+    --distance: 38px;
+  }
+  .road-map-line::after {
+    width: 8px;
+    animation: moveline 4.5s linear forwards;
+  }
+  .road-map-container {
+    padding: 20px 40px;
+    width: 30%;
+  }
+  .road-map-container-animation {
+    animation: movedown 1s linear forwards;
+  }
+  .road-map-text {
+    border-radius: 10px;
+    font-size: 1.6rem;
+  }
+  .road-map-container img {
+    --img-width: 45px;
+    padding: 8px;
+    border-radius: 8px;
+  }
+  .left-container-arrow {
+    right: -10px;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid var(--dark-primary-color);
+  }
+  .right-container-arrow {
+    left: -10px;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid var(--dark-primary-color);
+  }
+  footer {
+    padding: 30px;
   }
   footer p {
-    padding-bottom: 30px;
+    padding: 30px;
+    font-size: 1.4rem;
   }
   .footer-links {
     gap: 50px;
-    padding-bottom: 20px;
+    padding: 30px;
   }
   .footer-svg {
     width: 3rem;
@@ -1331,12 +1387,5 @@ footer p {
   .arrow-go-up {
     width: 70px;
     height: 70px;
-  }
-}
-
-/*############################## Extra large devices (large laptops and desktops, 1200px and up) ##############################*/
-@media only screen and (min-width: 1200px) {
-  .test {
-    background-color: #f200ff;
   }
 }
