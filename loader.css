@@ -1,0 +1,73 @@
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--light-primary-color);
+    transition: opacity 0.75s, visibility 0.75s;
+    z-index: 9999;
+  }
+  
+  .loader svg {
+    position: absolute;
+    transition: .5s;
+    z-index: calc(1 - (0.2 * var(--j)));
+    transform-origin: center;
+    width: 344px;
+    height: 344px;
+    fill: none;
+  }
+
+  .loader svg #center {
+    transition: .5s;
+    transform-origin: center;
+  }
+
+  #out1 {
+    stroke: var(--accent-color);
+  }
+  
+  #out2 {
+    animation: rotate16 7s ease-in-out infinite alternate;
+    transform-origin: center;
+    fill: var(--secondary-text);
+  }
+  
+  #out3 {
+    animation: rotate16 3s ease-in-out infinite alternate;
+    transform-origin: center;
+    stroke: var(--accent-color);
+  }
+  
+  #inner3,
+  #inner1 {
+    animation: rotate16 4s ease-in-out infinite alternate;
+    transform-origin: center;
+    fill: var(--secondary-text);
+
+  }
+  #inner4 {
+    fill: var(--accent-color);
+  }
+
+  #center1 {
+    fill: var(--secondary-text);
+    animation: rotate16 2s ease-in-out infinite alternate;
+    transform-origin: center;
+  }
+  
+  .loader-hidden {
+    opacity: 0;
+    visibility: 0;
+    z-index: -99;
+  }
+  
+  @keyframes rotate16 {
+    to {
+      transform: rotate(360deg);
+    }
+  }

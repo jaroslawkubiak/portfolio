@@ -2,34 +2,33 @@
 
 :root {
   --light-primary-color: #202542;
+  --lighter-primary-color: #313759;
   --dark-primary-color: #03081b;
   --primary-text: #f0f0f0;
   --secondary-text: #01e3cd;
   --accent-color: #ef5e4d;
 
-  /* --light-primary-color: #212751;
-  --dark-primary-color: #171d48;
-  --primary-text: #b3a59f;
-  --secondary-text: #4eaab0;
-  --accent-color: #eb6166; */
-
   /* --light-primary-color: #1f315d;
+  --lighter-primary-color: #2b427e;
   --dark-primary-color: #0d0825;
   --primary-text: #f0f0f0;
   --secondary-text: #48d9ee;
   --accent-color: #bdbdf7; */
 
-  /* --light-primary-color: #14102c;
+  /* --light-primary-color: #1e1841;
+  --lighter-primary-color: #2f2565;
   --dark-primary-color: #080321;
   --primary-text: #f0f0f0;
   --secondary-text: #8ba6ff;
   --accent-color: #3e7dff; */
 
-  /* --light-primary-color: #171616;
-  --dark-primary-color: #010101;
-  --primary-text: #f0f0f0;
-  --secondary-text: #19ddce;
-  --accent-color: #00c0aa; */
+  /* --light-primary-color: #212650;
+  --lighter-primary-color: #2c326c;
+  --dark-primary-color: #191e3c;
+  --primary-text: #f8f3f9;
+  --secondary-text: #56b9bb;
+  --accent-color: #56b9bb; */
+
 
   --svg-grayscale: #f0f0f0;
   /* border for tech svg icon */
@@ -56,7 +55,8 @@ body {
 main {
   display: grid;
 }
-#tech-skills, #soft-skills {
+#tech-skills,
+#soft-skills {
   transition: transform 1s, opacity 1s;
 }
 #portfolio,
@@ -81,7 +81,6 @@ section {
 .section-hidden {
   opacity: 0;
   visibility: hidden;
-
   transform: translateY(100px);
 }
 section > div {
@@ -291,7 +290,7 @@ nav {
   --img-width: 100px;
   width: var(--img-width);
   height: calc(var(--img-width) * 1.5);
-  --position: 90%;
+  --position: 55%;
   margin-right: 15px;
   margin-top: 6px;
 }
@@ -557,7 +556,7 @@ nav {
 /* courses section */
 .courses-item-wrapper {
   display: grid;
-  align-items: start;
+  align-items: center;
   grid-template-columns: 50px 1fr auto;
   margin-bottom: 20px;
   height: 50px;
@@ -852,7 +851,7 @@ footer p {
   width: 40px;
   height: 40px;
   border-radius: 100%;
-  z-index: 9999;
+  z-index: 999;
   bottom: 30px;
   right: 30px;
   color: var(--accent-color);
@@ -864,11 +863,12 @@ footer p {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 99999;
+  z-index: 9999;
   width: 10px;
   height: 30px;
   background-color: rgb(255, 0, 0);
 }
+
 
 /*############################## Small devices (portrait tablets and large phones, 600px and up) ##############################*/
 @media only screen and (min-width: 600px) {

@@ -8,6 +8,12 @@ import {
   arrowUp,
 } from "./svg/svg-icons.js";
 
+window.addEventListener("load", () => {
+  const loader = document.querySelector(".loader");
+
+  loader.classList.add("loader-hidden");
+});
+
 const burgerMenu = document.getElementById("burger");
 const mobileMenu = document.getElementById("mobile-menu");
 const portfolioList = document.getElementById("portfolio-list");
@@ -16,58 +22,38 @@ burgerMenu.addEventListener("click", () => {
   mobileMenu.classList.toggle("nav-hide");
 });
 
+const getWindowWidth = function () {
+  return window.innerWidth;
+};
+
 //////////////////////////////////////////////////////////
 // menu smooth navigation
-const windowWidth = window.innerWidth;
-// getting header height
-const headerElement = document.querySelector("header");
-let headerHeight = window
-  .getComputedStyle(headerElement)
-  .getPropertyValue("height");
-headerHeight = Number(headerHeight.substring(0, headerHeight.length - 2));
-
 document.getElementById("mobile-menu").addEventListener("click", function (e) {
   e.preventDefault();
-
   if (e.target.classList.contains("nav-link")) {
     const element = document.getElementById(e.target.hash.slice(1));
-    let elDistanceToTop;
+    // scrolling to section with class "section-to-reveal" has to be with shift in 300px. because section in revealing via css "section-hidden"
+    let transformSectionToReveal = 0;
 
-    switch (element.id) {
-      case "about-me":
-        elDistanceToTop =
-          window.pageYOffset + element.getBoundingClientRect().top;
-        break;
-      case "portfolio":
-        elDistanceToTop =
-          window.pageYOffset + element.getBoundingClientRect().top;
-        break;
-      case "courses":
-        elDistanceToTop =
-          window.pageYOffset +
-          element.getBoundingClientRect().top -
-          headerHeight -
-          50;
-        break;
-      case "skills":
-        if (windowWidth < 768) headerHeight = 0;
-        elDistanceToTop =
-          window.pageYOffset +
-          element.getBoundingClientRect().top -
-          headerHeight;
-        break;
-      case "road-map":
-        elDistanceToTop =
-          window.pageYOffset +
-          element.getBoundingClientRect().top -
-          headerHeight;
-        break;
-      default:
-        break;
+    // for pc view, when top menu is visible
+    const windowWidth = getWindowWidth();
+    // console.log(windowWidth);
+    if (windowWidth > 768) {
+      // console.log("pc");
+      if (element.id === "courses") transformSectionToReveal = 200;
+      if (element.id === "skills") transformSectionToReveal = 70;
+    } else {
+      // console.log("mobile");
+      if (element.id === "courses") transformSectionToReveal = 100;
+      if (element.id === "skills") transformSectionToReveal = 0;
     }
-
+    // console.log("transformSectionToReveal=", transformSectionToReveal);
+    const y =
+      element.getBoundingClientRect().top +
+      window.scrollY -
+      transformSectionToReveal;
     window.scroll({
-      top: elDistanceToTop,
+      top: y,
       behavior: "smooth",
     });
 
@@ -373,7 +359,6 @@ portfolio.forEach((item, index) => {
 //////////////////////////////////////////////////////////
 // smooth go back to top of the page
 function scrollUp() {
-  console.log('scroll up');
   window.scroll({ top: 0, behavior: "smooth" });
 }
 
@@ -396,7 +381,10 @@ function update() {
       `<div class="arrow-go-up" id="goUp" title="Go to top">${arrowUp}</div>`
     );
 }
-document.addEventListener("scroll", update);
+document.addEventListener("scroll", () => {
+  update();
+  getWindowWidth();
+});
 
 //////////////////////////////////////////////////////////
 // lazy loading img on portfolio sections
@@ -457,9 +445,9 @@ const animateCoursesCircle = function () {
       progressValue[index].textContent = `${progressCounter}%`;
       circle.style.background = `conic-gradient(var(--accent-color) ${
         progressCounter * 3.6
-      }deg, #292f53 0deg)`;
+      }deg, var(--lighter-primary-color) 0deg)`;
     }, progressSpeed);
-  });
+  }); // 292f53
 };
 
 //////////////////////////////////////////////////////////
