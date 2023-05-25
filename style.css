@@ -8,6 +8,13 @@
   --secondary-text: #01e3cd;
   --accent-color: #ef5e4d;
 
+  /* --light-primary-color: #16102f;
+  --lighter-primary-color: #281c57;
+  --dark-primary-color: #090325;
+  --primary-text: #fbfdff;
+  --secondary-text: #c83bd2;
+  --accent-color: #8f5ff9;
+ */
   /* --light-primary-color: #1f315d;
   --lighter-primary-color: #2b427e;
   --dark-primary-color: #0d0825;
@@ -290,7 +297,7 @@ nav {
   --img-width: 100px;
   width: var(--img-width);
   height: calc(var(--img-width) * 1.5);
-  --position: 55%;
+  --position: 90%;
   margin-right: 15px;
   margin-top: 6px;
 }
