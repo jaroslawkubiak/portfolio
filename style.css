@@ -315,7 +315,6 @@ nav {
 .me-wrapper {
     box-sizing: border-box;
     float: left;
-    border-radius: 10px;
     border: 2px solid var(--primary-text);
     display: grid;
     place-content: center;
@@ -325,8 +324,7 @@ nav {
     width: var(--img-width);
     height: calc(var(--img-width) * 1.5);
     --position: 90%;
-    margin-right: 15px;
-    margin-top: 6px;
+    margin: 6px 15px 10px 0;
 }
 .me-slider-image {
     width: 100%;
@@ -390,7 +388,6 @@ nav {
     margin: 20px 0 50px 0;
     font-size: 0.7rem;
 }
-
 .portfolio-item-wrapper {
     display: flex;
     flex-direction: column;
@@ -403,11 +400,10 @@ nav {
     text-transform: uppercase;
     margin: 10px 0;
 }
-.portfolio-description-wrapper div {
+.portfolio-description-wrapper {
     font-size: 0.7rem;
     line-height: 2;
 }
-
 ul.portfolio-panel-list li {
     position: relative;
     padding-left: 20px;
@@ -901,7 +897,21 @@ footer p {
 }
 .footer-svg-contact {
     fill: var(--link-color);
+
+    animation: contact 2s ease infinite alternate;
+    &:hover {
+        animation-play-state: paused;
+      }
 }
+@keyframes contact {
+    0% {
+        transform: rotate(0turn) scale(1);
+    }
+    100% {
+        transform: rotate(1turn) scale(1.6);
+    }
+}
+
 .footer-svg:hover {
     fill: var(--accent-color);
 }
@@ -948,7 +958,7 @@ footer p {
     .about-me,
     .about-me-show-more,
     .portfolio-overview,
-    .portfolio-description-wrapper div {
+    .portfolio-description-wrapper {
         font-size: 1rem;
     }
     li {
@@ -1153,7 +1163,7 @@ footer p {
     .about-me,
     .about-me-show-more,
     .portfolio-overview,
-    .portfolio-description-wrapper div {
+    .portfolio-description-wrapper {
         font-size: 1.1rem;
     }
     li {
@@ -1239,7 +1249,7 @@ footer p {
         display: none;
     }
     .portfolio-overview,
-    .portfolio-description-wrapper div,
+    .portfolio-description-wrapper,
     .about-me {
         font-size: 1.2rem;
     }

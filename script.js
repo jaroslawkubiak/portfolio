@@ -124,8 +124,7 @@ const portfolio = [
             "Construction drawings",
         ],
         tech: ["php", "mysql", "html", "css"],
-        description: `<div>
-
+        description: `
         This is my main project for a client in the window manufacturing industry. It started with just two database tables and over 7 years of adding new functionalities, the system has now grown to include:
         <ul class="portfolio-panel-list">
         <li>warehouse, registration of orders to suppliers</li>
@@ -150,7 +149,7 @@ const portfolio = [
         <li>PHPMailer - to send emails with HTML content with attachments</li>
         <li>FPDF - for generating PDFs, e.g. invoices, order confirmations, quotes</li>
         <li>Signature Pad - for signing on the tablet by customers who pick up their order from the driver.</li>
-        </ul></div>`,
+        </ul>`,
     },
     {
         title: "Lego Star Wars Minifigure Collection",
@@ -167,8 +166,7 @@ const portfolio = [
             "Modal windows with large preview of minifigure photo",
         ],
         tech: ["js", "react", "redux"],
-        description: `<div>
-            I'm a big fan and collector of Lego figures from the Star Wars series. When my collection grew to about 80 figures, 
+        description: `I'm a big fan and collector of Lego figures from the Star Wars series. When my collection grew to about 80 figures, 
             I needed a better way of cataloging it, something with pictures and better than Excel. Being a programmer, 
             I wrote a simple website (PHP and MySQL) where I could keep better track of which figurines are already in my 
             collection and I use this website till now. This project below, is the next version, written in JavaScript and React, 
@@ -176,10 +174,8 @@ const portfolio = [
             I will be able to complete the project and replace the one written in PHP. I want to copy all the functions I 
             have in the current version such as sorting, statistics, and label generation to PDF. 
             <br />Hint: when adding new f
-            igure type figure number from sw0001 to sw1267. Images are fetching from Lego DB.
-            </div>`,
+            igure type figure number from sw0001 to sw1267. Images are fetching from Lego DB.`,
     },
-
     {
         title: "Flag game",
         link: "portfolio/flags",
@@ -195,9 +191,7 @@ const portfolio = [
             "Game over - view your score and game statistics",
         ],
         tech: ["js", "html", "css"],
-        description: `<div>
-        One of my passions is traveling, With each trip I buy a patch with the flag of a particular country, which I then sew onto my backpack. I often play a quiz game on my phone where you have to guess the flags of different countries. I decided to write a similar game. During the JavaScript course, we used an API to get information about countries, so I used the same API to build this project. In my game, you can choose one or more continents from which you want to guess the flags of countries. You always have 10 flags to guess, drawn at random from the selected continents. The game remembers the best score in local storage.
-        </div>`,
+        description: `One of my passions is traveling, With each trip I buy a patch with the flag of a particular country, which I then sew onto my backpack. I often play a quiz game on my phone where you have to guess the flags of different countries. I decided to write a similar game. During the JavaScript course, we used an API to get information about countries, so I used the same API to build this project. In my game, you can choose one or more continents from which you want to guess the flags of countries. You always have 10 flags to guess, drawn at random from the selected continents. The game remembers the best score in local storage.`,
     },
     {
         title: "F1 - reflex game",
@@ -206,9 +200,7 @@ const portfolio = [
         imgDir: "f1",
         images: ["Your result", "Get ready", "Your result", "You click too soon"],
         tech: ["js", "html", "css"],
-        description: `<div>
-        Instagram's algorithm dropped me a video of Formula 1 driver Lando Norris testing his reflex, which is very important for a driver, especially during the start of a race. This inspired me to create a simple app where I could test my reaction speed and compare myself to an F1 driver. The average F1 driver's reaction speed is about 0.15 seconds, from the moment the start lights go off to the moment they press the accelerator. My app measures the time to the nearest 0.0001 seconds. Check your reflexes too.
-        </div>`,
+        description: `Instagram's algorithm dropped me a video of Formula 1 driver Lando Norris testing his reflex, which is very important for a driver, especially during the start of a race. This inspired me to create a simple app where I could test my reaction speed and compare myself to an F1 driver. The average F1 driver's reaction speed is about 0.15 seconds, from the moment the start lights go off to the moment they press the accelerator. My app measures the time to the nearest 0.0001 seconds. Check your reflexes too.`,
     },
     {
         title: "Snake game",
@@ -222,9 +214,7 @@ const portfolio = [
             "Game over - best score is stored in browser memory",
         ],
         tech: ["js", "html", "css"],
-        description: `<div>
-            I know, another Snake game project in JavaScript. Everyone does it, but this project is a good opportunity to practice JS and CSS. I wanted the game to have the feel of the one I remember from the Nokia 3310. You can play in portrait or landscape mode on a phone using gestures or on a PC using the arrow keys.
-            </div>`,
+        description: `I know, another Snake game project in JavaScript. Everyone does it, but this project is a good opportunity to practice JS and CSS. I wanted the game to have the feel of the one I remember from the Nokia 3310. You can play in portrait or landscape mode on a phone using gestures or on a PC using the arrow keys.`,
     },
 ];
 
