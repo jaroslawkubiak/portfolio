@@ -51,6 +51,8 @@
 
   /* skilss */
   --offset-skill-point: 15px;
+  /* pdf svg certyficate width */
+  --pdf-width: 25px;
 }
 * {
   margin: 0;
@@ -616,6 +618,7 @@ ul.portfolio-panel-list li::before {
 .courses-item-title a {
   padding: 0px;
 }
+
 .courses-item-title a:hover {
   color: var(--accent-color);
 }
@@ -632,10 +635,18 @@ ul.portfolio-panel-list li::before {
 .courses-item-link a::after {
   background: transparent;
 }
-
 .courses-svg-pdf {
-  width: 25px;
+  width: var(--pdf-width);
 }
+.courses-disabled {
+  cursor: not-allowed;
+}
+.courses-no-certificate {
+  height: 50px;
+  width: var(--pdf-width);
+  cursor: default;
+}
+
 /* courses - circular border drawing */
 .courses-item-circular-progress {
   --progress-bar-size: 46px;
@@ -663,6 +674,10 @@ ul.portfolio-panel-list li::before {
   position: relative;
   font-size: 0.6rem;
   color: var(--accent-color);
+}
+.courses-time,
+.courses-language {
+  display: none;
 }
 
 /* skils */
@@ -954,6 +969,9 @@ footer p {
   :root {
     /* border for tech svg icon */
     --svg-border-width: 2px;
+
+    /* pdf svg certyficate width */
+    --pdf-width: 36px;
   }
   .test {
     background-color: #ff9900;
@@ -1038,7 +1056,7 @@ footer p {
     font-size: 1.2rem;
   }
   .courses-svg-pdf {
-    width: 36px;
+    width: var(--pdf-width);
   }
   /* courses - circular border drawing */
   .courses-item-circular-progress {
@@ -1244,6 +1262,9 @@ footer p {
   :root {
     /* border for tech svg icon */
     --svg-border-width: 4px;
+
+    /* pdf svg certyficate width */
+    --pdf-width: 70px;
   }
   .test {
     background-color: #1100ff;
@@ -1408,15 +1429,22 @@ footer p {
     font-size: 1.4rem;
   }
   .courses-svg-pdf {
-    width: 70px;
-    height: 70px;
+    width: var(--pdf-width);
+    height: var(--pdf-width);
   }
   .courses-item-wrapper {
-    grid-template-columns: 100px 1fr auto;
+    grid-template-columns: 100px 1fr 90px 60px auto;
     height: 100px;
-    gap: 20px;
+    gap: 40px;
     padding: 0;
   }
+  .courses-time,
+  .courses-language {
+    font-size: 1.4rem;
+    text-align: right;
+    display: inline-block
+  }
+
   .courses-item-link {
     align-self: center;
   }
