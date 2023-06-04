@@ -1,14 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Aleo:wght@400;700&family=Montserrat:wght@400;700&display=swap");
 
 :root {
-  --light-primary-color: #202542;
-  --lighter-primary-color: #313759;
-  --dark-primary-color: #03081b;
-  --primary-text: #f0f0f0;
-  --secondary-text: hsl(174, 99%, 45%);
-  --accent-color: #ef5e4d;
-  --link-color: #8e5df9;
-
   --light-primary-color: #192440;
   --lighter-primary-color: #24345c;
   --dark-primary-color: #091529;
@@ -16,34 +8,6 @@
   --secondary-text: #00ead0;
   --accent-color: #da3f27;
   --link-color: #8e5df9;
-
-  /* --light-primary-color: #16102f;
-  --lighter-primary-color: #281c57;
-  --dark-primary-color: #090325;
-  --primary-text: #fbfdff;
-  --secondary-text: #c83bd2;
-  --accent-color: #8f5ff9;
- */
-  /* --light-primary-color: #1f315d;
-  --lighter-primary-color: #2b427e;
-  --dark-primary-color: #0d0825;
-  --primary-text: #f0f0f0;
-  --secondary-text: #48d9ee;
-  --accent-color: #bdbdf7; */
-
-  /* --light-primary-color: #1e1841;
-  --lighter-primary-color: #2f2565;
-  --dark-primary-color: #080321;
-  --primary-text: #f0f0f0;
-  --secondary-text: #8ba6ff;
-  --accent-color: #3e7dff; */
-
-  /* --light-primary-color: #212650;
-  --lighter-primary-color: #2c326c;
-  --dark-primary-color: #191e3c;
-  --primary-text: #f8f3f9;
-  --secondary-text: #56b9bb;
-  --accent-color: #56b9bb; */
 
   --svg-grayscale: #f0f0f0;
   /* border for tech svg icon */
@@ -1442,7 +1406,7 @@ footer p {
   .courses-language {
     font-size: 1.4rem;
     text-align: right;
-    display: inline-block
+    display: inline-block;
   }
 
   .courses-item-link {
