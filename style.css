@@ -13,7 +13,7 @@
   /* border for tech svg icon */
   --svg-border-width: 1.5px;
 
-  /* skilss */
+  /* skills */
   --offset-skill-point: 15px;
   /* pdf svg certyficate width */
   --pdf-width: 25px;
@@ -644,7 +644,7 @@ ul.portfolio-panel-list li::before {
   display: none;
 }
 
-/* skils */
+/* skills */
 .skills-section {
   display: flex;
   flex-direction: column;
@@ -1034,7 +1034,7 @@ footer p {
     font-size: 0.8rem;
   }
 
-  /* skils */
+  /* skills */
   .skills-section {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
