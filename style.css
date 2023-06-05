@@ -748,7 +748,7 @@ ul.portfolio-panel-list li::before {
   left: 50%;
   transform: translateX(-50%);
   z-index: -1;
-  animation: moveline 4.5s linear forwards;
+  animation: moveline 5.5s linear forwards;
 }
 .road-map-container {
   padding: 10px 20px;
@@ -781,11 +781,14 @@ ul.portfolio-panel-list li::before {
 .road-map-container:nth-child(4) {
   animation-delay: 3s;
 }
+.road-map-container:nth-child(5) {
+  animation-delay: 4.5s;
+}
+
 .road-map-text {
   padding: 10px;
   background-color: var(--dark-primary-color);
   position: relative;
-  /* border-radius: 6px; */
   font-size: 0.8rem;
   color: var(--primary-text);
 }
@@ -795,6 +798,13 @@ ul.portfolio-panel-list li::before {
 .road-map-right-container {
   left: 50%;
 }
+.road-map-center-container {
+  left: 25%;
+  text-align: center;
+  bottom: -30px;
+}
+
+
 .road-map-container img {
   position: absolute;
   --img-width: 25px;
