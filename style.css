@@ -804,12 +804,10 @@ ul.portfolio-panel-list li::before {
   bottom: -30px;
 }
 
-
 .road-map-container img {
   position: absolute;
   --img-width: 25px;
   padding: 4px;
-  /* border-radius: 5px; */
   right: calc((var(--img-width) - var(--img-width) / 2) * -1);
   top: 50%;
   transform: translateY(-50%);
@@ -837,11 +835,11 @@ ul.portfolio-panel-list li::before {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  right: -4px;
+  right: -6px;
   z-index: -1;
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
-  border-left: 5px solid var(--dark-primary-color);
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 7px solid var(--dark-primary-color);
 }
 .right-container-arrow {
   height: 0;
@@ -849,11 +847,11 @@ ul.portfolio-panel-list li::before {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  left: -4px;
+  left: -6px;
   z-index: -1;
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
-  border-right: 5px solid var(--dark-primary-color);
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-right: 7px solid var(--dark-primary-color);
 }
 
 /* footer */
@@ -1088,12 +1086,15 @@ footer p {
   }
   .road-map-text {
     padding: 10px 20px;
-    border-radius: 8px;
     font-size: 1rem;
   }
   .road-map-left-container {
     right: -10%;
   }
+  .road-map-center-container {
+    left: 30%;
+  }
+  
   .road-map-container img {
     --img-width: 30px;
   }
@@ -1229,6 +1230,27 @@ footer p {
     top: 25px;
     --distance: 28px;
   }
+  .road-map-container img {
+    --img-width: 35px;
+    padding: 6px;
+    right: calc((var(--img-width) - var(--img-width) / 2) * -1);
+  }
+  .road-map-center-container {
+    left: 35%;
+    text-align: center;
+    bottom: -30px;
+  }
+  .road-map-container {
+    width: 30%;
+  }
+
+  .road-map-left-container {
+    left:20%;
+  }
+  .road-map-right-container {
+    left: 50%;
+  }
+  
 }
 
 /*############################## Large devices (laptops/desktops, 992px and up) ##############################*/
@@ -1415,7 +1437,7 @@ footer p {
   .courses-time,
   .courses-language {
     font-size: 1.4rem;
-    text-align: right;
+    text-align: center;
     display: inline-block;
   }
 
@@ -1463,27 +1485,33 @@ footer p {
   }
   .road-map-line::after {
     width: 8px;
-    animation: moveline 4.5s linear forwards;
+    animation: moveline 5s linear forwards;
   }
   .road-map-container {
     padding: 20px 40px;
     width: 40%;
   }
-  .road-map-container-animation {
-    animation: movedown 1s linear forwards;
+
+  .road-map-container:nth-child(5) {
+    animation-delay: 4.2s;
+  }
+  
+  .road-map-center-container {
+    left: 30%;
+    bottom: -50px;
+  }
+  .road-map-right-container {
+    left: 50%;
   }
   .road-map-left-container {
-    right: -10%;
+    left: 10%;
   }
-
   .road-map-text {
-    border-radius: 10px;
     font-size: 1.6rem;
   }
   .road-map-container img {
     --img-width: 45px;
     padding: 8px;
-    border-radius: 8px;
   }
   .left-container-arrow {
     right: -10px;

@@ -560,3 +560,7 @@ aboutMeShowMore.addEventListener("click", () => {
       break;
   }
 });
+
+// inserting copyright text with current year
+const copyrightText = `Copyright &copy; ${new Date().getFullYear()} by Jarosław Kubiak`;
+document.getElementById("copyright").innerHTML = copyrightText;
