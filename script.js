@@ -51,17 +51,13 @@ document.getElementById("mobile-menu").addEventListener("click", function (e) {
 
     // for pc view, when top menu is visible
     const windowWidth = getWindowWidth();
-    // console.log(windowWidth);
     if (windowWidth > 768) {
-      // console.log("pc");
       if (element.id === "courses") transformSectionToReveal = 200;
       if (element.id === "skills") transformSectionToReveal = 70;
     } else {
-      // console.log("mobile");
       if (element.id === "courses") transformSectionToReveal = 100;
       if (element.id === "skills") transformSectionToReveal = 0;
     }
-    // console.log("transformSectionToReveal=", transformSectionToReveal);
     const y = element.getBoundingClientRect().top + window.scrollY - transformSectionToReveal;
     window.scroll({
       top: y,
@@ -71,6 +67,21 @@ document.getElementById("mobile-menu").addEventListener("click", function (e) {
     mobileMenu.classList.add("nav-hide");
     burgerMenu.checked = false;
   }
+});
+
+////////////////////////////////////////////////
+// smooth scrolling animation
+const allLinks = document.querySelectorAll("a");
+allLinks.forEach(link => {
+  link.addEventListener("click", e => {
+    const href = link.getAttribute("href");
+    
+    if (href !== "#" && href.startsWith("#")) {
+      e.preventDefault();
+      const sectionEl = document.querySelector(href);
+      sectionEl.scrollIntoView({ behavior: "smooth" });
+    }
+  });
 });
 
 //////////////////////////////////////////////////////////
@@ -522,7 +533,6 @@ const revealSection = function (entries, observer) {
   entries.forEach(entry => {
     if (!entry.isIntersecting) return;
 
-    // console.log("widze=", entry.target.id);
     entry.target.classList.remove("section-hidden");
 
     if (entry.target.id === "courses") animateCoursesCircle();

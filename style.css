@@ -23,6 +23,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  /* scroll-behavior: smooth; */
+}
 body {
   background-color: var(--light-primary-color);
   color: var(--primary-text);
@@ -241,6 +244,7 @@ nav {
   -ms-transform: translateY(-100%);
   transform: translateY(-100%);
 }
+
 .burger input:checked ~ span:nth-of-type(1) {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
@@ -1094,7 +1098,7 @@ footer p {
   .road-map-center-container {
     left: 30%;
   }
-  
+
   .road-map-container img {
     --img-width: 30px;
   }
@@ -1245,12 +1249,11 @@ footer p {
   }
 
   .road-map-left-container {
-    left:20%;
+    left: 20%;
   }
   .road-map-right-container {
     left: 50%;
   }
-  
 }
 
 /*############################## Large devices (laptops/desktops, 992px and up) ##############################*/
@@ -1495,7 +1498,7 @@ footer p {
   .road-map-container:nth-child(5) {
     animation-delay: 4.2s;
   }
-  
+
   .road-map-center-container {
     left: 30%;
     bottom: -50px;
