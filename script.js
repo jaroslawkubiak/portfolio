@@ -12,6 +12,7 @@ window.addEventListener("load", () => {
   const loader = document.querySelector(".loader");
   loader.classList.add("loader-hidden");
 
+
   // start slider line moving
   let meSliderStart = 90;
   let sliderDirection = "left";
@@ -234,9 +235,9 @@ const portfolio = [
 portfolio.forEach((item, index) => {
   let html = `
     <li class="portfolio-item-wrapper"  id="portfolio-${item.imgDir}"><article>
-    <h6 class="portfolio-title">
+    <h2 class="portfolio-title">
     ${item.title}
-    </h6>`;
+    </h2>`;
 
   // portfolio description
   html += `<div class="portfolio-description-wrapper" >${item.description}</div>`;
@@ -260,7 +261,8 @@ portfolio.forEach((item, index) => {
     </figure></div>`;
   }
 
-  html += `</div><button class="slider-btn slider-btn-left">${arrowLeft}</button><button class="slider-btn slider-btn-right">${arrowRight}</button>`;
+  html += `</div><button class="slider-btn slider-btn-left" aria-label="Slide image to left">${arrowLeft}</button>
+  <button class="slider-btn slider-btn-right" aria-label="Slide image to right">${arrowRight}</button>`;
   html += `<div class="portfolio-preview-btn-dots"><div class="dots"></div>`;
   html += `</div></div>`;
 
@@ -270,9 +272,6 @@ portfolio.forEach((item, index) => {
   html += `</div><div class="portfolio-footer-demo"><a href="${item.link}" target="_blank"><button class="portfolio-btn">${svgDemo}<p class="btn-text">Live demo</p></button></a></div>`;
 
   html += `</div></article></li>`;
-
-  // if load last portfolio - don't put a <hr> tag
-  if (index !== portfolio.length - 1) html += `<hr/>`;
 
   portfolioList.insertAdjacentHTML("beforeEnd", html);
 
@@ -291,7 +290,7 @@ portfolio.forEach((item, index) => {
     slides.forEach(function (_, i) {
       dotContainer.insertAdjacentHTML(
         "beforeend",
-        `<button class="dots-dot" data-slide="${i}"></button>`
+        `<button class="dots-dot" data-slide="${i}" aria-label="Dot symbolizing quantity of images"></button>`
       );
     });
   };
@@ -553,23 +552,6 @@ allSections.forEach(function (section) {
   section.classList.add("section-hidden");
 });
 
-//////////////////////////////////////////////////////////
-// abotu me show more content
-const aboutMeShowMore = document.getElementById("about-me-show-more");
-aboutMeShowMore.addEventListener("click", () => {
-  document.getElementById("about-me-more").classList.toggle("hidden-about-me");
-  let showContent = aboutMeShowMore.innerHTML;
-  switch (showContent) {
-    case "show more...":
-      aboutMeShowMore.innerHTML = "show less";
-      break;
-    case "show less":
-      aboutMeShowMore.innerHTML = "show more...";
-      break;
-    default:
-      break;
-  }
-});
 
 // inserting copyright text with current year
 const copyrightText = `Copyright &copy; ${new Date().getFullYear()} by Jarosław Kubiak`;

@@ -24,7 +24,7 @@
   box-sizing: border-box;
 }
 html {
-  /* scroll-behavior: smooth; */
+  scroll-behavior: smooth;
 }
 body {
   background-color: var(--light-primary-color);
@@ -90,17 +90,6 @@ header {
   display: flex;
   justify-content: space-between;
 }
-hr {
-  margin: 50px 0;
-  border: 0;
-  height: 2px;
-  background-image: linear-gradient(
-    to right,
-    var(--dark-primary-color),
-    var(--secondary-text),
-    var(--dark-primary-color)
-  );
-}
 h1 {
   font-family: "Aleo", serif;
   letter-spacing: 2px;
@@ -119,7 +108,9 @@ li {
   margin-bottom: 10px;
   line-height: 1.5;
 }
-a {
+
+a:link,
+a:visited {
   color: var(--primary-text);
   text-decoration: none;
   position: relative;
@@ -129,7 +120,8 @@ a {
   cursor: pointer;
   z-index: 1;
 }
-a:hover {
+a:hover,
+a:active {
   color: var(--accent-color);
 }
 a::after {
@@ -154,13 +146,13 @@ nav {
   top: 0;
   left: 0;
   right: 0;
-  background-color: var(--dark-primary-color);
   display: flex;
   flex-direction: column;
   align-items: center;
   font-weight: 700;
   letter-spacing: 2px;
   opacity: 0.95;
+  background-color: var(--dark-primary-color);
   transition: all 0.4s ease;
   border-bottom: 2px solid var(--accent-color);
 }
@@ -168,7 +160,7 @@ nav {
 .nav-link {
   color: var(--primary-text);
   text-decoration: none;
-  padding: 10px;
+  padding: 10px !important;
   margin: 0px 20px;
   border-bottom: 2px solid transparent;
   transition: all 0.3s;
@@ -176,6 +168,7 @@ nav {
 .nav-link:hover {
   color: var(--accent-color);
 }
+
 .nav-link::after {
   background: transparent;
 }
@@ -269,18 +262,6 @@ nav {
   line-height: 2;
   font-size: 0.7rem;
 }
-
-.hidden-about-me {
-  display: none;
-}
-.hidden-about-me-show-more {
-  display: block;
-}
-
-.about-me-show-more {
-  display: inline-block;
-  margin: 20px 0px;
-}
 /* wrapper, and slider to my images in about section */
 .me-wrapper {
   box-sizing: border-box;
@@ -355,7 +336,7 @@ nav {
   font-size: 0.7rem;
 }
 .portfolio-list {
-  margin: 20px 0 50px 0;
+  margin: 10px 0 20px 0;
   font-size: 0.7rem;
 }
 .portfolio-item-wrapper {
@@ -363,6 +344,24 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.portfolio-item-wrapper:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-image: linear-gradient(
+    to right,
+    var(--dark-primary-color),
+    var(--secondary-text),
+    var(--dark-primary-color)
+  );
+
 }
 .portfolio-title {
   color: var(--accent-color);
@@ -434,6 +433,7 @@ ul.portfolio-panel-list li::before {
 }
 .portfolio-preview-image {
   width: 90%;
+  height: auto;
   object-fit: contain;
   display: flex;
   margin: 0 auto;
@@ -583,7 +583,8 @@ ul.portfolio-panel-list li::before {
 .courses-item-title {
   font-size: 0.7rem;
 }
-.courses-item-title a {
+.courses-item-title a:link,
+.courses-item-title a:visited {
   padding: 0px;
 }
 
@@ -593,7 +594,8 @@ ul.portfolio-panel-list li::before {
 .courses-item-link {
   cursor: pointer;
 }
-.courses-item-link a {
+.courses-item-link a:link,
+.courses-item-link a:visited {
   padding: 0;
   margin: 0;
   display: grid;
@@ -873,7 +875,8 @@ footer p {
   gap: 20px;
   padding: 10px;
 }
-.footer-links a {
+.footer-links a:link,
+.footer-links a:visited {
   display: grid;
   place-content: center;
   border-radius: 50%;
@@ -888,8 +891,6 @@ footer p {
 }
 
 .footer-svg-contact {
-  /* fill: var(--link-color); */
-
   animation: contact 2s ease infinite alternate;
   &:hover {
     animation-play-state: paused;
@@ -956,7 +957,6 @@ footer p {
     font-size: 1.4rem;
   }
   .about-me,
-  .about-me-show-more,
   .portfolio-overview,
   .portfolio-description-wrapper {
     font-size: 1rem;
@@ -967,6 +967,9 @@ footer p {
   }
   .portfolio-title {
     font-size: 1.6rem;
+  }
+  .portfolio-list li {
+    font-size: 1rem;
   }
   .portfolio-svg {
     width: 28px;
@@ -985,11 +988,12 @@ footer p {
     width: 0.8rem;
     height: 0.8rem;
   }
-  a {
+  a:link,
+  a:visited {
     font-size: 1rem;
   }
   a::after {
-    bottom: -8px;
+    bottom: -7px;
   }
   .slider-btn {
     height: 2.4rem;
@@ -1129,7 +1133,8 @@ footer p {
     justify-content: center;
     gap: 20px;
   }
-  .footer-links a {
+  .footer-links a:link,
+  .footer-links a:visited {
     display: grid;
     place-content: center;
     border-radius: 50%;
@@ -1155,16 +1160,10 @@ footer p {
   .test {
     background-color: #008000;
   }
-  hr {
-    margin: 50px 0;
-    border: 0;
-    height: 4px;
-  }
   h1 {
     font-size: 1.6rem;
   }
   .about-me,
-  .about-me-show-more,
   .portfolio-overview,
   .portfolio-description-wrapper {
     font-size: 1.1rem;
@@ -1172,11 +1171,15 @@ footer p {
   li {
     padding: 15px;
   }
-  a {
+  a:link,
+  a:visited {
     font-size: 1.1rem;
   }
   a::after {
     bottom: -10px;
+  }
+  .portfolio-list li {
+    font-size: 1.1rem;
   }
   .portfolio-title {
     font-size: 1.8rem;
@@ -1268,15 +1271,12 @@ footer p {
   .test {
     background-color: #1100ff;
   }
-  .hidden-about-me {
-    display: block;
-  }
-  .hidden-about-me-show-more {
-    display: none;
-  }
   .portfolio-overview,
   .portfolio-description-wrapper,
-  .about-me {
+  .about-me,
+  a:link,
+  a:visited,
+  .portfolio-list li {
     font-size: 1.2rem;
   }
   #about-me {
@@ -1301,14 +1301,12 @@ footer p {
     font-size: 1.8rem;
   }
   li {
-    padding: 20px;
-  }
-  a {
-    font-size: 1.2rem;
+    padding: 10px;
   }
   a::after {
     bottom: -12px;
   }
+
   .svg-logo {
     position: relative;
     width: 80px;
@@ -1366,6 +1364,10 @@ footer p {
   .portfolio-item-wrapper {
     margin-top: 0px;
   }
+  .portfolio-item-wrapper:not(:last-child)::after {
+    height: 4px;
+  }
+  
   .portfolio-svg {
     width: 48px;
     height: 48px;
@@ -1389,7 +1391,7 @@ footer p {
     padding-left: 35px;
   }
   ul.portfolio-panel-list li::before {
-    top: 25px;
+    top: 15px;
     width: 1.2rem;
     height: 1.2rem;
   }

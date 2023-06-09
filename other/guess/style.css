@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  margin: 30px;
+  font-size: 12px;
+  box-sizing: border-box;
+  font-family: 'Press Start 2P', sans-serif;
+  color: #eee;
+  background-color: #222;
+}
+
+.wrapper {
+  position: relative;
+  height: 90vh;
+  width: 350px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ELEMENTS STYLE */
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  padding: 40px;
+  font-size: 16px;
+}
+
+.number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(255, 245, 231);
+  color: #333;
+  width: 80px;
+  height: 80px;
+}
+
+.guess {
+  background: none;
+  border: 4px solid #eee;
+  font-family: inherit;
+  font-size: 24px;
+  color: inherit;
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.btn {
+  border: none;
+  background-color: #eee;
+  color: #222;
+  font-family: inherit;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.again {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px 20px;
+}
+
+.message {
+  text-align: center;
+  margin: 20px;
+  color: #0bb2f9;
+  line-height: 50px;
+}
+
+.label-score,
+.label-highscore {
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  width: 100%;
+}
+
+.score-animate {
+  color: rgb(214, 51, 51);
+  padding: 10px;
+  top: 8px;
+  right: 60px;
+  position: absolute;
+}
+
+.animate {
+  animation-name: score;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes score {
+  100% {
+    transform: rotate(20deg) scale(0.5) translate(40px, -50px);
+    opacity: 0;
+  }
+}
+.wrapper_number {
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  width: 90%;
+}
+
+.wrapper_check {
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  width: 90%;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.check {
+  width: 100%;
+  padding: 20px 40px;
+}

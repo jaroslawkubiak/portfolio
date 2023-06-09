@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Zgadnij numer</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="title">
+        <p>Zgadnij numer<br /><br /><span id="maxNumber"></span></p>
+      </div>
+      <!-- <h1>Zgadnij numer</h1><h1>(od 1 do <span id="maxNumber">ooo</span>)</h1> -->
+
+      <button class="btn again">Powtórz</button>
+      <div class="number">?</div>
+
+      <p class="message">Zacznij zgadywać ...</p>
+
+      <p class="label-score">
+        <span class="score">💯 Twój wynik: 100</span>
+        <span id="scoreDecrese" class="score-animate"></span>
+      </p>
+
+      <p class="label-highscore">
+        🥇 Najlepszy wynik: <span class="highscore">0</span>
+      </p>
+
+      <div class="wrapper_number">
+        <input
+          placeholder="wpisz numer"
+          type="number"
+          onClick="this.select();"
+          onKeyUp="checkInput();"
+          class="guess"
+        />
+      </div>
+      <div class="wrapper_check">
+        <button class="btn check">Sprawdź!</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
