@@ -184,9 +184,7 @@ const portfolio = [
             collection and I use this website till now. This project below, is the next version, written in JavaScript and React, 
             but not finished entirely. At the moment the database is contained in a JSON file, and once I learn Node.JS 
             I will be able to complete the project and replace the one written in PHP. I want to copy all the functions I 
-            have in the current version such as sorting, statistics, and label generation to PDF. 
-            <br />Hint: when adding new f
-            igure type figure number from sw0001 to sw1267. Images are fetching from Lego DB.`,
+            have in the current version such as sorting, statistics, and label generation to PDF.`,
   },
   {
     title: "Flag game",
@@ -252,7 +250,7 @@ portfolio.forEach((item, index) => {
 
   for (let i = 0; i < item.images.length; i++) {
     html += `<div class="slide"><figure>
-    <img src="/img/img-preview.jpg" 
+    <img src="/img/img-prev.webp" 
     data-src="/img/portfolio-preview/${item.imgDir}/${i + 1}.jpg" 
     alt="${item.images[i]}" title="${
       item.images[i]

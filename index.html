@@ -24,29 +24,25 @@
       const fileVer = Date.now();
       const head = document.getElementsByTagName("head")[0];
 
-      // let scriptLink = document.createElement("script");
-      // scriptLink.defer = true;
-      // scriptLink.type = "module";
-      // scriptLink.src = `script.js?v=${fileVer}`;
-      // head.appendChild(scriptLink);
+      let scriptLink = document.createElement("script");
+      scriptLink.defer = true;
+      scriptLink.type = "module";
+      scriptLink.src = `script.js?v=${fileVer}`;
+      head.appendChild(scriptLink);
 
-      // let svgLink = document.createElement("script");
-      // svgLink.defer = true;
-      // svgLink.type = "module";
-      // svgLink.src = `svg/svg-icons.js?v=${fileVer}`;
-      // head.appendChild(svgLink);
+      let svgLink = document.createElement("script");
+      svgLink.defer = true;
+      svgLink.type = "module";
+      svgLink.src = `svg/svg-icons.js?v=${fileVer}`;
+      head.appendChild(svgLink);
 
-      // let link = document.createElement("link");
-      // link.rel = "stylesheet";
-      // link.type = "text/css";
-      // link.href = `style.css?v=${fileVer}`;
-      // head.appendChild(link);
+      let link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.type = "text/css";
+      link.href = `style.css?v=${fileVer}`;
+      head.appendChild(link);
     </script>
 
-<script defer type="module" src="script.js"></script>
-<script defer type="module" src="svg/svg-icons.js"></script>
-
-    <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
@@ -156,7 +152,7 @@
           <span></span>
         </label>
 
-        <img src="/svg/new-logo.svg?v=1" class="svg-logo" alt="Logo" />
+        <img src="/img/logo.png" class="logo" alt="Logo" />
         <nav id="mobile-menu" class="nav nav-hide">
           <a class="nav-link" href="#about-me">About me</a>
           <a class="nav-link" href="#portfolio">Portfolio</a>
@@ -176,13 +172,13 @@
             <div class="me-wrapper">
               <div class="me-image-container">
                 <img
-                  src="img/jarek-1.jpg"
+                  src="img/me1.jpg"
                   class="me-slider-image me-image-before"
                   alt="My photo"
                   title="Jarosław Kubiak"
                 />
                 <img
-                  src="img/jarek-2.jpg"
+                  src="img/me2.jpg"
                   class="me-slider-image"
                   alt="My photo"
                   title="Jarosław Kubiak"
@@ -233,10 +229,10 @@
               technology and I decided to complement my knowledge and experience from the backend
               with the frontend. This is how I started learning <strong>JavaScript</strong> and then
               <strong>React</strong>. Every serious company needs to exist on the web, so I think
-              JavaScript is a step in the right direction. I want to become a JavaScript developer,
-              and with the knowledge and experience gained from <strong>15 years</strong> as a
-              freelancer, I will be able to <strong>support</strong> the backend team in their
-              tasks.
+              JavaScript is a step in the right direction. I want to become a
+              <strong>JavaScript developer</strong>, and with the knowledge and experience gained
+              from <strong>15 years</strong> as a freelancer, I will be able to
+              <strong>support</strong> the backend team in their tasks.
             </p>
           </article>
         </div>
@@ -273,14 +269,11 @@
             a lot from them. The same situation applies to the React course, which is entirely in my
             repo on <a href="https://github.com/jaroslawkubiak/react" target="_blank">GitHub</a> or
             Build Responsive Websites course where We build this reaponsive
-            <a href="https://jaroslawkubiak-omnifood.netlify.app/" target="_blank"
-              >Omnifood website</a
-            >
-
-            Additionally, I solve exercises on algorithmic problems from
+            <a href="https://jaroslawkubiak-omnifood.netlify.app/" target="_blank">Omnifood</a>
+            website. Additionally, I solve exercises on algorithmic problems from
             <a href="https://neetcode.io/" target="_blank">Neetcode</a> - code is on my
-            <a href="https://github.com/jaroslawkubiak/neetcode" target="_blank">GitHub</a>. Below are
-            some of my projects that I wrote from scratch, they are not copies rewritten from
+            <a href="https://github.com/jaroslawkubiak/neetcode" target="_blank">GitHub</a>. Below
+            are some of my projects that I wrote from scratch, they are not copies rewritten from
             Youtube, with the exception of the Snake game, which I improved by adding the best score
             memorization, pause game ability, touch controls, and Nokia 3310 feel.
           </p>
