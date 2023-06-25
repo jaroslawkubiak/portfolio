@@ -126,7 +126,7 @@ a:active {
 }
 a::after {
   content: "";
-  bottom: -2px;
+  bottom: -4px;
   left: 0;
   position: absolute;
   width: 100%;
@@ -582,6 +582,8 @@ ul.portfolio-panel-list li::before {
 }
 .courses-item-title {
   font-size: 0.8rem;
+  text-decoration: underline;
+  text-decoration-color: var(--link-color);
 }
 .courses-item-title a:link,
 .courses-item-title a:visited {
