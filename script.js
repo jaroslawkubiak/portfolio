@@ -1,5 +1,5 @@
 'use strict';
-import { svg, svgDemo, svgGithub, arrowRight, arrowLeft, arrowUp } from './svg/svg-icons.js';
+import { svg, svgDemo, svgGithub, arrowRight, arrowLeft, arrowUp } from './svg/svgIcons.js';
 
 //////////////////////////////////////////////////////////
 // slider on me images
@@ -176,7 +176,7 @@ const portfolio = [
       'Dropdown list in filters',
       'Modal windows with large preview of minifigure photo',
     ],
-    tech: ['js', 'react', 'redux'],
+    tech: ['react', 'redux', 'node', 'express'],
     description: `I'm a big fan and collector of Lego figures from the Star Wars series. When my collection grew to about 80 figures, 
             I needed a better way of cataloging it, something with pictures and better than Excel. Being a programmer, 
             I wrote a simple website (PHP and MySQL) where I could keep better track of which figurines are already in my 
