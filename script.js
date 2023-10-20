@@ -165,7 +165,11 @@ const portfolio = [
   {
     title: 'Lego Star Wars Minifigure Collection',
     link: 'portfolio/figures',
-    github: 'https://github.com/jaroslawkubiak/figures',
+    github: [
+      { name: 'frontend', link: 'https://github.com/jaroslawkubiak/figures' },
+      { name: 'backend', link: 'https://github.com/jaroslawkubiak/figures-backend' },
+    ],
+
     imgDir: 'figures',
     images: [
       'Minifigure card view',
@@ -175,20 +179,28 @@ const portfolio = [
       'Comparasion of card view and R2D2 style view with more datail about figure',
       'Dropdown list in filters',
       'Modal windows with large preview of minifigure photo',
+      'Notification when figure was eddited',
+      'Notification when figure was removed',
     ],
-    tech: ['react', 'redux', 'node', 'express'],
+    tech: ['react', 'redux', 'node', 'express', 'mysql'],
     description: `I'm a big fan and collector of Lego figures from the Star Wars series. When my collection grew to about 80 figures, 
-            I needed a better way of cataloging it, something with pictures and better than Excel. Being a programmer, 
-            I wrote a simple website (PHP and MySQL) where I could keep better track of which figurines are already in my 
-            collection and I use this website till now. This project below, is the next version, written in JavaScript and React, 
-            but not finished entirely. At the moment the database is contained in a JSON file, and once I learn Node.JS 
-            I will be able to complete the project and replace the one written in PHP. I want to copy all the functions I 
-            have in the current version such as sorting, statistics, and label generation to PDF.`,
+      I needed a better way of cataloging it, something with pictures and better than Excel. Being a programmer, 
+      I wrote a simple website (PHP and MySQL) where I could keep better track of which figurines are already in my 
+      collection and I use this website till now. This project below, is the next version, written in React, Node.JS and MySQL. Project has several new features, like:
+      <ul class="portfolio-panel-list">
+      <li>React fetch data from Node API, like: figure list etc.</li>
+      <li>when entering 6-digic new figure number, program use Bricklink API (Oauth) for fetch figure data, like: name, additional, average price and release year</li>
+      <li>when you submit a new figure, its photo will be downloaded to your computer and sent to FTP server</li>
+      <li>when you delete figure from DB, its photo will also deleted from FTP server</li>
+      <li>notification when adding, editing or deleting figure</li>
+      </ul>
+      Project is still in development. I want to copy all the functions have in the current version such as sorting, 
+      statistics, and label generation to PDF.`,
   },
   {
     title: 'Flag game',
     link: 'portfolio/flags',
-    github: 'https://github.com/jaroslawkubiak/flag-game',
+    github: [{ name: 'front', link: 'https://github.com/jaroslawkubiak/flag-game' }],
     imgDir: 'flag',
     images: [
       'Select continent to start game',
@@ -205,7 +217,7 @@ const portfolio = [
   {
     title: 'F1 - reflex game',
     link: 'portfolio/f1',
-    github: 'https://github.com/jaroslawkubiak/reflex',
+    github: [{ name: 'front', link: 'https://github.com/jaroslawkubiak/reflex' }],
     imgDir: 'f1',
     images: ['Your result', 'Get ready', 'Your result', 'You click too soon'],
     tech: ['js', 'html', 'css'],
@@ -214,7 +226,7 @@ const portfolio = [
   {
     title: 'Snake game',
     link: 'portfolio/snake',
-    github: 'https://github.com/jaroslawkubiak/snake',
+    github: [{ name: 'front', link: 'https://github.com/jaroslawkubiak/snake' }],
     imgDir: 'snake',
     images: [
       'Game in mobile landscape view',
@@ -229,7 +241,7 @@ const portfolio = [
 
 //////////////////////////////////////////////////////////
 // map through portfolio array to create html
-portfolio.forEach((item, index) => {
+portfolio.forEach(item => {
   let html = `
     <li class="portfolio-item-wrapper"  id="portfolio-${item.imgDir}"><article>
     <h2 class="portfolio-title">
@@ -262,10 +274,17 @@ portfolio.forEach((item, index) => {
   html += `</div></div>`;
 
   html += `<div class="portfolio-footer"><div class="portfolio-footer-github">`;
-  if (item.github)
-    html += `<a href="${item.github}" target="_blank"><button class="portfolio-btn">${svgGithub}<p class="btn-text">GitHub</p></button></a>`;
-  html += `</div><div class="portfolio-footer-demo"><a href="${item.link}" target="_blank"><button class="portfolio-btn">${svgDemo}<p class="btn-text">Live demo</p></button></a></div>`;
+  if (item.github) {
+    item.github.forEach(el => {
+      html += `<a href="${
+        el.link
+      }" target="_blank"><button class="portfolio-btn">${svgGithub}<p class="btn-text">GitHub ${
+        el.name === 'front' ? '' : el.name
+      }</p></button></a>`;
+    });
+  }
 
+  html += `</div><div class="portfolio-footer-demo"><a href="" target="_blank"><button class="portfolio-btn">${svgDemo}<p class="btn-text">Live demo</p></button></a></div>`;
   html += `</div></article></li>`;
 
   portfolioList.insertAdjacentHTML('beforeEnd', html);
