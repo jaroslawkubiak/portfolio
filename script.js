@@ -284,7 +284,7 @@ portfolio.forEach(item => {
     });
   }
 
-  html += `</div><div class="portfolio-footer-demo"><a href="" target="_blank"><button class="portfolio-btn">${svgDemo}<p class="btn-text">Live demo</p></button></a></div>`;
+  html += `</div><div class="portfolio-footer-demo"><a href="${item.link}" target="_blank"><button class="portfolio-btn">${svgDemo}<p class="btn-text">Live demo</p></button></a></div>`;
   html += `</div></article></li>`;
 
   portfolioList.insertAdjacentHTML('beforeEnd', html);
