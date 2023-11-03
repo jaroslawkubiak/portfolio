@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Aleo:wght@400;700&family=Montserrat:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Aleo:wght@400;700&family=Montserrat:wght@400;700&display=swap');
 
 :root {
   --light-primary-color: #192440;
@@ -6,7 +6,7 @@
   --dark-primary-color: #091529;
   --primary-text: #f0f0f0;
   --secondary-text: #00ead0;
-  --accent-color: #E94127;
+  --accent-color: #e94127;
   --link-color: #8e5df9;
 
   --svg-grayscale: #f0f0f0;
@@ -29,7 +29,7 @@ html {
 body {
   background-color: var(--light-primary-color);
   color: var(--primary-text);
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   display: grid;
   justify-content: center;
@@ -91,7 +91,7 @@ header {
   justify-content: space-between;
 }
 h1 {
-  font-family: "Aleo", serif;
+  font-family: 'Aleo', serif;
   letter-spacing: 2px;
   font-size: 1.1rem;
   margin: 10px 0;
@@ -125,7 +125,7 @@ a:active {
   color: var(--accent-color);
 }
 a::after {
-  content: "";
+  content: '';
   bottom: -4px;
   left: 0;
   position: absolute;
@@ -348,7 +348,7 @@ nav {
 }
 
 .portfolio-item-wrapper:not(:last-child)::after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: 0;
   left: 0;
@@ -360,7 +360,6 @@ nav {
     var(--secondary-text),
     var(--dark-primary-color)
   );
-
 }
 .portfolio-title {
   color: var(--accent-color);
@@ -377,7 +376,7 @@ ul.portfolio-panel-list li {
   padding-left: 20px;
 }
 ul.portfolio-panel-list li::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0px;
   top: 4px;
@@ -610,9 +609,17 @@ ul.portfolio-panel-list li::before {
 .courses-svg-pdf {
   width: var(--pdf-width);
 }
+.courses-svg-pdf:hover {
+  transform: scale(1.1);
+}
+
 .courses-disabled {
   cursor: not-allowed;
 }
+.courses-disabled:hover {
+  transform: scale(1);
+}
+
 .courses-no-certificate {
   height: 50px;
   width: var(--pdf-width);
@@ -635,7 +642,7 @@ ul.portfolio-panel-list li::before {
 }
 .courses-item-circular-progress::before {
   --progress-bar-whdth: 5px;
-  content: "";
+  content: '';
   position: absolute;
   height: calc(var(--progress-bar-size) - var(--progress-bar-whdth));
   width: calc(var(--progress-bar-size) - var(--progress-bar-whdth));
@@ -646,6 +653,7 @@ ul.portfolio-panel-list li::before {
   position: relative;
   font-size: 0.6rem;
   color: var(--accent-color);
+  cursor: default;
 }
 .courses-time,
 .courses-language {
@@ -676,7 +684,7 @@ ul.portfolio-panel-list li::before {
   height: 22px;
 }
 .skills-points::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   top: 20px;
@@ -747,7 +755,7 @@ ul.portfolio-panel-list li::before {
   position: relative;
 }
 .road-map-line::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 4px;
   height: 100%;
@@ -1368,7 +1376,7 @@ footer p {
   .portfolio-item-wrapper:not(:last-child)::after {
     height: 4px;
   }
-  
+
   .portfolio-svg {
     width: 48px;
     height: 48px;
