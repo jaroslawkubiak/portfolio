@@ -117,8 +117,6 @@ const headerObserver = new IntersectionObserver(stickyNav, {
 });
 headerObserver.observe(aboutMe);
 
-
-
 //////////////////////////////////////////////////////////
 // smooth go back to top of the page
 function scrollUp() {

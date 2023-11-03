@@ -24,7 +24,7 @@
       const fileVer = Date.now();
       const head = document.getElementsByTagName('head')[0];
 
-      const scripts = ['js/script', 'js/svgIcons', 'js/courses', 'js/portfolio'];
+      const scripts = ['js/script', 'js/svgIcons', 'js/courses', 'js/portfolio', 'js/skills'];
       scripts.forEach(file => {
         const link = document.createElement('script');
         link.defer = true;
@@ -277,108 +277,7 @@
         <div class="skills-section">
           <div id="tech-skills" class="section-to-reveal">
             <h1>Tech skills</h1>
-            <ul>
-              <li class="skills-item-wrapper">
-                <div class="skills-item-title">JavaScript ES6</div>
-                <div class="skills-points">
-                  <span class="skill-point point-1"></span>
-                  <span class="skill-point point-2"></span>
-                  <span class="skill-point point-3"></span>
-                  <span class="skill-point point-4"></span>
-                  <span class="skill-point skill-off point-5"></span>
-                </div>
-              </li>
-              <li class="skills-item-wrapper">
-                <div class="skills-item-title">TypeScript</div>
-                <div class="skills-points">
-                  <span class="skill-point point-1"></span>
-                  <span class="skill-point point-2"></span>
-                  <span class="skill-point skill-off point-3"></span>
-                  <span class="skill-point skill-off point-4"></span>
-                  <span class="skill-point skill-off point-5"></span>
-                </div>
-              </li>
-              <li class="skills-item-wrapper">
-                <div class="skills-item-title">Node.js</div>
-                <div class="skills-points">
-                  <span class="skill-point point-1"></span>
-                  <span class="skill-point point-2"></span>
-                  <span class="skill-point skill-off point-3"></span>
-                  <span class="skill-point skill-off point-4"></span>
-                  <span class="skill-point skill-off point-5"></span>
-                </div>
-              </li>
-              <li class="skills-item-wrapper">
-                <div class="skills-item-title">React & Redux</div>
-                <div class="skills-points">
-                  <span class="skill-point point-1"></span>
-                  <span class="skill-point point-2"></span>
-                  <span class="skill-point point-3"></span>
-                  <span class="skill-point skill-off point-4"></span>
-                  <span class="skill-point skill-off point-5"></span>
-                </div>
-              </li>
-              <li class="skills-item-wrapper">
-                <div class="skills-item-title">PHP</div>
-                <div class="skills-points">
-                  <span class="skill-point point-1"></span>
-                  <span class="skill-point point-2"></span>
-                  <span class="skill-point point-3"></span>
-                  <span class="skill-point point-4"></span>
-                  <span class="skill-point skill-off point-5"></span>
-                </div>
-              </li>
-              <li class="skills-item-wrapper">
-                <div class="skills-item-title">MySQL</div>
-                <div class="skills-points">
-                  <span class="skill-point point-1"></span>
-                  <span class="skill-point point-2"></span>
-                  <span class="skill-point skill-off point-3"></span>
-                  <span class="skill-point skill-off point-4"></span>
-                  <span class="skill-point skill-off point-5"></span>
-                </div>
-              </li>
-              <li class="skills-item-wrapper">
-                <div class="skills-item-title">HTML + CSS</div>
-                <div class="skills-points">
-                  <span class="skill-point point-1"></span>
-                  <span class="skill-point point-2"></span>
-                  <span class="skill-point point-3"></span>
-                  <span class="skill-point point-4"></span>
-                  <span class="skill-point skill-off point-5"></span>
-                </div>
-              </li>
-              <li class="skills-item-wrapper">
-                <div class="skills-item-title">Tailwind</div>
-                <div class="skills-points">
-                  <span class="skill-point point-1"></span>
-                  <span class="skill-point point-2"></span>
-                  <span class="skill-point skill-off point-3"></span>
-                  <span class="skill-point skill-off point-4"></span>
-                  <span class="skill-point skill-off point-5"></span>
-                </div>
-              </li>
-              <li class="skills-item-wrapper">
-                <div class="skills-item-title">GIT</div>
-                <div class="skills-points">
-                  <span class="skill-point point-1"></span>
-                  <span class="skill-point point-2"></span>
-                  <span class="skill-point skill-off point-3"></span>
-                  <span class="skill-point skill-off point-4"></span>
-                  <span class="skill-point skill-off point-5"></span>
-                </div>
-              </li>
-              <li class="skills-item-wrapper">
-                <div class="skills-item-title">VS Code</div>
-                <div class="skills-points">
-                  <span class="skill-point point-1"></span>
-                  <span class="skill-point point-2"></span>
-                  <span class="skill-point point-3"></span>
-                  <span class="skill-point skill-off point-4"></span>
-                  <span class="skill-point skill-off point-5"></span>
-                </div>
-              </li>
-            </ul>
+            <ul id="techSkillList"></ul>
           </div>
           <div id="soft-skills" class="section-to-reveal">
             <h1 class="text-align-right">Soft skills</h1>
