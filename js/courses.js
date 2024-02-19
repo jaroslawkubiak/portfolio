@@ -50,8 +50,16 @@ export const coursesList = [
     language: 'ENG',
   },
   {
+    name: 'Angular - The Complete Guide (2024 Edition)',
+    percent: 12,
+    udemy: 'https://www.udemy.com/course/the-complete-guide-to-angular-2/',
+    pdf: 'certificates/.pdf',
+    time: '36h',
+    language: 'ENG',
+  },
+  {
     name: 'Advanced CSS and Sass: Flexbox, Grid, Animations and More!',
-    percent: 32,
+    percent: 54,
     udemy: 'https://www.udemy.com/course/advanced-css-and-sass/',
     pdf: 'certificates/.pdf',
     time: '28h',
@@ -67,7 +75,7 @@ export const coursesList = [
   },
   {
     name: 'Wprowadzenie do Git i GitHub',
-    percent: 65,
+    percent: 100,
     udemy: 'https://www.udemy.com/course/kurs-git-i-github-od-podstaw/',
     pdf: '',
     time: '5h',
