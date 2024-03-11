@@ -51,7 +51,7 @@ export const coursesList = [
   },
   {
     name: 'Angular - The Complete Guide (2024 Edition)',
-    percent: 12,
+    percent: 35,
     udemy: 'https://www.udemy.com/course/the-complete-guide-to-angular-2/',
     pdf: 'certificates/.pdf',
     time: '36h',
