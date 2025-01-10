@@ -7,15 +7,27 @@ export const skillsList = [
   },
   {
     skill: 'TypeScript',
-    level: 2,
-  },
-  {
-    skill: 'Node.JS',
     level: 4,
   },
   {
-    skill: 'React & Redux',
+    skill: 'Node.JS/Nest.JS',
     level: 3,
+  },
+  {
+    skill: 'Nest.JS',
+    level: 3,
+  },
+  {
+    skill: 'Angular',
+    level: 3,
+  },
+  {
+    skill: 'RxJS',
+    level: 2,
+  },
+  {
+    skill: 'React & Redux',
+    level: 2,
   },
   {
     skill: 'PHP',
@@ -23,6 +35,10 @@ export const skillsList = [
   },
   {
     skill: 'MySQL',
+    level: 3,
+  },
+  {
+    skill: 'Redis',
     level: 2,
   },
   {
@@ -35,11 +51,11 @@ export const skillsList = [
   },
   {
     skill: 'GIT',
-    level: 2,
+    level: 3,
   },
   {
     skill: 'VS Code',
-    level: 3,
+    level: 4,
   },
 ];
 
