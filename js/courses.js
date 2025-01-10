@@ -2,6 +2,47 @@ const coursesContainer = document.getElementById("coursesList");
 
 export const coursesList = [
   {
+    name: `Typescript: The Complete Developer's Guide`,
+    percent: 100,
+    udemy:
+      "https://www.udemy.com/course/typescript-the-complete-developers-guide/",
+    pdf: "certificates/typescript.pdf",
+    time: "27h",
+    language: "ENG",
+  },
+  {
+    name: "Angular - The Complete Guide (2025 Edition)",
+    percent: 100,
+    udemy: "https://www.udemy.com/course/the-complete-guide-to-angular-2",
+    pdf: "certificates/angular.pdf",
+    time: "55,5h",
+    language: "ENG",
+  },
+  {
+    name: "RxJS 101",
+    percent: 100,
+    udemy: "https://www.udemy.com/course/rxjs-101-course/",
+    pdf: "certificates/rxjs.pdf",
+    time: "5,5h",
+    language: "ENG",
+  },
+  {
+    name: "NestJS: The Complete Developer's Guide",
+    percent: 100,
+    udemy: "https://www.udemy.com/course/nestjs-the-complete-developers-guide/",
+    pdf: "certificates/nestjs.pdf",
+    time: "19,5h",
+    language: "ENG",
+  },
+  {
+    name: "Node.js, Express, MongoDB & More. The Complete Bootcamp",
+    percent: 100,
+    udemy: "https://www.udemy.com/course/nodejs-express-mongodb-bootcamp/",
+    pdf: "certificates/nodejs.pdf",
+    time: "42h",
+    language: "ENG",
+  },
+  {
     name: "The Complete JavaScript Course 2023. From Zero to Expert!",
     percent: 100,
     udemy: "https://www.udemy.com/course/the-complete-javascript-course/",
@@ -18,20 +59,11 @@ export const coursesList = [
     language: "ENG",
   },
   {
-    name: "Node.js, Express, MongoDB & More. The Complete Bootcamp",
-    percent: 100,
-    udemy: "https://www.udemy.com/course/nodejs-express-mongodb-bootcamp/",
-    pdf: "certificates/nodejs.pdf",
-    time: "42h",
-    language: "ENG",
-  },
-  {
-    name: `Typescript: The Complete Developer's Guide`,
-    percent: 100,
-    udemy:
-      "https://www.udemy.com/course/typescript-the-complete-developers-guide/",
-    pdf: "certificates/typescript.pdf",
-    time: "27h",
+    name: "The Ultimate React Course 2023: React, Redux & More",
+    percent: 48,
+    udemy: "https://www.udemy.com/course/the-ultimate-react-course/",
+    pdf: "certificates/.pdf",
+    time: "67h",
     language: "ENG",
   },
   {
@@ -41,22 +73,6 @@ export const coursesList = [
       "https://www.udemy.com/course/design-and-develop-a-killer-website-with-html5-and-css3/",
     pdf: "certificates/build-responsive-real-world-websites.pdf",
     time: "37,5h",
-    language: "ENG",
-  },
-  {
-    name: "The Ultimate React Course 2023: React, Redux & More",
-    percent: 48,
-    udemy: "https://www.udemy.com/course/the-ultimate-react-course/",
-    pdf: "certificates/.pdf",
-    time: "67h",
-    language: "ENG",
-  },
-  {
-    name: "Angular - The Complete Guide (2024 Edition)",
-    percent: 52,
-    udemy: "https://www.udemy.com/course/the-complete-guide-to-angular-2/",
-    pdf: "certificates/.pdf",
-    time: "36h",
     language: "ENG",
   },
   {
