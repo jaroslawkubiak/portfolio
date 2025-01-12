@@ -6,7 +6,11 @@
     <meta http-equiv="CACHE-CONTROL" content="NO-CACHE" />
     <link rel="shortcut icon" href="favicon3.png" />
     <link rel="icon" type="image/png" href="/favicon3.png" />
-    <link rel="icon" type="image/png" href="https://jaroslawkubiak.pl/favicon3.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://jaroslawkubiak.pl/favicon3.png"
+    />
 
     <title>Javascript developer</title>
     <meta
@@ -22,20 +26,26 @@
     <!-- add css adn script file with version extension, to always load new files, preventing caching old files in browsers -->
     <script>
       const fileVer = Date.now();
-      const head = document.getElementsByTagName('head')[0];
+      const head = document.getElementsByTagName("head")[0];
 
-      const scripts = ['js/script', 'js/svgIcons', 'js/courses', 'js/portfolio', 'js/skills'];
-      scripts.forEach(file => {
-        const link = document.createElement('script');
+      const scripts = [
+        "js/script",
+        "js/svgIcons",
+        "js/courses",
+        "js/portfolio",
+        "js/skills",
+      ];
+      scripts.forEach((file) => {
+        const link = document.createElement("script");
         link.defer = true;
-        link.type = 'module';
+        link.type = "module";
         link.src = `${file}.js?v=${fileVer}`;
         head.appendChild(link);
       });
 
-      let link = document.createElement('link');
-      link.rel = 'stylesheet';
-      link.type = 'text/css';
+      let link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.type = "text/css";
       link.href = `style.css?v=${fileVer}`;
       head.appendChild(link);
     </script>
@@ -167,14 +177,34 @@
           <article>
             <div class="me-wrapper">
               <div class="me-image-container">
-                <img src="img/me1.jpg" class="me-slider-image me-image-before" alt="My photo" title="Jarosław Kubiak" />
-                <img src="img/me2.jpg" class="me-slider-image" alt="My photo" title="Jarosław Kubiak" />
+                <img
+                  src="img/me1.jpg"
+                  class="me-slider-image me-image-before"
+                  alt="My photo"
+                  title="Jarosław Kubiak"
+                />
+                <img
+                  src="img/me2.jpg"
+                  class="me-slider-image"
+                  alt="My photo"
+                  title="Jarosław Kubiak"
+                />
               </div>
-              <input type="range" min="0" max="100" class="me-slider" aria-label="Percent of image show" />
+              <input
+                type="range"
+                min="0"
+                max="100"
+                class="me-slider"
+                aria-label="Percent of image show"
+              />
 
               <div class="me-slider-line"></div>
               <div class="me-slider-button" aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="currentcolor" viewBox="0 0 256 256">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentcolor"
+                  viewBox="0 0 256 256"
+                >
                   <path
                     d="M128,28A100,100,0,1,0,228,128,100.11,100.11,0,0,0,128,28Zm0,192a92,92,0,1,1,92-92A92.1,92.1,0,0,1,128,220Zm34.83-118.83a4,4,0,0,1-5.66,5.66L128,77.66,98.83,106.83a4,4,0,0,1-5.66-5.66l32-32a4,4,0,0,1,5.66,0Zm0,48a4,4,0,0,1,0,5.66l-32,32a4,4,0,0,1-5.66,0l-32-32a4,4,0,0,1,5.66-5.66L128,178.34l29.17-29.17A4,4,0,0,1,162.83,149.17Z"
                   ></path>
@@ -183,33 +213,52 @@
             </div>
 
             <p class="about-me">
-              Hello. I'm Jarosław. After <strong>graduating</strong> from the Kazimierza Wielkiego University in
-              Bydgoszcz, I got a <strong>freelance job</strong> to write software for a window production company from
-              my region. At first, it was a straightforward website, on which user could log in to the system, add
-              customers profiles and their orders to the database, and view and edit them. My engineering thesis for
-              academic credit was to write a warehouse management software in PHP and MySQL, therefore, the program I
-              was commissioned for also uses the same technologies. That project has developed over<strong>
-                6 years</strong
-              >
-              and ended in 2014. A new company was established in 2015, by former employees of the previous company and
-              I got further order for a similar project. This project is still being developed to the
-              <strong>present</strong> day, and new functionalities are being added to improve my client's work. This
-              simple project has grown into quite a large <strong>ERP system</strong> (more than 60,000 lines of code)
-              over these few years. You can find out more about this system in my portfolio.
+              Hello, my name is Jaroslaw. For the past year I have been gaining
+              knowledge as a <strong>Junior Fullstack Developer</strong> at
+              Huuuge Games working on a <strong>LiveOps</strong> system based on
+              <strong>TypeScript</strong>, <strong>Node.JS</strong> and
+              <strong>Angular</strong>. I am a programming
+              <strong>enthusiast</strong> with basic knowledge and junior
+              <strong>experience</strong>. Before becoming a programmer, I
+              worked for the past 15 years as a service engineer specialist at
+              Konica Minolta. While working full-time, I was
+              <strong>simultaneously</strong> involved in the development of
+              <strong>two ERP systems</strong>.
 
-              <br /><br />
-              In addition to working on these projects, I have written several
-              <strong>websites</strong>, mainly for friends and family. I wrote my first website in Notepad without
-              spell checking, IDE tips, error highlighting, LiveServer, or Prettier 😁. Now, that I'm writing in
-              <strong>Visual Studio Code</strong>, it's much easier with its extensions. Last year I decided to become a
-              <strong>full-time programmer</strong>. PHP is becoming less popular every year, being replaced by Python
-              (I have completed one course), so I didn't want to stay in that technology and I decided to complement my
-              knowledge and experience from the backend with the frontend. This is how I started learning
-              <strong>JavaScript</strong>,then <strong>React</strong>, <strong>TypeScript</strong> and
-              <strong>Node.JS</strong>. Every serious company needs to exist on the web, so I think JavaScript is a step
-              in the right direction. I want to become a <strong>JavaScript developer</strong>, and with the knowledge
-              and experience gained from <strong>15 years</strong> as a freelancer, I will be able to
-              <strong>support</strong> the backend team in their tasks.
+              <br />After graduating from Kazimierz Wielki University in
+              Bydgoszcz, I was commissioned as a freelancer to
+              <strong>write software</strong> for a window manufacturing
+              company. At first it was a simple website where the user could log
+              into the system, add customer profiles and their orders to the
+              database, view and edit them. This <strong>ERP system</strong> was
+              written in <strong>PHP</strong>, <strong>MySQL</strong> and
+              <strong>HTML</strong>. The project was in development for 6 years
+              and ended in 2014. A year later, a newly established company,
+              founded by former employees of the previous one, approached me
+              with a proposal to design a <strong>similar system</strong>. The
+              project has been developed to <strong>this day</strong>, with new
+              functionalities being added to improve my client's workflow. This
+              simple project has grown over the years into a sizable ERP system
+              (more than 60,000 lines of code) with lots of
+              <strong>new features</strong>. More information about this system
+              can be found in my portfolio. <br /><br />
+              In <strong>addition</strong> to working on these projects, I wrote
+              a few websites, mostly for friends and family. I wrote my first
+              website in Notepad, which didn't check code syntax, highlight
+              errors, has LiveServer or Prettier 😁. Now that I use
+              <strong>Visual Studio Code</strong>, it's much easier thanks to
+              its extensions. Before I started working <strong>full-time as a
+              programmer</strong>, I spent more than a <strong>year</strong> learning new
+              technologies by completing courses on Udemy.com. I started with
+              <strong>JavaScript</strong>, followed by <strong>React</strong>,
+              <strong>TypeScript</strong> and <strong>Node.JS</strong>. You can
+              find a full list of courses and their completion certificates in
+              the courses section. During my work as a Fullstack Developer, I
+              use <strong>Copilot</strong> to help me with daily tasks. Using AI
+              is essential these days. I <strong>continue</strong> to develop
+              constantly by completing more courses, such as
+              <strong>Angular</strong>, <strong>Nest.JS</strong> and
+              <strong>RxJS</strong>.
             </p>
           </article>
         </div>
@@ -220,36 +269,63 @@
         <div class="portfolio-section">
           <h1>Portfolio</h1>
           <p class="portfolio-overview">
-            The JavaScript course I started in 2022 consisted of several projects, such as:
+            The JavaScript course I started in 2022 consisted of several
+            projects, such as:
           </p>
           <ul class="portfolio-list">
             <li>
-              <a href="https://jaroslawkubiak-mapty.netlify.app/" target="_blank">Mapty</a> (for marking workouts on a
-              map, using Leaflet library)
+              <a
+                href="https://jaroslawkubiak-mapty.netlify.app/"
+                target="_blank"
+                >Mapty</a
+              >
+              (for marking workouts on a map, using Leaflet library)
             </li>
             <li>
-              <a href="https://jaroslawkubiak-forkify.netlify.app/" target="_blank">Forkify</a>
+              <a
+                href="https://jaroslawkubiak-forkify.netlify.app/"
+                target="_blank"
+                >Forkify</a
+              >
               (finding recipes via API)
             </li>
             <li>
-              <a href="https://jaroslawkubiak-piggame.netlify.app/" target="_blank">Pig Game</a>
+              <a
+                href="https://jaroslawkubiak-piggame.netlify.app/"
+                target="_blank"
+                >Pig Game</a
+              >
               (game for two players, each of them rolls a dice)
             </li>
-            <li><a href="other/guess" target="_blank">Guess Number</a> (You have to guess secret number)</li>
+            <li>
+              <a href="other/guess" target="_blank">Guess Number</a> (You have
+              to guess secret number)
+            </li>
           </ul>
 
           <p class="portfolio-overview">
-            I didn't put them in the portfolio because they are not my projects, although I learned a lot from them. The
-            same situation applies to the React course, which is entirely in my repo on
-            <a href="https://github.com/jaroslawkubiak/react" target="_blank">GitHub</a> or Build Responsive Websites
-            course where We build this reaponsive
-            <a href="https://jaroslawkubiak-omnifood.netlify.app/" target="_blank">Omnifood</a>
-            website. Additionally, I solve exercises on algorithmic problems from
-            <a href="https://neetcode.io/" target="_blank">Neetcode</a> - code is on my
-            <a href="https://github.com/jaroslawkubiak/neetcode" target="_blank">GitHub</a>. Below are some of my
-            projects that I wrote from scratch, they are not copies rewritten from Youtube, with the exception of the
-            Snake game, which I improved by adding the best score memorization, pause game ability, touch controls, and
-            Nokia 3310 feel.
+            I didn't put them in the portfolio because they are not my projects,
+            although I learned a lot from them. The same situation applies to
+            the React course, which is entirely in my repo on
+            <a href="https://github.com/jaroslawkubiak/react" target="_blank"
+              >GitHub</a
+            >
+            or Build Responsive Websites course where We build this reaponsive
+            <a
+              href="https://jaroslawkubiak-omnifood.netlify.app/"
+              target="_blank"
+              >Omnifood</a
+            >
+            website. Additionally, I solve exercises on algorithmic problems
+            from
+            <a href="https://neetcode.io/" target="_blank">Neetcode</a> - code
+            is on my
+            <a href="https://github.com/jaroslawkubiak/neetcode" target="_blank"
+              >GitHub</a
+            >. Below are some of my projects that I wrote from scratch, they are
+            not copies rewritten from Youtube, with the exception of the Snake
+            game, which I improved by adding the best score memorization, pause
+            game ability, touch controls, and Nokia 3310 feel.
           </p>
 
           <ul class="portfolio-list">
@@ -285,12 +361,23 @@
               <li class="skills-item-wrapper skill-absolute">English B2+</li>
               <li class="skills-item-wrapper skill-absolute">Ambitious</li>
               <li class="skills-item-wrapper skill-absolute">Fast learning</li>
-              <li class="skills-item-wrapper skill-absolute">Analytical thinking</li>
-              <li class="skills-item-wrapper skill-absolute">Problem-solving</li>
+              <li class="skills-item-wrapper skill-absolute">
+                Analytical thinking
+              </li>
+              <li class="skills-item-wrapper skill-absolute">
+                Problem-solving
+              </li>
               <li class="skills-item-wrapper skill-absolute">Curiosity</li>
-              <li class="skills-item-wrapper skill-absolute">Attention to details</li>
-              <li class="skills-item-wrapper skill-absolute">Self-starting attitude</li>
+              <li class="skills-item-wrapper skill-absolute">
+                Attention to details
+              </li>
+              <li class="skills-item-wrapper skill-absolute">
+                Self-starting attitude
+              </li>
               <li class="skills-item-wrapper skill-absolute">Assertiveness</li>
+              <li class="skills-item-wrapper skill-absolute">
+                Can-do attitude
+              </li>
             </ul>
           </div>
         </div>
@@ -304,28 +391,44 @@
 
         <div id="road-map-timeline" class="">
           <div class="road-map-container road-map-left-container">
-            <img src="svg/angular.svg" class="road-map-svg" alt="Icon for Angular" />
+            <img
+              src="svg/angular.svg"
+              class="road-map-svg"
+              alt="Icon for Angular"
+            />
             <div class="road-map-text">
               <h4>Master Angular and RxJS</h4>
               <span class="left-container-arrow"></span>
             </div>
           </div>
           <div class="road-map-container road-map-right-container">
-            <img src="svg/nestjs.svg" class="road-map-svg" alt="Icon for NestJS" />
+            <img
+              src="svg/nestjs.svg"
+              class="road-map-svg"
+              alt="Icon for NestJS"
+            />
             <div class="road-map-text">
               <h4>Master NestJS</h4>
               <span class="right-container-arrow"></span>
             </div>
           </div>
           <div class="road-map-container road-map-left-container">
-            <img src="svg/electron.svg" class="road-map-svg" alt="Icon for Electron" />
+            <img
+              src="svg/electron.svg"
+              class="road-map-svg"
+              alt="Icon for Electron"
+            />
             <div class="road-map-text">
               <h4>Electron</h4>
               <span class="left-container-arrow"></span>
             </div>
           </div>
           <div class="road-map-container road-map-right-container">
-            <img src="svg/reactnative.svg" class="road-map-svg" alt="Icon for React Native" />
+            <img
+              src="svg/reactnative.svg"
+              class="road-map-svg"
+              alt="Icon for React Native"
+            />
             <div class="road-map-text">
               <h4>React Native</h4>
               <span class="right-container-arrow"></span>
@@ -345,15 +448,27 @@
       <p id="copyright">Copyright &copy; 2023 by Jarosław Kubiak</p>
       <div class="footer-links">
         <a href="mailto: jaroslawkubiak82@gmail.com" title="Contact">
-          <svg class="footer-svg footer-svg-contact" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <svg
+            class="footer-svg footer-svg-contact"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
             <path
               d="M12 2.02c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 12.55l-5.992-4.57h11.983l-5.991 4.57zm0 1.288l-6-4.629v6.771h12v-6.771l-6 4.629z"
             />
           </svg>
         </a>
 
-        <a href="https://github.com/jaroslawkubiak" target="_blank" title="GitHub">
-          <svg class="footer-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <a
+          href="https://github.com/jaroslawkubiak?tab=overview&from=2023-12-01&to=2023-12-31"
+          target="_blank"
+          title="GitHub"
+        >
+          <svg
+            class="footer-svg"
+            viewBox="0 0 100 100"
+            xmlns="http://www.w3.org/2000/svg"
+          >
             <path
               fill-rule="evenodd"
               clip-rule="evenodd"
@@ -362,8 +477,16 @@
           </svg>
         </a>
 
-        <a href="https://www.linkedin.com/in/jaros%C5%82aw-kubiak-a701b7263/" target="_blank" title="LinkedIn">
-          <svg xmlns="http://www.w3.org/2000/svg" class="footer-svg" viewBox="0 0 24 24">
+        <a
+          href="https://www.linkedin.com/in/jaros%C5%82aw-kubiak-a701b7263/"
+          target="_blank"
+          title="LinkedIn"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="footer-svg"
+            viewBox="0 0 24 24"
+          >
             <path
               d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
             />

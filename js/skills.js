@@ -1,74 +1,76 @@
-const techSkillContainer = document.getElementById('techSkillList');
-console.log(techSkillContainer);
+const techSkillContainer = document.getElementById("techSkillList");
+
 export const skillsList = [
   {
-    skill: 'JavaScript ES6',
+    skill: "JavaScript ES6",
     level: 4,
   },
   {
-    skill: 'TypeScript',
+    skill: "TypeScript",
     level: 4,
   },
   {
-    skill: 'Node.JS/Nest.JS',
+    skill: "Node.JS/Nest.JS",
     level: 3,
   },
   {
-    skill: 'Nest.JS',
+    skill: "Nest.JS",
     level: 3,
   },
   {
-    skill: 'Angular',
+    skill: "Angular",
     level: 3,
   },
   {
-    skill: 'RxJS',
+    skill: "RxJS",
     level: 2,
   },
   {
-    skill: 'React & Redux',
+    skill: "React & Redux",
     level: 2,
   },
   {
-    skill: 'PHP',
+    skill: "PHP",
     level: 4,
   },
   {
-    skill: 'MySQL',
+    skill: "MySQL",
     level: 3,
   },
   {
-    skill: 'Redis',
+    skill: "Redis",
     level: 2,
   },
   {
-    skill: 'HTML + CSS',
+    skill: "HTML + CSS",
     level: 4,
   },
   {
-    skill: 'Tailwind',
+    skill: "Tailwind",
     level: 2,
   },
   {
-    skill: 'GIT',
+    skill: "GIT",
     level: 3,
   },
   {
-    skill: 'VS Code',
+    skill: "VS Code",
     level: 4,
   },
 ];
 
-skillsList.forEach(item => {
+skillsList.forEach((item) => {
   let html = `
     <li class="skills-item-wrapper">
         <div class="skills-item-title">${item.skill}</div>
         <div class="skills-points">`;
 
   for (let i = 1; i <= 5; i++) {
-    html += `<span class="skill-point point-${i} ${item.level >= i ? '' : 'skill-off'}"></span>`;
+    html += `<span class="skill-point point-${i} ${
+      item.level >= i ? "" : "skill-off"
+    }"></span>`;
   }
   html += `</div></li>`;
 
-  techSkillContainer.insertAdjacentHTML('beforeEnd', html);
+  techSkillContainer.insertAdjacentHTML("beforeEnd", html);
 });

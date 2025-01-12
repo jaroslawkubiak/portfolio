@@ -1292,6 +1292,11 @@ footer p {
   #about-me {
     margin-top: 100px;
   }
+  section > div {
+    width: 100%;
+    max-width: 1280px;
+    padding: 40px;
+  }
   header {
     position: absolute;
     width: 100%;
