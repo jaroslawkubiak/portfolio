@@ -11,7 +11,7 @@ export const coursesList = [
     language: "ENG",
   },
   {
-    name: "Angular - The Complete Guide",
+    name: "Angular - The Complete Guide (2025 Edition)",
     percent: 100,
     udemy: "https://www.udemy.com/course/the-complete-guide-to-angular-2",
     pdf: "certificates/angular.pdf",

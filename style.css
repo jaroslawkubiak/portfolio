@@ -942,13 +942,13 @@ footer p {
   background-color: var(--accent-color);
 }
 .test {
-  position: fixed;
+  /* position: fixed;
   top: 0;
   left: 0;
   z-index: 9999;
   width: 10px;
   height: 30px;
-  background-color: rgb(255, 0, 0);
+  background-color: rgb(255, 0, 0); */
 }
 
 /*############################## Small devices (portrait tablets and large phones, 600px and up) ##############################*/
@@ -961,7 +961,7 @@ footer p {
     --pdf-width: 36px;
   }
   .test {
-    background-color: #ff9900;
+    /* background-color: #ff9900; */
   }
   h1 {
     font-size: 1.4rem;
@@ -1168,7 +1168,7 @@ footer p {
     --svg-border-width: 3px;
   }
   .test {
-    background-color: #008000;
+    /* background-color: #008000; */
   }
   h1 {
     font-size: 1.6rem;
@@ -1279,7 +1279,7 @@ footer p {
     --pdf-width: 70px;
   }
   .test {
-    background-color: #1100ff;
+    /* background-color: #1100ff; */
   }
   .portfolio-overview,
   .portfolio-description-wrapper,
