@@ -404,7 +404,7 @@ ul.portfolio-panel-list li::before {
   height: 25px;
   border-radius: 100%;
   margin: 5px;
-  border: var(--svg-border-width) solid var(--svg-grayscale);
+  /* border: var(--svg-border-width) solid var(--svg-grayscale); */
 }
 /* portfolio - svg fill color */
 .svg-grayscale-fill {
