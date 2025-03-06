@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Aleo:wght@400;700&family=Montserrat:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Aleo:wght@400;700&family=Montserrat:wght@400;700&display=swap");
 
 :root {
   --light-primary-color: #192440;
@@ -29,7 +29,7 @@ html {
 body {
   background-color: var(--light-primary-color);
   color: var(--primary-text);
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
   display: grid;
   justify-content: center;
@@ -42,30 +42,36 @@ main {
 #soft-skills {
   transition: transform 1s, opacity 1s;
 }
-#portfolio,
-#skills {
+#recommendations,
+#courses,
+#road-map {
   background-color: var(--dark-primary-color);
   width: 100vw;
-  display: grid;
+  display: flex;
+  align-items: center;
 }
+
 .courses-section,
 .skills-section,
 .road-map-section {
   width: 100vw;
 }
+
 section {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   transition: transform 1s, opacity 1s;
-  margin: 25px 0 75px 0;
+  margin: 25px 0;
   justify-self: center;
 }
+
 .section-hidden {
   opacity: 0;
   visibility: hidden;
   transform: translateY(100px);
 }
+
 section > div {
   width: 100%;
   max-width: 1280px;
@@ -77,12 +83,9 @@ section > div {
 
 /* general style to tags */
 header {
-  /* position: relative; */
   background-color: var(--dark-primary-color);
   width: 100%;
   height: 60px;
-  /* display: flex;
-  justify-content: center; */
 }
 .header {
   position: relative;
@@ -91,7 +94,7 @@ header {
   justify-content: space-between;
 }
 h1 {
-  font-family: 'Aleo', serif;
+  font-family: "Aleo", serif;
   letter-spacing: 2px;
   font-size: 1.1rem;
   margin: 10px 0;
@@ -125,7 +128,7 @@ a:active {
   color: var(--accent-color);
 }
 a::after {
-  content: '';
+  content: "";
   bottom: -4px;
   left: 0;
   position: absolute;
@@ -348,7 +351,7 @@ nav {
 }
 
 .portfolio-item-wrapper:not(:last-child)::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -356,9 +359,9 @@ nav {
   height: 2px;
   background-image: linear-gradient(
     to right,
-    var(--dark-primary-color),
+    var(--light-primary-color),
     var(--secondary-text),
-    var(--dark-primary-color)
+    var(--light-primary-color)
   );
 }
 .portfolio-title {
@@ -376,7 +379,7 @@ ul.portfolio-panel-list li {
   padding-left: 20px;
 }
 ul.portfolio-panel-list li::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0px;
   top: 4px;
@@ -404,7 +407,7 @@ ul.portfolio-panel-list li::before {
   height: 25px;
   border-radius: 100%;
   margin: 5px;
-  /* border: var(--svg-border-width) solid var(--svg-grayscale); */
+  border: var(--svg-border-width) solid var(--svg-grayscale);
 }
 /* portfolio - svg fill color */
 .svg-grayscale-fill {
@@ -634,7 +637,10 @@ ul.portfolio-panel-list li::before {
   width: var(--progress-bar-size);
   border-radius: 50%;
   /* background is set from JS */
-  background: conic-gradient(var(--accent-color) 270deg, var(--dark-primary-color) 0deg);
+  background: conic-gradient(
+    var(--accent-color) 270deg,
+    var(--dark-primary-color) 0deg
+  );
   display: flex;
   align-items: center;
   align-self: center;
@@ -642,12 +648,12 @@ ul.portfolio-panel-list li::before {
 }
 .courses-item-circular-progress::before {
   --progress-bar-whdth: 5px;
-  content: '';
+  content: "";
   position: absolute;
   height: calc(var(--progress-bar-size) - var(--progress-bar-whdth));
   width: calc(var(--progress-bar-size) - var(--progress-bar-whdth));
   border-radius: 50%;
-  background-color: var(--light-primary-color);
+  background-color: var(--dark-primary-color);
 }
 .courses-item-progress-value {
   position: relative;
@@ -684,13 +690,13 @@ ul.portfolio-panel-list li::before {
   height: 22px;
 }
 .skills-points::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 20px;
   width: 120px;
   height: 15px;
-  background-color: var(--dark-primary-color);
+  background-color: var(--light-primary-color);
 }
 .skill-point {
   width: 10px;
@@ -755,21 +761,22 @@ ul.portfolio-panel-list li::before {
   position: relative;
 }
 .road-map-line::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 4px;
-  height: 100%;
-  background-color: var(--dark-primary-color);
+  height: 100px;
+  background-color: var(--light-primary-color);
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  z-index: -1;
+  z-index: 1;
   animation: moveline 5.5s linear forwards;
 }
 .road-map-container {
   padding: 10px 20px;
   position: relative;
   width: 50%;
+  z-index: 5;
 }
 .road-map-container-animation {
   animation: movedown 1s linear forwards;
@@ -803,7 +810,7 @@ ul.portfolio-panel-list li::before {
 
 .road-map-text {
   padding: 10px;
-  background-color: var(--dark-primary-color);
+  background-color: var(--light-primary-color);
   position: relative;
   font-size: 0.8rem;
   color: var(--primary-text);
@@ -828,7 +835,7 @@ ul.portfolio-panel-list li::before {
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
-  background-color: var(--dark-primary-color);
+  background-color: var(--light-primary-color);
 }
 .road-map-right-container img {
   left: calc((var(--img-width) - var(--img-width) / 2) * -1);
@@ -855,7 +862,7 @@ ul.portfolio-panel-list li::before {
   z-index: -1;
   border-top: 7px solid transparent;
   border-bottom: 7px solid transparent;
-  border-left: 7px solid var(--dark-primary-color);
+  border-left: 7px solid var(--light-primary-color);
 }
 .right-container-arrow {
   height: 0;
@@ -867,12 +874,12 @@ ul.portfolio-panel-list li::before {
   z-index: -1;
   border-top: 7px solid transparent;
   border-bottom: 7px solid transparent;
-  border-right: 7px solid var(--dark-primary-color);
+  border-right: 7px solid var(--light-primary-color);
 }
 
 /* footer */
 footer {
-  background-color: var(--dark-primary-color);
+  background-color: var(--light-primary-color);
   padding: 20px 5px;
   text-align: center;
 }
@@ -949,6 +956,28 @@ footer p {
   width: 10px;
   height: 30px;
   background-color: rgb(255, 0, 0);
+}
+
+.reference-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.reference-list a {
+  all: unset;
+}
+
+.reference-list img {
+  justify-self: center;
+  display: flex;
+  width: 90%;
+  max-width: 300px;
+  height: auto;
+  object-fit: contain;
+  cursor: pointer;
 }
 
 /*############################## Small devices (portrait tablets and large phones, 600px and up) ##############################*/
@@ -1120,13 +1149,13 @@ footer p {
     right: -7px;
     border-top: 8px solid transparent;
     border-bottom: 8px solid transparent;
-    border-left: 8px solid var(--dark-primary-color);
+    border-left: 8px solid var(--light-primary-color);
   }
   .right-container-arrow {
     left: -7px;
     border-top: 8px solid transparent;
     border-bottom: 8px solid transparent;
-    border-right: 8px solid var(--dark-primary-color);
+    border-right: 8px solid var(--light-primary-color);
   }
 
   /* footer */
@@ -1158,6 +1187,10 @@ footer p {
     height: 50px;
     bottom: 40px;
     right: 40px;
+  }
+
+  .reference-list img {
+    max-width: 581px;
   }
 }
 
@@ -1293,8 +1326,6 @@ footer p {
     margin-top: 100px;
   }
   section > div {
-    width: 100%;
-    max-width: 1280px;
     padding: 40px;
   }
   header {
@@ -1536,13 +1567,13 @@ footer p {
     right: -10px;
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
-    border-left: 10px solid var(--dark-primary-color);
+    border-left: 10px solid var(--light-primary-color);
   }
   .right-container-arrow {
     left: -10px;
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
-    border-right: 10px solid var(--dark-primary-color);
+    border-right: 10px solid var(--light-primary-color);
   }
   footer {
     padding: 30px;
@@ -1562,5 +1593,11 @@ footer p {
   .arrow-go-up {
     width: 70px;
     height: 70px;
+  }
+
+  .reference-list {
+    margin-top: 50px;
+    flex-direction: row;
+    gap: 50px;
   }
 }
