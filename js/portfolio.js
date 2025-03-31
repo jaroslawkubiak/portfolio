@@ -3,6 +3,64 @@ const portfolioList = document.getElementById("portfolio-list");
 
 export const portfolio = [
   {
+    title: "System for managing sets for a Interior Design Studio",
+    link: "",
+    github: [
+      {
+        name: "frontend",
+        link: "https://github.com/jaroslawkubiak/zestawienia_frontend",
+      },
+      {
+        name: "backend",
+        link: "https://github.com/jaroslawkubiak/zestawienia_backend",
+      },
+    ],
+    imgDir: "sets",
+    images: [
+      "Suppliers table",
+      "Edit supplier modal",
+      "Sets table, with sorting etc",
+      "Detail position in set",
+      "Action buttons - reorder position, add new, cloen, delete",
+      "Set as PDF file",
+      "DB",
+      "Notification after pasting image in position",
+      "Notification after saving set header",
+    ],
+    tech: ["angular", "rxjs", "node", "nestjs", "mysql"],
+    description: `This is my latest project for the interior design studio. 
+    It start with end of <strong>february 2025</strong> and its evolving every day.
+    Now, for every project design studio,o create a spreadsheet with a list of all products needed for the interior project. 
+    This project is to make it easier for the client to track changes in the sets. 
+        <ul class="portfolio-panel-list">
+        <li>loging into the system</li>
+        <li>managing clients and suppliers: CRUD operations. User can filter the client by name, company, email etc.</li>
+        <li>managing sets for a client, with tracking of created (user and date) and update (user and date)</li>
+        <li>set have different statuses to better track and filter a specific tab to check (kitchen, bathroom, living room etc)</li>
+        <li>user can add new positions with product details to a specific tab</li>
+        <li>user can paste a printscreen to set the position, and the image is immediately sent to the server</li>
+        <li>user can fill up designated columns</li>
+        <li>user can arrange the position order just by dragging and dropping the selected position to a new place</li>
+        <li>user can clone existing position - for quicker entering data</li>
+        <li>every column width in the set can be adjusted and saved independently </li>
+        <li>set a unique link that can be sent as HTML by email to the client (no need to log in for the client)</li>
+        <li>set can be converted to PDF file</li>
+        <li>user can send additional files to set, ex moodboards, visualization and other PDF files</li>
+        </ul>
+        <br />
+        Aside from Angular in the project I also use PrimeNG components.
+        The project is still in development mode. Next steps on the todo list:
+        <ul class="portfolio-panel-list">
+        <li>sended email list with details</li>
+        <li>client can add comments to every position, and user can answer on their comment</li>
+        <li> sent email to suppliers with list of products</li>
+        <li>different setting options like: email header, email content, default bookmarks</li>
+        <li>and many more</li>
+        </ul>
+        There is no live demo yet. You can check GitHubs links.
+        `,
+  },
+  {
     title: "ERP System",
     link: "portfolio/panel",
     imgDir: "panel",
@@ -153,7 +211,7 @@ portfolio.forEach((item) => {
   item.tech.forEach((tech) => (html += svg[tech]));
   html += `</div>`;
 
-  //portfolio images
+  // portfolio images
   html += `<div class="portfolio-preview" id="${item.imgDir}"><div class="portfolio-preview-images">`;
 
   for (let i = 0; i < item.images.length; i++) {
@@ -181,8 +239,15 @@ portfolio.forEach((item) => {
       }</p></button></a>`;
     });
   }
+  html += `</div>`;
 
-  html += `</div><div class="portfolio-footer-demo"><a href="${item.link}" target="_blank"><button class="portfolio-btn">${svgDemo}<p class="btn-text">Live demo</p></button></a></div>`;
+  if (item.link !== "") {
+    html += `<div class="portfolio-footer-demo">
+    <a href="${item.link}" target="_blank">
+    <button class="portfolio-btn">${svgDemo}<p class="btn-text">Live demo</p></button></a>
+    </div>`;
+  }
+
   html += `</div></article></li>`;
 
   portfolioList.insertAdjacentHTML("beforeEnd", html);

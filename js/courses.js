@@ -76,6 +76,15 @@ export const coursesList = [
     language: "ENG",
   },
   {
+    name: "Wordpress & Elementor Mastery 2025 - Learn To Build Websites",
+    percent: 43,
+    udemy:
+      "https://www.udemy.com/course/complete-wordpress-elementor-mastery-course/",
+    pdf: "",
+    time: "20h",
+    language: "ENG",
+  },
+  {
     name: "Advanced CSS and Sass: Flexbox, Grid, Animations and More!",
     percent: 54,
     udemy: "https://www.udemy.com/course/advanced-css-and-sass/",

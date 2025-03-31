@@ -151,6 +151,40 @@ document.addEventListener("scroll", () => {
 });
 
 //////////////////////////////////////////////////////////
+// lazy loading img on portfolio sections
+// get all section from portfolio
+const portfolioTargets = document.querySelectorAll(".portfolio-preview");
+
+// load high res image for visible portfolio section
+const loadImg = function (entries, observer) {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) return;
+
+    const portfolioLoading = document.getElementById(entry.target.id);
+    const imgTargets = portfolioLoading.querySelectorAll("img[data-src]");
+
+    imgTargets.forEach((img) => {
+      // replace lazy img with high res img
+      img.src = img.dataset.src;
+
+      // remove blur effect(class) when img is finish loading
+      img.addEventListener("load", () => {
+        img.classList.remove("portfolio-lazy-img");
+        observer.unobserve(entry.target);
+      });
+    });
+  });
+};
+
+// create observer for each section in portfolio
+const portfolioObserver = new IntersectionObserver(loadImg, {
+  root: null,
+  threshold: 0,
+  rootMargin: "250px",
+});
+portfolioTargets.forEach((portfolio) => portfolioObserver.observe(portfolio));
+
+//////////////////////////////////////////////////////////
 // courses animation
 const animateCoursesCircle = function () {
   const circularProgress = document.querySelectorAll(

@@ -423,7 +423,7 @@ ul.portfolio-panel-list li::before {
   position: relative;
   margin-top: 20px;
   width: 100%;
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 .portfolio-preview-images {
@@ -520,6 +520,7 @@ ul.portfolio-panel-list li::before {
   top: 0;
   display: grid;
   place-content: center;
+  width: 100%;
   transition: transform 1s;
 }
 .slider-btn {
