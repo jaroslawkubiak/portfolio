@@ -19,11 +19,11 @@ export const portfolio = [
     images: [
       "Suppliers table",
       "Edit supplier modal",
-      "Sets table, with sorting etc",
+      "Sets table, with sorting, paginations etc",
       "Detail position in set",
-      "Action buttons - reorder position, add new, cloen, delete",
+      "Action buttons - reorder position, add new, clone, delete",
       "Set as PDF file",
-      "DB",
+      "data base",
       "Notification after pasting image in position",
       "Notification after saving set header",
     ],
@@ -60,6 +60,38 @@ export const portfolio = [
         There is no live demo yet. You can check GitHubs links.
         `,
   },
+  {
+    title: "Travel blog in WordpPress",
+    link: "http://wp.jaroslawkubiak.pl",
+    github: [],
+    imgDir: ["wordpress"],
+    images: [
+      "Homepage",
+      "Fresh from our blog section",
+      "Europe travel",
+      "Header menu",
+      "Asia travel page",
+      "Single post page",
+      "Them builder",
+      "Global settings",
+    ],
+    tech: ["wordpress", "html", "css"],
+    description: `I am currently completing the Complete WordPress & Elementor Mastery Course (73% finished), 
+    where I am learning to build modern, responsive websites using WordPress and Elementor.
+    <br /><br />
+    Course Scope and Skills Acquired:
+    <ul class="portfolio-panel-list">
+      <li>Installing and configuring WordPress on a private server</li>
+      <li>Creating websites with Elementor (no coding required)</li>
+      <li>Building responsive and visually appealing layouts</li>
+      <li>Optimizing website speed and performance</li>
+      <li>Developing online stores with WooCommerce</li>
+      <li>SEO - optimizing content for search engines</li>
+      <li>Managing WordPress themes and plugins</li>
+    </ul>
+    `,
+  },
+
   {
     title: "ERP System",
     link: "portfolio/panel",

@@ -771,7 +771,7 @@ ul.portfolio-panel-list li::before {
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
-  animation: moveline 5.5s linear forwards;
+  animation: moveline 6.5s linear forwards;
 }
 .road-map-container {
   padding: 10px 20px;
