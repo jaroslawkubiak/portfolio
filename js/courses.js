@@ -2,15 +2,6 @@ const coursesContainer = document.getElementById("coursesList");
 
 export const coursesList = [
   {
-    name: "Wordpress & Elementor Mastery 2025 - Learn To Build Websites",
-    percent: 73,
-    udemy:
-      "https://www.udemy.com/course/complete-wordpress-elementor-mastery-course/",
-    pdf: "",
-    time: "20h",
-    language: "ENG",
-  },
-  {
     name: `Typescript: The Complete Developer's Guide`,
     percent: 100,
     udemy:
@@ -73,6 +64,15 @@ export const coursesList = [
     udemy: "https://www.udemy.com/course/the-ultimate-react-course/",
     pdf: "certificates/.pdf",
     time: "67h",
+    language: "ENG",
+  },
+  {
+    name: "Wordpress & Elementor Mastery 2025 - Learn To Build Websites",
+    percent: 100,
+    udemy:
+      "https://www.udemy.com/course/complete-wordpress-elementor-mastery-course/",
+    pdf: "certificates/wordpress.pdf",
+    time: "20h",
     language: "ENG",
   },
   {

@@ -46,6 +46,10 @@ export const skillsList = [
     level: 4,
   },
   {
+    skill: "WordPress & Elementor",
+    level: 3,
+  },
+  {
     skill: "Tailwind",
     level: 2,
   },

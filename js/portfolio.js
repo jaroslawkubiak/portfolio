@@ -28,10 +28,10 @@ export const portfolio = [
       "Notification after saving set header",
     ],
     tech: ["angular", "rxjs", "node", "nestjs", "mysql"],
-    description: `This is my latest project for the interior design studio. 
+    description: `This is my latest project for the interior design studio.
     It start with end of <strong>february 2025</strong> and its evolving every day.
-    Now, for every project design studio,o create a spreadsheet with a list of all products needed for the interior project. 
-    This project is to make it easier for the client to track changes in the sets. 
+    Now, for every project design studio,o create a spreadsheet with a list of all products needed for the interior project.
+    This project is to make it easier for the client to track changes in the sets.
         <ul class="portfolio-panel-list">
         <li>loging into the system</li>
         <li>managing clients and suppliers: CRUD operations. User can filter the client by name, company, email etc.</li>
@@ -61,10 +61,10 @@ export const portfolio = [
         `,
   },
   {
-    title: "Travel blog in WordpPress",
+    title: "Travel blog in WordpPress & Elementor",
     link: "http://wp.jaroslawkubiak.pl",
     github: [],
-    imgDir: ["wordpress"],
+    imgDir: "wordpress",
     images: [
       "Homepage",
       "Fresh from our blog section",
@@ -76,7 +76,7 @@ export const portfolio = [
       "Global settings",
     ],
     tech: ["wordpress", "html", "css"],
-    description: `I am currently completing the Complete WordPress & Elementor Mastery Course (73% finished), 
+    description: `I am currently completing the Complete WordPress & Elementor Mastery Course (73% finished),
     where I am learning to build modern, responsive websites using WordPress and Elementor.
     <br /><br />
     Course Scope and Skills Acquired:
@@ -91,7 +91,6 @@ export const portfolio = [
     </ul>
     `,
   },
-
   {
     title: "ERP System",
     link: "portfolio/panel",
@@ -107,7 +106,7 @@ export const portfolio = [
     ],
     tech: ["php", "mysql", "html", "css"],
     description: `
-          This is my main project <strong>for a client</strong> in the window joinery industry. 
+          This is my main project <strong>for a client</strong> in the window joinery industry.
           It all started with just two tables in the database. After 10 years of implementing new functionalities, the system includes:
           <ul class="portfolio-panel-list">
           <li>warehouse, registration of orders to suppliers</li>
@@ -124,10 +123,10 @@ export const portfolio = [
           <li>separate login panel is available for customers to check the status of their orders</li>
           <li>separate login panel for drivers responsible for transporting orders</li>
           </ul>
-  
-          All functions were programmed as agreed upon and <strong>requested</strong> by the client. Before I started working on this system, the client was working on Excel tables, 
+
+          All functions were programmed as agreed upon and <strong>requested</strong> by the client. Before I started working on this system, the client was working on Excel tables,
           so most of the system is programmed on tables tags, basically copying the look and function to HTML.
-          
+
           <br /><br />I used three external libraries in the project:
           <ul class="portfolio-panel-list">
           <li>PHPMailer - to send emails with HTML content with attachments</li>
@@ -159,9 +158,9 @@ export const portfolio = [
       "Notification when figure was removed",
     ],
     tech: ["react", "redux", "node", "express", "mysql"],
-    description: `I am a huuuge fan and collector of <strong>Lego Star Wars</strong> minifigures. As my collection grew above 80 figures, 
-    I needed a better way to catalog them, something where I could upload pictures, sort, and customize them to my needs. 
-    As a <strong>programmer by passion</strong>, I wrote a simple website (PHP and MySQL) where I could better track which figures were already in my collection, and I use that website to this day. 
+    description: `I am a huuuge fan and collector of <strong>Lego Star Wars</strong> minifigures. As my collection grew above 80 figures,
+    I needed a better way to catalog them, something where I could upload pictures, sort, and customize them to my needs.
+    As a <strong>programmer by passion</strong>, I wrote a simple website (PHP and MySQL) where I could better track which figures were already in my collection, and I use that website to this day.
     The project below is the next version, written in <strong>React</strong>, Node.JS, and MySQL. The project has a few new features, such as:
         <ul class="portfolio-panel-list">
         <li>React fetch data from Node API, like: figure list etc.</li>
@@ -189,9 +188,9 @@ export const portfolio = [
       "Game over - view your score and game statistics",
     ],
     tech: ["js", "html", "css"],
-    description: `One of my passions is <strong>traveling</strong>, With each trip I buy a patch with the flag of a particular country, which I then sew onto my backpack. 
-    I often play a quiz game on my phone where you have to guess the flags of different countries. I decided to write a similar game. During the <strong>JavaScript course</strong>, 
-    we used an API to get information about countries, so I used the same API to build this project. In my game, you can choose one or more continents from which you want to guess the flags of countries. 
+    description: `One of my passions is <strong>traveling</strong>, With each trip I buy a patch with the flag of a particular country, which I then sew onto my backpack.
+    I often play a quiz game on my phone where you have to guess the flags of different countries. I decided to write a similar game. During the <strong>JavaScript course</strong>,
+    we used an API to get information about countries, so I used the same API to build this project. In my game, you can choose one or more continents from which you want to guess the flags of countries.
     You always have 10 flags to guess, drawn at random from the selected continents. The game remembers the best score in local storage.`,
   },
   {
@@ -203,8 +202,8 @@ export const portfolio = [
     imgDir: "f1",
     images: ["Your result", "Get ready", "Your result", "You click too soon"],
     tech: ["js", "html", "css"],
-    description: `Instagram's algorithm dropped me a video of Formula 1 driver Lando Norris testing his reflex, which is very important for a driver, especially during the start of a race. 
-    This inspired me to create a simple app where I could test my reaction speed and compare myself to an F1 driver. The average F1 driver's reaction speed is about 0.15 seconds, 
+    description: `Instagram's algorithm dropped me a video of Formula 1 driver Lando Norris testing his reflex, which is very important for a driver, especially during the start of a race.
+    This inspired me to create a simple app where I could test my reaction speed and compare myself to an F1 driver. The average F1 driver's reaction speed is about 0.15 seconds,
     from the moment the start lights go off to the moment they press the accelerator. My app measures the time to the nearest 0.0001 seconds. Check your reflexes too.`,
   },
   {

@@ -423,7 +423,7 @@ ul.portfolio-panel-list li::before {
   position: relative;
   margin-top: 20px;
   width: 100%;
-  max-width: 1000px;
+  max-width: 600px;
   margin: 0 auto;
 }
 .portfolio-preview-images {
@@ -435,7 +435,7 @@ ul.portfolio-panel-list li::before {
 .portfolio-preview-image {
   width: 90%;
   height: auto;
-  max-height: 800px;
+  max-height: 600px;
   object-fit: contain;
   display: flex;
   margin: 0 auto;
@@ -527,7 +527,7 @@ ul.portfolio-panel-list li::before {
   all: unset;
   position: absolute;
   bottom: 3px;
-  transform: translateY(-50%);
+  top: 150px;
   z-index: 10;
   border: none;
   background-color: var(--primary-text);
@@ -1310,7 +1310,7 @@ footer p {
     --svg-border-width: 4px;
 
     /* pdf svg certyficate width */
-    --pdf-width: 70px;
+    --pdf-width: 60px;
   }
   .test {
     background-color: #1100ff;
@@ -1321,7 +1321,7 @@ footer p {
   a:link,
   a:visited,
   .portfolio-list li {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
   #about-me {
     margin-top: 100px;
@@ -1345,7 +1345,7 @@ footer p {
     background-color: var(--dark-primary-color);
   }
   h1 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
   li {
     padding: 10px;
@@ -1403,7 +1403,7 @@ footer p {
     height: 40px;
   }
   .portfolio-title {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     padding: 20px 0;
     margin-top: 40px;
   }
@@ -1415,12 +1415,12 @@ footer p {
   }
 
   .portfolio-svg {
-    width: 48px;
-    height: 48px;
+    width: 35px;
+    height: 35px;
   }
   .portfolio-svg-wrapper {
-    width: 85px;
-    height: 85px;
+    width: 65px;
+    height: 65px;
     margin: 25px;
   }
   .portfolio-image-caption {
@@ -1441,8 +1441,9 @@ footer p {
     width: 1.2rem;
     height: 1.2rem;
   }
+
   .slider-btn {
-    top: 40%;
+    top: 150px;
     height: 3rem;
     width: 3rem;
     padding: 8px;
@@ -1454,15 +1455,15 @@ footer p {
     right: -8%;
   }
   .dots-dot {
-    width: 2rem;
-    height: 2rem;
+    width: 1.6rem;
+    height: 1.6rem;
     margin-right: 2.4rem;
   }
   .portfolio-btn {
-    padding: 18px 25px;
+    padding: 12px 18px;
   }
   .portfolio-btn .btn-text {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
   }
   .portfolio-footer {
     padding: 10px;
@@ -1592,8 +1593,8 @@ footer p {
     height: 3rem;
   }
   .arrow-go-up {
-    width: 70px;
-    height: 70px;
+    width: 55px;
+    height: 55px;
   }
 
   .reference-list {
